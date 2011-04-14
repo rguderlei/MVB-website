@@ -1,4 +1,6 @@
 Mvb::Application.routes.draw do |map|
+  resources :events
+
   resources :infos
 
   resources :pages

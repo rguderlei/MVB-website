@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  begin: 2011-04-14 22:32:39
+  end: 2011-04-14 22:32:39
+  location: MyString
+  orchestra: MyString
+  title: MyString
+  description: MyText
+  public_event: false
+
+two:
+  begin: 2011-04-14 22:32:39
+  end: 2011-04-14 22:32:39
+  location: MyString
+  orchestra: MyString
+  title: MyString
+  description: MyText
+  public_event: false

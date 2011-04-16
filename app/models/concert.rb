@@ -1,0 +1,2 @@
+class concert < event
+end

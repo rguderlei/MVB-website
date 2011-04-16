@@ -1,0 +1,11 @@
+@mixin rounded($side, $orientation, $radius: 5px) {
+  border-#{$side}-#{$orientation}-radius: $radius;
+  -moz-border-radius-#{$side}#{$orientation}: $radius;
+  /*-webkit-border-#{$side}-radius: $radius;*/
+}
+
+@mixin rounded_box($radius: 5px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  /*-webkit-border-#{$side}-radius: $radius;*/
+}

@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mvb</title>
-  <%= stylesheet_link_tag :all %>
+  <title></title>
+  <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="wrapper">
+	<div id="header">
+		<!-- Musikverein Biberach e.V. -->
+	</div><!-- #header-->
 
-<%= yield %>
+	<div id="menucontainer">
+		<ul id="menu">
+				<li><a href=""><img src="/images/logo_mvb.gif" height="11px" /></a></li>
+				<li><a href="/static/about">&uuml;ber uns</a></li>
+				<li><a href="/static/stadtkapelle">Stadtkapelle</a></li>
+				<li><a href="/static/sinfonieorchester">Sinfonieorchester</a></li>
+				<li><a href="">Ensembles</a></li>
+				<li><a href="/static/bilder">Bilder</a></li>
+		</ul>
+	</div>
 
+	<div id="middle">
+		<%= yield %>
+	</div><!-- #middle-->
+	<div id="footer">
+		&copy; 2011 Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a>	
+	</div><!-- #footer -->
+</div><!-- #wrapper -->
 </body>
 </html>

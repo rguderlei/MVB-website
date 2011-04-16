@@ -1,0 +1,5 @@
+@mixin gradient ($start_color, $end_color){
+	background-color: #{$start_color}; /* fallback color */
+	background-image: -moz-linear-gradient(100% 100% 90deg, #{$end_color}, #{$start_color});
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#{$start_color}), to(#{$end_color}));
+}

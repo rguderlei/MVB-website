@@ -1,0 +1,171 @@
+@import "rounded";
+@import "shadow";
+@import "gradient";
+@import "colors";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 14px Molengo, Arial, sans-serif;	
+	color: $font-color;
+	width: 100%;	
+}
+
+a {
+	color: $font-color-highlight;
+	font-weight: bold;
+	outline: none;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+h1 {
+	font: 20px Allan, Arial, sans-serif;
+	color: $font-color-highlight;
+}
+
+p {
+	margin: 0 0 18px
+}
+
+img {
+	border: none;
+}
+
+input {
+	vertical-align: middle;
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	background-color:$background-color-light;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+	height: 150px;	
+	background-image: url(/images/header.jpg);
+}
+
+#menucontainer {
+	height: 55px;	
+
+	margin: 0;
+	padding: 0;
+
+	float:left;
+        width:100%;
+	background:#fff;
+	overflow:hidden;
+	position:relative;
+	background-color:$background-color-light;
+	
+	ul#menu{
+	   clear:left;
+	   float:left;
+	   list-style:none;
+	   margin:0;
+	   padding:0;
+	   position:relative;
+	   left:50%;
+	   text-align:center;
+
+	    li  {
+		    list-style-type: none;
+		    display: block;
+		    width: 8em;
+		    float: left;
+		    text-align: center;
+			
+		    margin-top:5px;
+		    padding: 10px;
+		    color:#FDFCFF;
+		    
+		    position:relative;
+		    right:50%;
+			
+		    border-right: 1px $background-color-dark solid;
+		    
+		    @include gradient($border-color-light, $border-color-dark);
+		    @include box_shadow;
+		    
+		     &:last-child{
+			@include rounded(top, right, 5px);
+			@include rounded(bottom, right, 5px);
+                     }
+		     
+		      &:first-child{
+		         @include rounded(top, left, 5px);
+		         @include rounded(bottom, left, 5px);
+	              }
+	     }
+	}
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#middle {
+	/*margin-top:80px;*/
+	width: 100%;
+	height: 1%;
+	position: relative;
+}
+#middle:after {
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+#container {	
+	width: 735px;
+	float: left;
+	overflow: hidden;
+}
+#content {
+	/*background: $background-color-dark;*/
+	border: 1px solid $background-color-dark;
+	padding: 10px;
+	margin: 10px;
+	@include rounded_box();
+	
+	ul {
+		list-style:none;
+		li#hilite {
+			background-color:$background-color-dark;
+		}
+	}
+	
+	h1 {
+		margin-top: 15px;
+	}
+}
+
+/* Sidebar Right
+-----------------------------------------------------------------------------*/
+#sideRight {
+	float: right;
+	padding: 10px 10px 10px 25px; 
+	width: 210px;
+	margin: 10px;
+	position: relative;
+	background: $background-color-dark;
+	@include rounded_box();
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+	margin: 10px;
+	padding: 10px;	
+	background: $background-color-dark;
+	@include rounded_box();
+}

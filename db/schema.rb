@@ -10,7 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110414195647) do
+ActiveRecord::Schema.define(:version => 20110417000419) do
+
+  create_table "events", :force => true do |t|
+    t.datetime "begin"
+    t.datetime "end"
+    t.string   "location"
+    t.string   "orchestra"
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "public_event"
+    t.text     "annoucement"
+    t.text     "critique"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "infos", :force => true do |t|
     t.string   "title"
@@ -24,6 +39,22 @@ ActiveRecord::Schema.define(:version => 20110414195647) do
     t.string   "permalink"
     t.text     "main_content"
     t.text     "side_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prints", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_file_size"
+    t.string   "image_content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "original_file_name"
+    t.string   "original_file_size"
+    t.string   "original_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  uses_tiny_mce(:options => AppConfig.default_mce_options, :only => [:new, :edit])
+
   # GET /pages
   # GET /pages.xml
   def index

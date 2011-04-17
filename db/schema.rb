@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110417101539) do
+ActiveRecord::Schema.define(:version => 20110417184430) do
 
   create_table "events", :force => true do |t|
     t.datetime "begin"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20110417101539) do
     t.datetime "updated_at"
   end
 
+  create_table "galleries", :force => true do |t|
+    t.string   "name"
+    t.datetime "context_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "infos", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -39,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20110417101539) do
     t.string   "permalink"
     t.text     "main_content"
     t.text     "side_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.integer  "gallery_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

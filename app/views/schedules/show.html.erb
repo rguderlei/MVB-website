@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Orchestra:</b>
+  <%= @schedule.orchestra %>
+</p>
+
+<p>
+  <b>Header:</b>
+  <%= @schedule.header %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

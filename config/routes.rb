@@ -1,8 +1,8 @@
 Mvb::Application.routes.draw do |map|
+  resources :schedules
   resources :events
-
+  resources :concerts
   resources :infos
-
   resources :pages
   
   get "home/index"

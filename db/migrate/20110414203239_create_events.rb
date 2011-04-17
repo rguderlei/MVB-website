@@ -10,7 +10,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :description
       t.boolean :public_event
       # concert attributes
-      t.text :annoucement
+      t.text :announcement
       t.text :critique
 
       t.string :type

@@ -1,2 +1,2 @@
-class concert < event
+class Concert < Event
 end

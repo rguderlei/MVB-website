@@ -1,13 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  permalink: MyString
-  main_content: MyText
-  side_content: MyText
+  name: Impressum
+  permalink: impressum
+  main_content: TBD
+  side_content: TBD
 
 two:
-  name: MyString
-  permalink: MyString
-  main_content: MyText
-  side_content: MyText
+  name: &Uuml;ber uns
+  permalink: about
+  main_content: TBD
+  side_content: TBD
+
+three:
+  name: Stadtkapelle
+  permalink: stadtkapelle
+  main_content: TBD
+  side_content: TBD
+
+four:
+  name: Sinfonieorchester
+  permalink: sinfonieorchester
+  main_content: TBD
+  side_content: TBD

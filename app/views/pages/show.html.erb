@@ -2,13 +2,13 @@
 
 <div id="container">
 <div id="content">
-  <%= @page.main_content %>
+  <%= @page.main_content.html_safe %>
 </div>
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>
 </div>
 
 <div class="sidebar" id="sideRight">
-  <%= @page.side_content %>
+  <%= @page.side_content.html_safe %>
 </div>
 

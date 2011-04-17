@@ -9,6 +9,11 @@ Features
 - Probenpläne
 - Bildergalerien
 
+User Guide
+----------
+
+TBD
+
 Developer Guide
 ---------------
 

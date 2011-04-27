@@ -24,7 +24,7 @@
     <td><%= event.description %></td>
     <td><%= event.public_event %></td>
     <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Edit', edit_polymorphic_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

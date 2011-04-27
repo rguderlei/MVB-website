@@ -10,10 +10,12 @@ Mvb::Application.routes.draw do |map|
   resources :pages
   
   get "home/index"
+  get "admin/index"
 
   root :to => "home#index" 
   
   map.static "static/:permalink", :controller=>"pages", :action=>"show"
+  map.static "admin", :controller=>"admin", :action=>"index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,14 +1,11 @@
-<h1>Listing events</h1>
+<h1>Termine</h1>
 
 <table>
   <tr>
-    <th>Begin</th>
-    <th>End</th>
-    <th>Location</th>
-    <th>Orchestra</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Public event</th>
+    <th>Beginn</th>
+    <th>Ort</th>
+    <th>Orchester</th>
+    <th>Veranstaltung</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,16 +13,13 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.begin %></td>
-    <td><%= event.end %></td>
+    <td><%= l event.begin, :format=>:long %></td>
     <td><%= event.location %></td>
     <td><%= event.orchestra %></td>
     <td><%= event.title %></td>
-    <td><%= event.description %></td>
-    <td><%= event.public_event %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_polymorphic_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Details', event %></td>
+    <td><%= link_to 'Bearbeiten', edit_polymorphic_path(event) %></td>
+    <td><%= link_to 'Löschen', event, :confirm => 'Soll der Termin wirklich gelöscht werden?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20110417184430) do
   create_table "photos", :force => true do |t|
     t.string   "name"
     t.integer  "gallery_id"
+    t.datetime "context_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

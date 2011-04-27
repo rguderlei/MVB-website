@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :orchestra %><br />
-    <%= f.text_field :orchestra %>
+    <%= f.select :orchestra, options_for_select(%w{Stadtkapelle Sinfonieorchester }) %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :public_event %><br />
-    <%= f.check_box :public_event %>
+    <%= f.check_box :public_event, :disabled=>true%>
   </div>
   <div class="actions">
     <%= f.submit %>

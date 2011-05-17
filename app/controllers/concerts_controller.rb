@@ -1,4 +1,5 @@
 class ConcertsController < ApplicationController
+    before_filter :authenticate_user!, :except => [:index, :get]
     # GET //concerts
     # GET /concerts.xml
     def index

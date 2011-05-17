@@ -11,6 +11,8 @@ gem 'haml'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'paperclip'
 
+gem 'devise', '1.3.4'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -1,4 +1,6 @@
 Mvb::Application.routes.draw do |map|
+  devise_for :users
+
   resources :photos
 
   resources :galleries

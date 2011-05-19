@@ -11,8 +11,8 @@ de:
 
     day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
     abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
-    month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
-    abbr_month_names: [~, Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+    month_names: [~, Januar, Februar, MÃ¤rz, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+    abbr_month_names: [~, Jan, Feb, MÃ¤r, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
     order: [ :day, :month, :year ]
   
   time:
@@ -118,23 +118,23 @@ de:
         header:
           one: "Konnte dieses {{model}} Objekt nicht speichern: 1 Fehler."
           other: "Konnte dieses {{model}} Objekt nicht speichern: {{count}} Fehler."
-        body: "Bitte überprüfen Sie die folgenden Felder:"
+        body: "Bitte Ã¼berprÃ¼fen Sie die folgenden Felder:"
 
       messages:
-        inclusion: "ist kein gültiger Wert"
-        exclusion: "ist nicht verfügbar"
-        invalid: "ist nicht gültig"
-        confirmation: "stimmt nicht mit der Bestätigung überein"
+        inclusion: "ist kein gÃ¼ltiger Wert"
+        exclusion: "ist nicht verfÃ¼gbar"
+        invalid: "ist nicht gÃ¼ltig"
+        confirmation: "stimmt nicht mit der BestÃ¤tigung Ã¼berein"
         accepted: "muss akzeptiert werden"
-        empty: "muss ausgefüllt werden"
-        blank: "muss ausgefüllt werden"
+        empty: "muss ausgefÃ¼llt werden"
+        blank: "muss ausgefÃ¼llt werden"
         too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
         too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
-        wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+        wrong_length: "hat die falsche LÃ¤nge (muss genau {{count}} Zeichen haben)"
         taken: "ist bereits vergeben"
         not_a_number: "ist keine Zahl"
-        greater_than: "muss größer als {{count}} sein"
-        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+        greater_than: "muss grÃ¶ÃŸer als {{count}} sein"
+        greater_than_or_equal_to: "muss grÃ¶ÃŸer oder gleich {{count}} sein"
         equal_to: "muss genau {{count}} sein"
         less_than: "muss kleiner als {{count}} sein"
         less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"

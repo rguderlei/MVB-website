@@ -25,6 +25,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/new.xml
   def new
     @gallery = Gallery.new
+    @gallery.photos.build
 
     respond_to do |format|
       format.html # new.html.erb

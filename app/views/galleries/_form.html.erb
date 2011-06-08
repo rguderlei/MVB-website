@@ -22,9 +22,14 @@
   <h2>Bilder</h2>
   <% f.fields_for :photos do |photo_form| %>
 
-  <div class="field">
-    <%= photo_form.file_field :image %>
-  </div>
+      <div class="field">
+        <% if photo_form.object.image? %>
+            <%= image_tag photo_form.object.image.url(:small) %>
+            <%= photo_form.link_to_remove "Bild löschen" %>
+        <% else %>
+            <%= photo_form.file_field :image %>
+        <% end %>
+      </div>
   <% end %>
   <p><%= f.link_to_add "Bild hinzufügen", :photos %></p>
   <div class="actions">

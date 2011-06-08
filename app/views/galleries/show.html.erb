@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h1>
   <%= @gallery.name %>
-</p>
+</h1>
 
 <p>
-  <b>Context date:</b>
+  Datum:
   <%= @gallery.context_date %>
 </p>
 
-<% @gallery.photos.each{ |photo| %>
-    <%= image_tag photo.image.url(:small) %>
+<% i=1 %>
+<% @gallery.photos.each_slice(5){ |photos| %>
+    <p>
+    <% photos.each { |photo| %>
+        <%= image_tag photo.image.url(:small) %>
+    <% } %>    
+    </p>
 <% } %>
-
 
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |

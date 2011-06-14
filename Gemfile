@@ -5,13 +5,22 @@ gem 'rails', '3.0.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# sqlite as dev database
 gem 'sqlite3'
+# Styling Scss
 gem 'haml'
 
+# use jquery as js framework
 gem 'jquery-rails', '>= 0.2.6'
+
+# use paperclip to handle attachments
 gem 'paperclip'
 
+# use devise as authentication framework
 gem 'devise', '1.3.4'
+
+# use nested_forms to simplify forms for models with associations
+gem 'nested_form'
 
 # Use unicorn as the web server
 # gem 'unicorn'

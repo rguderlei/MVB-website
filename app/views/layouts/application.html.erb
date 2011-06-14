@@ -2,11 +2,12 @@
 <html>
 <head>
   <title></title>
-  <%= stylesheet_link_tag "style" %>
-  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag "style", "jquery.lightbox-0.5" %>
+  <%= javascript_include_tag :defaults, "nested_form", "jquery.lightbox-0.5.min" %>
   <%= javascript_include_tiny_mce_if_used %>
   <%= tiny_mce if using_tiny_mce? %>
   <%= csrf_meta_tag %>
+  <%= javascript_tag "$(function() { \n $('a.lightbox').lightBox(); \n });" %> 
 </head>
 <body>
 <div id="wrapper">
@@ -16,10 +17,30 @@
 
 	<div id="menucontainer">
 		<ul id="menu">
-				<li><a href="/"><img src="/images/logo_mvb.gif" height="11px" /></a></li>
-				<li><a href="/static/about">&uuml;ber uns</a></li>
-				<li><a href="/static/stadtkapelle">Stadtkapelle</a></li>
-				<li><a href="/static/sinfonieorchester">Sinfonieorchester</a></li>
+				<li>
+                    <a href="/"><img src="/images/logo_mvb.gif" height="11px" /></a>
+                </li>
+				<li>
+                    <a href="/static/about">&uuml;ber uns</a>
+                    <ul>
+                        <li> <a href="/static/vorstand">Vorstand</a></li>
+                        <li> <a href="/static/geschichte">Geschichte</a></li>
+                        <li> <a href="/static/satzung">Satzung</a></li>
+                        <li> <a href="/static/joi">JOI</a></li>
+                    </ul>
+                </li>
+				<li><a href="/static/stadtkapelle">Stadtkapelle</a>
+                    <ul>
+                        <li><a href="/static/stadtkapelle">Orchester</a></li>
+                        <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
+                    </ul>
+                </li>
+				<li><a href="/static/sinfonieorchester">Sinfonieorchester</a>
+                    <ul>
+                        <li><a href="/static/sinfonieorchester">Orchester</a></li>
+                        <li><a href="/static/vorstand_sinfonieorchester">Vorstand</a></li>
+                    </ul>
+                </li>
 				<li><a href="/galleries">Bilder</a></li>
 				<li><a href="/kontakt">Kontakt</a></li>
                 <% if user_signed_in? %>

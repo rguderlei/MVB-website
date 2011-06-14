@@ -1,15 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div id="container">
+    <div id="content">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @gallery.name %>
-</p>
+        <h1>
+          <%= @gallery.name %>
+        </h1>
 
-<p>
-  <b>Context date:</b>
-  <%= @gallery.context_date %>
-</p>
+        <p>
+          Datum:
+          <%= l(@gallery.context_date) %>
+        </p>
+
+        <% @gallery.photos.each_slice(5){ |photos| %>
+            <p> 
+            <% photos.each { |photo| %>
+                <%= link_to image_tag(photo.image.url(:small)),  photo.image.url(:medium), :class=>"lightbox" %>
+            <% } %>    
+            </p>
+        <% } %>
 
 
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-<%= link_to 'Back', galleries_path %>
+        <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+        <%= link_to 'Back', galleries_path %>
+    </div>
+</div>

@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20110602204243) do
     t.string   "name"
     t.string   "permalink"
     t.text     "main_content"
-    t.text     "side_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

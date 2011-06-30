@@ -4,22 +4,50 @@ one:
   name: Impressum
   permalink: impressum
   main_content: TBD
-  side_content: TBD
 
 two:
   name: &Uuml;ber uns
   permalink: about
   main_content: TBD
-  side_content: TBD
+
+two_one:
+  name: Vorstand
+  permalink: vorstand
+  main_content: TBD
+
+two_two:
+  name: Geschichte
+  permalink: geschichte
+  main_content: TBD
+
+two_three:
+  name: Satzung
+  permalink: satzung
+  main_content: TBD
+
+two_four:
+  name: JOI
+  permalink: joi
+  main_content: TBD
 
 three:
   name: Stadtkapelle
   permalink: stadtkapelle
   main_content: TBD
-  side_content: TBD
 
 four:
+  name: Vorstand Stadtkapelle
+  permalink: vorstand_stadtkapelle
+  main_content: TBD
+
+five:
   name: Sinfonieorchester
   permalink: sinfonieorchester
   main_content: TBD
-  side_content: TBD
+
+six:
+  name: Vorstand Sinfonieorchester
+  permalink: vorstand_sinfonieorchester
+  main_content: TBD
+
+

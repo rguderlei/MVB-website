@@ -153,6 +153,31 @@ ul#menu{
 	}
 }
 
+#simple_calendar {
+	margin: 50px;
+ul{
+    border: 1px solid $background-color-dark;
+    @include rounded_box(10px);
+   float:left;
+   list-style:none;
+   width:100%;
+   clear:left;
+   margin:0;
+   padding:0;
+   position:relative;   
+  
+   text-align:center;
+
+   li {
+	    list-style-type: none;
+	    display: block;
+	    float: left;
+	    text-align: center;			    
+	    padding: 5px;	    
+	    position:relative;
+   }
+}
+}
 
 #content:after {
 	content: '.';

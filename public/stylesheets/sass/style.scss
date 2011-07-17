@@ -176,6 +176,15 @@ ul{
 	    padding: 5px;	    
 	    position:relative;
    }
+   li#event {
+	    list-style-type: none;
+	    display: block;
+	    float: left;
+	    text-align: center;			    
+	    padding: 5px;	    
+	    position:relative;
+	    background: $background-color-dark;
+   }
 }
 }
 

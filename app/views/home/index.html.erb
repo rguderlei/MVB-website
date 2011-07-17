@@ -1,5 +1,5 @@
 <div id="container">
-    <%= render :partial=>"events/simplecalendar" %>
+    <%= render :partial=>"events/simplecalendar", :locals=>{:events=>@events} %>
     <br clear="all" />
     <div id="content">
 		<h1>Aktuelles</h1>

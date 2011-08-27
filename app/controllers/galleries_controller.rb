@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /galleries
   # GET /galleries.xml
   def index

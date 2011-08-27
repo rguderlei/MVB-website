@@ -1,4 +1,5 @@
 class InfosController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /infos
   # GET /infos.xml
   def index

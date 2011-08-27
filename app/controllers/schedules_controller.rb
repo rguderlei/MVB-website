@@ -1,4 +1,5 @@
 class SchedulesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /schedules
   # GET /schedules.xml
   def index

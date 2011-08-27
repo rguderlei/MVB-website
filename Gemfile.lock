@@ -95,7 +95,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ckeditor (~> 3.6.0)
+  ckeditor
   devise (= 1.3.4)
   haml
   jquery-rails (>= 0.2.6)

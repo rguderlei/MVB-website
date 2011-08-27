@@ -24,7 +24,7 @@ gem 'devise', '1.3.4'
 gem 'nested_form'
 
 # ckeditor - html wysiwyg
-gem "ckeditor", "~> 3.6.0"
+gem "ckeditor"
 
 # Use unicorn as the web server
 # gem 'unicorn'

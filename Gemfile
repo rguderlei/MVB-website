@@ -9,6 +9,7 @@ gem 'rails', '3.0.9'
 gem 'sqlite3'
 # Styling Scss
 gem 'haml'
+gem 'sass'
 
 # use jquery as js framework
 gem 'jquery-rails', '>= 0.2.6'

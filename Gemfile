@@ -23,6 +23,9 @@ gem 'devise', '1.3.4'
 # use nested_forms to simplify forms for models with associations
 gem 'nested_form'
 
+# ckeditor - html wysiwyg
+gem "ckeditor", "~> 3.6.0"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -10,6 +10,7 @@ gem 'sqlite3'
 # Styling Scss
 gem 'haml'
 gem 'sass'
+gem 'bourbon' # Bourbon css3/sass mixins
 
 # use jquery as js framework
 gem 'jquery-rails', '>= 0.2.6'

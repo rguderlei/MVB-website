@@ -30,6 +30,8 @@ GEM
     activesupport (3.0.9)
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
+    bourbon (0.1.5)
+      sass (>= 3.1)
     builder (2.1.2)
     ckeditor (3.6.1)
       mime-types (~> 1.16)
@@ -95,6 +97,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   ckeditor
   devise (= 1.3.4)
   haml

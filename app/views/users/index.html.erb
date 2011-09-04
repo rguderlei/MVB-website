@@ -1,0 +1,23 @@
+<h1>Benutzerverwaltung</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %> </td>
+    <td><%= link_to 'Anzeigen', user %></td>
+    <td><%= link_to 'Bearbeiten', edit_user_path(user) %></td>
+    <td><%= link_to 'Löschen', user, :confirm => 'Sicher?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Neuen Benutzer anlegen', new_user_path %>

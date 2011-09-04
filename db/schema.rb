@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20110827170938) do
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
-    t.datetime "context_date"
+    t.date     "context_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20110827170938) do
     t.string   "name"
     t.string   "permalink"
     t.text     "main_content"
-    t.text     "side_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,14 +71,6 @@ ActiveRecord::Schema.define(:version => 20110827170938) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "prints", :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "image_file_size"
-    t.string   "image_content_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "schedules", :force => true do |t|
@@ -108,13 +99,5 @@ ActiveRecord::Schema.define(:version => 20110827170938) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "videos", :force => true do |t|
-    t.string   "original_file_name"
-    t.string   "original_file_size"
-    t.string   "original_content_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

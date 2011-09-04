@@ -2,7 +2,7 @@ class CreateGalleries < ActiveRecord::Migration
   def self.up
     create_table :galleries do |t|
       t.string :name
-      t.datetime :context_date
+      t.date :context_date
 
       t.timestamps
     end

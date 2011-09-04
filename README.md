@@ -22,5 +22,5 @@ Neben Rails kommen noch die folgenden Gems zum Einsatz:
 - [Sass](http://sass-lang.com)
 - [JQuery](http://jquery.com/) in Form von [Jquery-Rails](https://github.com/indirect/jquery-rails)
 - [Paperclip](https://github.com/thoughtbot/paperclip)
-
+- ckeditor
 

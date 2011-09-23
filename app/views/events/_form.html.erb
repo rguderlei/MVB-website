@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :begin %><br />
+    <%= f.label "Beginn" %><br />
     <%= f.datetime_select :begin %>
   </div>
   <div class="field">
-    <%= f.label :end %><br />
+    <%= f.label "Ende" %><br />
     <%= f.datetime_select :end %>
   </div>
   <div class="field">
-    <%= f.label :location %><br />
+    <%= f.label "Ort" %><br />
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :orchestra %><br />
+    <%= f.label "Orchester" %><br />
     <%= f.select :orchestra, options_for_select(%w{Stadtkapelle Sinfonieorchester }) %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label "Titel" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label "Beschreibung" %><br />
     <%= f.cktext_area :description %>
   </div>
   <div class="field">
-    <%= f.label :public_event %><br />
+    <%= f.label "öfffentlich?" %><br />
     <%= f.check_box :public_event %>
   </div>
   <div class="actions">

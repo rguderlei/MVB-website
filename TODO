@@ -1,0 +1,20 @@
+blocker:
+    - Startseite: dreispaltiges Layout
+    - Startseite: Einbindung von dynamischem Content (Aktuelles, Konzerte)
+    - Probenpläne, Druckansicht, Link von Startseite
+    - Blättern in Kalenderleiste
+
+critical:
+    - Layout durchsprechen
+    - Layout konsisten gestalten (Box um Content, ...)
+    - Terminkalender bei INDEX /events
+
+mayor:
+    - vernünftige Datepicker-Komponente
+    - Ankündigungen auf der Startseite
+    - Layouting Kalenderleiste
+    - Überarbeitung Layout Menü
+    - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content
+
+minor:
+    - Styling: Buttons

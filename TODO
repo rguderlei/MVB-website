@@ -3,11 +3,14 @@ blocker:
     - Startseite: Einbindung von dynamischem Content (Aktuelles, Konzerte)
     - Probenpläne, Druckansicht, Link von Startseite
     - Blättern in Kalenderleiste
+    - Konzert: Attribut "Plakat": Bild für Startseite und Detailansicht
 
 critical:
     - Layout durchsprechen
     - Layout konsisten gestalten (Box um Content, ...)
     - Terminkalender bei INDEX /events
+    - Layout infos, pages
+    - Lokalisierung prüfen
 
 mayor:
     - vernünftige Datepicker-Komponente
@@ -15,6 +18,7 @@ mayor:
     - Layouting Kalenderleiste
     - Überarbeitung Layout Menü
     - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content
+    - Detailansicht Konzert: Plakat anzeigen
 
 minor:
     - Styling: Buttons

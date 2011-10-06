@@ -7,6 +7,7 @@ blocker:
 
 critical:
     - Layout durchsprechen
+    - Überarbeitung Styling Hauptmenü 
     - Layout konsisten gestalten (Box um Content, ...)
     - Terminkalender bei INDEX /events
     - Layout infos, pages

@@ -2,19 +2,15 @@
     <%= render :partial=>"events/simplecalendar", :locals=>{:events=>@events, :start_date=>@start_date, :end_date=>@end_date} %>
     <br clear="all" />
     <div id="content">
-		<h1>Aktuelles</h1>
-		<ul>
-			<li id="hilite">Probenwoche des Sinfonieorchesters in Lindenberg/Allg&auml;u</li>
-			<li>Proben f&uuml;r den &quot;Wildsch&uuml;tz&quot; laufen auf Hochtouren, Permiere ist am 19.03.2011.</li>
-			<li id="hilite">Die Stadtkapelle plant eine Konzertreise nach Nizhny Novgorod, Russland.</li>
-		</ul>
-
-		<h1>n&auml;chste Konzerte</h1>
-		<ul>
-			<li id="hilite">Sa., 19.03.2011 Der Wildsch&uuml;tz (Sinfonieorchester)</li>
-			<li>Mi., 23.03.2011 Der Wildsch&uuml;tz (Sinfonieorchester)</li>
-			<li id="hilite">Fr., 25.03.2011 Der Wildsch&uuml;tz (Sinfonieorchester)</li>
-			<li>Sa., 26.03.2011 Der Wildsch&uuml;tz (Sinfonieorchester)</li>
-		</ul>
+		<div id="left">
+			<h2>Aktuelles</h2>
+			
+		</div>
+		<div id="center">
+			<h2>N&auml;chstes Konzert Sinfonieorchester</h2>
+		</div>
+		<div id="right">
+			<h2>N&auml;chstes Konzert Stadtkapelle</h2>
+		</div>
 	</div><!-- #content-->
 </div><!-- #container-->

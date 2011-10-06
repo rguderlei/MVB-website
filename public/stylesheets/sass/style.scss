@@ -147,6 +147,16 @@ ul#menu{
 	h1 {
 		margin-top: 15px;
 	}
+
+    #left, #center, #right{
+	    border: 1px solid $background-color-dark;
+	    @include border-radius(5px);
+        width: 30%;
+        margin: 5px;
+        position: relative;
+        float: left;
+        padding: 5px;
+    }
 }
 
 #simple_calendar {

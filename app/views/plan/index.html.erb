@@ -1,0 +1,21 @@
+<h1>Probenplan <%= events.first.orchestra %></h1>
+<small>Datum: <%= l Date.today, :format=>:long %> </small>
+
+<table>
+  <tr>
+    <th>Beginn</th>
+    <th>Ort</th>
+    <th>Orchester</th>
+    <th>Veranstaltung</th>
+  </tr>
+
+<% events.each do |event| %>
+  <tr>
+    <td><%= l event.begin, :format=>:short %></td>
+    <td><%= event.location %></td>
+    <td><%= event.orchestra %></td>
+    <td><%= event.title %></td>
+  </tr>
+<% end %>
+</table>
+

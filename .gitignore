@@ -4,3 +4,4 @@ tmp/**/*
 public/stylesheets/style.css
 public/system
 public/ckeditor_assets
+.redcar/

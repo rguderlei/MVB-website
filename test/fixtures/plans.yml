@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  orchestra: MyText
+  header: MyText
+  footer: MyText
+
+two:
+  orchestra: MyText
+  header: MyText
+  footer: MyText

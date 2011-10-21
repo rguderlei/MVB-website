@@ -16,8 +16,8 @@ class PagesController < ApplicationController
   # GET /pages/1.xml
   def show
     if params[:permalink] then
-	@page = Page.find_by_permalink(params[:permalink])
-	raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?
+	    @page = Page.find_by_permalink(params[:permalink])
+	    raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?
     else
     	@page = Page.find(params[:id])
     end

@@ -1,16 +1,16 @@
 Mvb::Application.routes.draw do |map|
+  
   devise_for :users
+  
   resources :users
-
   resources :photos
-
   resources :galleries
-
   resources :schedules
   resources :events
   resources :concerts
   resources :infos
   resources :pages
+  resources :plans
   
   get "home/index"
   get "admin/index"
@@ -19,6 +19,7 @@ Mvb::Application.routes.draw do |map|
   
   map.static "static/:permalink", :controller=>"pages", :action=>"show"
   map.static "admin", :controller=>"admin", :action=>"index"
+  map.static "plan", :controller=>"plan", :action=>"index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

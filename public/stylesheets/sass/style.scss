@@ -54,6 +54,7 @@ input {
 
 
 ul#menu{
+  /*  overflow:auto; */
    width:100%;
    clear:left;
    float:left;
@@ -224,6 +225,21 @@ ul{
 #footer {
 	margin: 10px;
 	padding: 10px;	
+  overflow:auto; 
 	background: $background-color-dark;
 	@include border-radius(5px);
+  
+  #left, #right{
+    position: relative;
+    float: left;
+  }
+  
+  #left{
+    width:49%;
+  }
+  
+  #right{
+    text-align:right;
+    width:50%;
+  }
 }

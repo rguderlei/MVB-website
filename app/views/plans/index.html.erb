@@ -1,0 +1,10 @@
+<h1>Probenpläne</h1>
+
+<ul>
+<% @plans.each do |plan| %>
+  <li> <%= link_to plan.orchestra, plan %> </li>
+<% end %>  
+<ul>
+  
+<%= link_to('Neuen Probenplan anlegen', new_plan_path) if user_signed_in? %>
+

@@ -11,11 +11,14 @@ class PlansController < ApplicationController
     
   end
   
-  # GET /pages/sinf
+  # GET /probenplan/Sinfonieorchester
+  # GET /plans/1
   def show
     if params[:orchestra]
-      @plan = Plan.find_by_orchestra(params[:orchestra])  
-    	raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?	
+      @plan = Plan.find_by_orchestra(params[:orchestra])
+    	if @plan == nil
+        raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?
+      end
     else
       @plan = Plan.find(params[:id])
     end

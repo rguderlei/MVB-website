@@ -2,7 +2,7 @@
 <small>Datum: <%= l Date.today, :format=>:long %> </small>
 
 <div class="probenplan_anmerkung">
-  <%= link_to('Bearbeiten', edit_page_path(@plan)) if user_signed_in?%>
+  <%= link_to('Bearbeiten', edit_plan_path(@plan)) if user_signed_in?%>
   <%= @plan.header.html_safe %>
 </div>
 

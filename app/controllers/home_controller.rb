@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   def index
     today = Date.today
-    @start_date = Date.new(today.year, today.month, 1)
-    @end_date = Date.new(today.year, today.month + 1, 1) -1
+    @start_date = Date.today - 1 # Date.new(today.year, today.month, 1)
+    @end_date = Date.today + 30  # Date.new(today.year, today.month + 1, 1) -1
     @monthly_events = Event.where(:begin=> @start_date..@end_date)
 
     @latest_info = Info.order("created_at DESC").first

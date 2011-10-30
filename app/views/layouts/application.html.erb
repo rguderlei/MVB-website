@@ -57,8 +57,8 @@
 		<%= yield %>
 	</div><!-- #middle-->
 	<div id="footer">
-    <div id="left"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %> </div>
-    <div id="right"> &copy; 2011 Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a>	</div>
+    <div id="left"> &copy; 2011 Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a></div>
+    <div id="right"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %> 	</div>
 	</div><!-- #footer -->
 </div><!-- #wrapper -->
 </body>

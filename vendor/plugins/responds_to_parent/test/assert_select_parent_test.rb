@@ -34,14 +34,14 @@ class AssertSelectParentTest < ActionController::TestCase
     end
 
     def rescue_action(e)
-       raise e
+      raise e
     end
   end
 
   def setup
     @controller = AssertSelectParentController.new
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
+    @request = ActionController::TestRequest.new
+    @response = ActionController::TestResponse.new
   end
 
   def test_basic
@@ -87,29 +87,29 @@ class AssertSelectParentTest < ActionController::TestCase
   end
 
   protected
-    def render_rjs(&block)
-      @controller.response_with &block
-      get :rjs
-    end
+  def render_rjs(&block)
+    @controller.response_with &block
+    get :rjs
+  end
 
-    def render_text(text)
-      @controller.response_with = text
-      get :text
-    end
+  def render_text(text)
+    @controller.response_with = text
+    get :text
+  end
 
-    def do_test_with_text(text)
-      render_text text
+  def do_test_with_text(text)
+    render_text text
 
-      assert_select_parent do |text_for_parent|
-        assert_equal text, text_for_parent
-      end
+    assert_select_parent do |text_for_parent|
+      assert_equal text, text_for_parent
     end
+  end
 end
 require File.dirname(__FILE__) + '/../../../../config/environment'
 require 'test/unit'
 #require 'test_help'
 
-class AssertSelectParentTest <  ActionController::TestCase
+class AssertSelectParentTest < ActionController::TestCase
   class AssertSelectParentController < ActionController::Base
     def response_with=(content)
       @content = content
@@ -140,14 +140,14 @@ class AssertSelectParentTest <  ActionController::TestCase
     end
 
     def rescue_action(e)
-       raise e
+      raise e
     end
   end
 
   def setup
     @controller = AssertSelectParentController.new
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
+    @request = ActionController::TestRequest.new
+    @response = ActionController::TestResponse.new
   end
 
   def test_basic
@@ -193,29 +193,29 @@ class AssertSelectParentTest <  ActionController::TestCase
   end
 
   protected
-    def render_rjs(&block)
-      @controller.response_with &block
-      get :rjs
-    end
+  def render_rjs(&block)
+    @controller.response_with &block
+    get :rjs
+  end
 
-    def render_text(text)
-      @controller.response_with = text
-      get :text
-    end
+  def render_text(text)
+    @controller.response_with = text
+    get :text
+  end
 
-    def do_test_with_text(text)
-      render_text text
+  def do_test_with_text(text)
+    render_text text
 
-      assert_select_parent do |text_for_parent|
-        assert_equal text, text_for_parent
-      end
+    assert_select_parent do |text_for_parent|
+      assert_equal text, text_for_parent
     end
+  end
 end
 require File.dirname(__FILE__) + '/../../../../config/environment'
 require 'test/unit'
 #require 'test_help'
 
-class AssertSelectParentTest <  ActionController::TestCase
+class AssertSelectParentTest < ActionController::TestCase
   class AssertSelectParentController < ActionController::Base
     def response_with=(content)
       @content = content
@@ -246,14 +246,14 @@ class AssertSelectParentTest <  ActionController::TestCase
     end
 
     def rescue_action(e)
-       raise e
+      raise e
     end
   end
 
   def setup
     @controller = AssertSelectParentController.new
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
+    @request = ActionController::TestRequest.new
+    @response = ActionController::TestResponse.new
   end
 
   def test_basic
@@ -299,21 +299,21 @@ class AssertSelectParentTest <  ActionController::TestCase
   end
 
   protected
-    def render_rjs(&block)
-      @controller.response_with &block
-      get :rjs
-    end
+  def render_rjs(&block)
+    @controller.response_with &block
+    get :rjs
+  end
 
-    def render_text(text)
-      @controller.response_with = text
-      get :text
-    end
+  def render_text(text)
+    @controller.response_with = text
+    get :text
+  end
 
-    def do_test_with_text(text)
-      render_text text
+  def do_test_with_text(text)
+    render_text text
 
-      assert_select_parent do |text_for_parent|
-        assert_equal text, text_for_parent
-      end
+    assert_select_parent do |text_for_parent|
+      assert_equal text, text_for_parent
     end
+  end
 end

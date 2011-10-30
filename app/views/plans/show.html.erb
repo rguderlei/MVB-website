@@ -1,8 +1,8 @@
-<h1>Probenplan <%= @plan.orchestra  %></h1>
+<h1>Probenplan <%= @plan.orchestra %></h1>
 <small>Datum: <%= l Date.today, :format=>:long %> </small>
 
 <div class="probenplan_anmerkung">
-  <%= link_to('Bearbeiten', edit_plan_path(@plan)) if user_signed_in?%>
+  <%= link_to('Bearbeiten', edit_plan_path(@plan)) if user_signed_in? %>
   <%= @plan.header.html_safe %>
 </div>
 
@@ -13,11 +13,11 @@
     <th>Veranstaltung</th>
   </tr>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= l event.begin, :format=>:short %></td>
-    <td><%= event.location %></td>
-    <td><%= event.title %></td>
-  </tr>
-<% end %>
+  <% @events.each do |event| %>
+      <tr>
+        <td><%= l event.begin, :format=>:short %></td>
+        <td><%= event.location %></td>
+        <td><%= event.title %></td>
+      </tr>
+  <% end %>
 </table>

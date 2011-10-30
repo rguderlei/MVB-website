@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div id="container">
-<div id="content">
-  <%= @page.main_content.html_safe %>
-</div>
-<%= link_to('Edit', edit_page_path(@page)) if user_signed_in?%> |
-<%= link_to('Back', pages_path) if user_signed_in?%>
+  <div id="content">
+    <%= @page.main_content.html_safe %>
+  </div>
+  <%= link_to('Edit', edit_page_path(@page)) if user_signed_in? %> |
+  <%= link_to('Back', pages_path) if user_signed_in? %>
 </div>
 

@@ -1,7 +1,7 @@
 Mvb::Application.routes.draw do |map|
-  
+
   devise_for :users
-  
+
   resources :users
   resources :photos
   resources :galleries
@@ -11,12 +11,12 @@ Mvb::Application.routes.draw do |map|
   resources :infos
   resources :pages
   resources :plans
-  
+
   get "home/index"
   get "admin/index"
 
-  root :to => "home#index" 
-  
+  root :to => "home#index"
+
   map.static "static/:permalink", :controller=>"pages", :action=>"show"
   map.static "probenplan/:orchestra", :controller=>"plans", :action=>"show"
 

@@ -1,53 +1,62 @@
 <%= form_for(@concert) do |f| %>
-  <% if @concert.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <% if @concert.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @concert.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @concert.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :begin %>
+      <br/>
+      <%= f.datetime_select :begin %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :begin %><br />
-    <%= f.datetime_select :begin %>
-  </div>
-  <div class="field">
-    <%= f.label :end %><br />
-    <%= f.datetime_select :end %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :orchestra %><br />
-    <%= f.select :orchestra, options_for_select(%w{Stadtkapelle Sinfonieorchester }) %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.cktext_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :announcement %><br />
-    <%= f.cktext_area :announcement %>
-  </div>
-  <div class="field">
-    <%= f.label :critique %><br />
-    <%= f.cktext_area :critique %>
-  </div>
-  <div class="field">
-    <%= f.label :public_event %><br />
-    <%= f.check_box :public_event, :disabled=>true%>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :end %>
+      <br/>
+      <%= f.datetime_select :end %>
+    </div>
+    <div class="field">
+      <%= f.label :location %>
+      <br/>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :orchestra %>
+      <br/>
+      <%= f.select :orchestra, options_for_select(%w{Stadtkapelle Sinfonieorchester }) %>
+    </div>
+    <div class="field">
+      <%= f.label :title %>
+      <br/>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <br/>
+      <%= f.cktext_area :description %>
+    </div>
+    <div class="field">
+      <%= f.label :announcement %>
+      <br/>
+      <%= f.cktext_area :announcement %>
+    </div>
+    <div class="field">
+      <%= f.label :critique %>
+      <br/>
+      <%= f.cktext_area :critique %>
+    </div>
+    <div class="field">
+      <%= f.label :public_event %>
+      <br/>
+      <%= f.check_box :public_event, :disabled=>true %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

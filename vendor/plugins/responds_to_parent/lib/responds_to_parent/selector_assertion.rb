@@ -14,17 +14,17 @@ module RespondsToParent
     # Typically #assert_select_rjs is used in the block.
     def assert_select_parent(*args, &block)
       wrapper_re_str = Regexp.escape("with(window.parent) { setTimeout(function() { window.eval('") +
-                     "(.*)" +
-                     Regexp.escape("'); window.loc && loc.replace('about:blank'); }, 1) }")
+          "(.*)" +
+          Regexp.escape("'); window.loc && loc.replace('about:blank'); }, 1) }")
       match = @response.body.match(Regexp.new(wrapper_re_str))
 
       if match
         escaped_js = match[1]
         unescaped_js = escaped_js.
-          gsub(%r!</scr"\+"ipt>!, '</script>').
-          gsub(/\\(\'|\")/, '\1').
-          gsub(/((?:^|[^\\])(?:\\\\)*)\\n/, "\\1\n"). # replace `n' with odd number of backslash.
-          gsub(/\\\\/, '\\')
+            gsub(%r!</scr"\+"ipt>!, '</script>').
+            gsub(/\\(\'|\")/, '\1').
+            gsub(/((?:^|[^\\])(?:\\\\)*)\\n/, "\\1\n").# replace `n' with odd number of backslash.
+            gsub(/\\\\/, '\\')
         @response.body = unescaped_js # assert_select_rjs refers @response.body.
 
         if block_given?

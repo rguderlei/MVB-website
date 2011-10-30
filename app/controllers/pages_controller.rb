@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show]  
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /pages
   # GET /pages.xml
   def index
@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @pages }
+      format.xml { render :xml => @pages }
     end
   end
 
@@ -16,15 +16,15 @@ class PagesController < ApplicationController
   # GET /pages/1.xml
   def show
     if params[:permalink] then
-	    @page = Page.find_by_permalink(params[:permalink])
-	    raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?
+      @page = Page.find_by_permalink(params[:permalink])
+      raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?
     else
-    	@page = Page.find(params[:id])
+      @page = Page.find(params[:id])
     end
-	
+
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @page }
+      format.xml { render :xml => @page }
     end
   end
 
@@ -35,7 +35,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @page }
+      format.xml { render :xml => @page }
     end
   end
 
@@ -52,10 +52,10 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.save
         format.html { redirect_to(@page, :notice => 'Page was successfully created.') }
-        format.xml  { render :xml => @page, :status => :created, :location => @page }
+        format.xml { render :xml => @page, :status => :created, :location => @page }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @page.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -68,10 +68,10 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.update_attributes(params[:page])
         format.html { redirect_to(@page, :notice => 'Page was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @page.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -84,7 +84,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(pages_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end

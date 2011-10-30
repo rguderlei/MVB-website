@@ -1,17 +1,19 @@
 <h1>Bilder</h1>
 <p>
-<%= link_to('Neue Bildergallerie anlegen', new_gallery_path) if user_signed_in?%>
+  <%= link_to('Neue Bildergallerie anlegen', new_gallery_path) if user_signed_in? %>
 </p>
 
 <% @galleries.each_slice(6) do |gallery_slice| %>
-  <p>
-    <% gallery_slice.each do |gallery| %>
-    <div>
-      <%= link_to image_tag(gallery.photos.first.image.url(:small)), gallery %> <br />
-      <%= gallery.name %> <br /> <%= l(gallery.context_date) %><br />
-      <%= link_to('Bearbeiten', edit_gallery_path(gallery)) if user_signed_in?%>, <%= link_to('Löschen', gallery, :confirm => 'Sicher?', :method => :delete) if user_signed_in?%>
-    </div>
-<% end %>
-  </p>  
+    <p>
+      <% gallery_slice.each do |gallery| %>
+        <div>
+          <%= link_to image_tag(gallery.photos.first.image.url(:small)), gallery %> <br/>
+          <%= gallery.name %> <br/> <%= l(gallery.context_date) %>
+          <br/>
+          <%= link_to('Bearbeiten', edit_gallery_path(gallery)) if user_signed_in? %>
+          , <%= link_to('Löschen', gallery, :confirm => 'Sicher?', :method => :delete) if user_signed_in? %>
+        </div>
+    <% end %>
+    </p>
 <% end %>
 

@@ -1,16 +1,16 @@
 class PlansController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show] 
-  
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   def index
     @plans = Plan.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @plans }
+      format.xml { render :xml => @plans }
     end
-    
+
   end
-  
+
   # GET /probenplan/Sinfonieorchester
   # GET /plans/1
   def show
@@ -20,15 +20,15 @@ class PlansController < ApplicationController
     else
       @plan = Plan.find(params[:id])
     end
-    
+
     @events = Event.where("begin>=:begin AND orchestra=:orchestra",
-      {:begin=>Date.today-1, :orchestra=>@plan.orchestra} )
+                          {:begin=>Date.today-1, :orchestra=>@plan.orchestra})
 
     respond_to do |format|
       format.html
     end
   end
-  
+
   # GET /pages/new
   # GET /pages/new.xml
   def new
@@ -36,15 +36,15 @@ class PlansController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @plan }
+      format.xml { render :xml => @plan }
     end
   end
-  
-   # GET /pages/1/edit
+
+  # GET /pages/1/edit
   def edit
     @plan = Plan.find(params[:id])
   end
-  
+
   # POST /pages
   # POST /pages.xml
   def create
@@ -53,10 +53,10 @@ class PlansController < ApplicationController
     respond_to do |format|
       if @plan.save
         format.html { redirect_to(@plan, :notice => 'plan was successfully created.') }
-        format.xml  { render :xml => @plan, :status => :created, :location => @plan }
+        format.xml { render :xml => @plan, :status => :created, :location => @plan }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @plan.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @plan.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -69,10 +69,10 @@ class PlansController < ApplicationController
     respond_to do |format|
       if @plan.update_attributes(params[:plan])
         format.html { redirect_to(@plan, :notice => 'plan was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @plan.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @plan.errors, :status => :unprocessable_entity }
       end
     end
   end

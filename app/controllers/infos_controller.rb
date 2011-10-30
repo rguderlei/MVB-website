@@ -7,7 +7,7 @@ class InfosController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @infos }
+      format.xml { render :xml => @infos }
     end
   end
 
@@ -18,7 +18,7 @@ class InfosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @info }
+      format.xml { render :xml => @info }
     end
   end
 
@@ -29,7 +29,7 @@ class InfosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @info }
+      format.xml { render :xml => @info }
     end
   end
 
@@ -46,10 +46,10 @@ class InfosController < ApplicationController
     respond_to do |format|
       if @info.save
         format.html { redirect_to(@info, :notice => 'Info was successfully created.') }
-        format.xml  { render :xml => @info, :status => :created, :location => @info }
+        format.xml { render :xml => @info, :status => :created, :location => @info }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @info.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @info.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,10 +62,10 @@ class InfosController < ApplicationController
     respond_to do |format|
       if @info.update_attributes(params[:info])
         format.html { redirect_to(@info, :notice => 'Info was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @info.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @info.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,7 +78,7 @@ class InfosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(infos_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end

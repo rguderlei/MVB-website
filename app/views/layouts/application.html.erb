@@ -3,63 +3,67 @@
 <head>
   <title></title>
   <%= stylesheet_link_tag "style", "jquery.lightbox-0.5" %>
-  <%= stylesheet_link_tag "print_style", :media => "print"  %>
+  <%= stylesheet_link_tag "print_style", :media => "print" %>
   <%= javascript_include_tag :defaults, "nested_form", "jquery.lightbox-0.5.min" %>
   <%= javascript_include_tag :ckeditor %>
   <%= csrf_meta_tag %>
-  <%= javascript_tag "$(function() { \n $('a.lightbox').lightBox(); \n });" %> 
+  <%= javascript_tag "$(function() { \n $('a.lightbox').lightBox(); \n });" %>
 </head>
 <body>
 <div id="wrapper">
-	<div id="header">
-		<!-- Musikverein Biberach e.V. -->
-	</div><!-- #header-->
+  <div id="header">
+    <!-- Musikverein Biberach e.V. -->
+  </div>
+  <!-- #header-->
 
-	<div id="menucontainer">
-		<ul id="menu">
-				<li>
-                    <a href="/"><img src="/images/logo_mvb.gif" height="11px" /></a>
-                </li>
-				<li>
-                    <a href="/static/about">&uuml;ber uns</a>
-                    <ul>
-                        <li> <a href="/static/vorstand">Vorstand</a></li>
-                        <li> <a href="/static/geschichte">Geschichte</a></li>
-                        <li> <a href="/static/satzung">Satzung</a></li>
-                        <li> <a href="/static/joi">JOI</a></li>
-                    </ul>
-                </li>
-				<li><a href="/static/stadtkapelle">Stadtkapelle</a>
-                    <ul>
-                        <li><a href="/static/stadtkapelle">Orchester</a></li>
-                        <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
-                    </ul>
-                </li>
-				<li><a href="/static/sinfonieorchester">Sinfonieorchester</a>
-                    <ul>
-                        <li><a href="/static/sinfonieorchester">Orchester</a></li>
-                        <li><a href="/static/vorstand_sinfonieorchester">Vorstand</a></li>
-                    </ul>
-                </li>
-				<li><a href="/galleries">Bilder</a></li>
-				<li><a href="/kontakt">Kontakt</a></li>
-                <% if user_signed_in? %>
-				    <li> <%= link_to 'Logout', destroy_user_session_path %></li> 
-                <% else %>    
-				    <li> <%= link_to 'Login', new_user_session_path %></li> 
-                <% end %>
-		</ul>
-	</div>
+  <div id="menucontainer">
+    <ul id="menu">
+      <li>
+        <a href="/"><img src="/images/logo_mvb.gif" height="11px"/></a>
+      </li>
+      <li>
+        <a href="/static/about">&uuml;ber uns</a>
+        <ul>
+          <li><a href="/static/vorstand">Vorstand</a></li>
+          <li><a href="/static/geschichte">Geschichte</a></li>
+          <li><a href="/static/satzung">Satzung</a></li>
+          <li><a href="/static/joi">JOI</a></li>
+        </ul>
+      </li>
+      <li><a href="/static/stadtkapelle">Stadtkapelle</a>
+        <ul>
+          <li><a href="/static/stadtkapelle">Orchester</a></li>
+          <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
+        </ul>
+      </li>
+      <li><a href="/static/sinfonieorchester">Sinfonieorchester</a>
+        <ul>
+          <li><a href="/static/sinfonieorchester">Orchester</a></li>
+          <li><a href="/static/vorstand_sinfonieorchester">Vorstand</a></li>
+        </ul>
+      </li>
+      <li><a href="/galleries">Bilder</a></li>
+      <li><a href="/kontakt">Kontakt</a></li>
+      <% if user_signed_in? %>
+          <li> <%= link_to 'Logout', destroy_user_session_path %></li>
+      <% else %>
+          <li> <%= link_to 'Login', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
 
-	<div style="clear:both"/>
-	
-	<div id="content">
-		<%= yield %>
-	</div><!-- #middle-->
-	<div id="footer">
+  <div style="clear:both"/>
+
+  <div id="content">
+    <%= yield %>
+  </div>
+  <!-- #middle-->
+  <div id="footer">
     <div id="left"> &copy; 2011 Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a></div>
-    <div id="right"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %> 	</div>
-	</div><!-- #footer -->
-</div><!-- #wrapper -->
+    <div id="right"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %>     </div>
+  </div>
+  <!-- #footer -->
+</div>
+<!-- #wrapper -->
 </body>
 </html>

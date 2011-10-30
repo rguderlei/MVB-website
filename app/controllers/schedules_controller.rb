@@ -7,7 +7,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @schedules }
+      format.xml { render :xml => @schedules }
     end
   end
 
@@ -18,7 +18,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @schedule }
+      format.xml { render :xml => @schedule }
     end
   end
 
@@ -29,7 +29,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @schedule }
+      format.xml { render :xml => @schedule }
     end
   end
 
@@ -46,10 +46,10 @@ class SchedulesController < ApplicationController
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to(@schedule, :notice => 'Schedule was successfully created.') }
-        format.xml  { render :xml => @schedule, :status => :created, :location => @schedule }
+        format.xml { render :xml => @schedule, :status => :created, :location => @schedule }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @schedule.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @schedule.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,10 +62,10 @@ class SchedulesController < ApplicationController
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
         format.html { redirect_to(@schedule, :notice => 'Schedule was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @schedule.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @schedule.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,7 +78,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(schedules_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end

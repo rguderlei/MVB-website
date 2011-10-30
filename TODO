@@ -1,6 +1,3 @@
-blocker:
-    - Blättern in Kalenderleiste
-
 critical:
     - Layout durchsprechen
     - Überarbeitung Styling Hauptmenü 
@@ -11,7 +8,6 @@ critical:
 
 mayor:
     - vernünftige Datepicker-Komponente
-    - Ankündigungen auf der Startseite
     - Layouting Kalenderleiste
     - Überarbeitung Layout Menü
     - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content

@@ -9,9 +9,18 @@
 <div id="center">
   <h2>Sinfonieorchester</h2>
   <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
-
+  <% if !@next_sinf_concert.nil? %>
+    <h3><%= @next_sinf_concert.title %></h3>
+    <%= l @next_sinf_concert.begin, :format=>:short %>, <br /> <%= @next_sinf_concert.location %> <br />
+    <%= link_to image_tag(@next_sinf_concert.image.url(:small)), @next_sinf_concert %> <br/>
+  <% end %>
 </div>
 <div id="right">
   <h2>Stadtkapelle</h2>
   <a href="probenplan/Stadtkapelle">Probenplan</a>
+  <% if !@next_skp_concert.nil? %>
+    <h3><%= @next_skp_concert.title %></h3>
+    <%= l @next_skp_concert.begin, :format=>:short %>, <br /> <%= @next_skp_concert.location %> <br />
+    <%= link_to image_tag(@next_skp_concert.image.url(:small)), @next_skp_concert %> <br/>
+  <% end %>
 </div>

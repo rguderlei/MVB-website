@@ -1,38 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Begin:</b>
-  <%= @concert.begin %>
-</p>
-
-<p>
-  <b>End:</b>
-  <%= @concert.end %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @concert.location %>
-</p>
-
-<p>
-  <b>Orchestra:</b>
-  <%= @concert.orchestra %>
-</p>
-
-<p>
-  <b>Title:</b>
+<h1>
   <%= @concert.title %>
-</p>
+</h1>
+
+<small>
+  Beginn:
+  <%= l @concert.begin, :format=>:short %>
+  <br />
+  Ort:  <%= @concert.location %>
+  <br />
+  Orchester: <%= @concert.orchestra %>
+</small>
 
 <p>
-  <b>Description:</b>
+  <%= link_to image_tag(@concert.image.url(:small)), @concert.image.url(:medium), :class=>"lightbox" %>
+  <%= @concert.announcement.html_safe %>
+</p>
+
+
+
+<h2>Programm:</h2>
+<p>
   <%= @concert.description.html_safe %>
-</p>
-
-<p>
-  <b>Public concert:</b>
-  <%= @concert.public_event %>
 </p>
 
 

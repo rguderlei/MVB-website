@@ -1,8 +1,5 @@
 blocker:
-    - Startseite: dreispaltiges Layout
-    - Startseite: Einbindung von dynamischem Content (Aktuelles, Konzerte)
     - Blättern in Kalenderleiste
-    - Konzert: Attribut "Plakat": Bild für Startseite und Detailansicht
 
 critical:
     - Layout durchsprechen

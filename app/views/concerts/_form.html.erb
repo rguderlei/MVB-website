@@ -55,10 +55,8 @@
       <%= f.label "Plakat" %>
       <% if f.object.image? %>
         <%= image_tag f.object.image.url(:small) %>
-        <%= f.link_to_remove "Bild löschen" %>
-      <% else %>
-        <%= f.file_field :image %>
       <% end %>
+      <%= f.file_field :image %>
     </div>
     <div class="field">
       <%= f.label "Konzertkritik" %>

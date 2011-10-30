@@ -16,9 +16,7 @@ class PlansController < ApplicationController
   def show
     if params[:orchestra]
       @plan = Plan.find_by_orchestra(params[:orchestra])
-    	if @plan == nil
-        raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @page.nil?
-      end
+      raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @plan.nil?
     else
       @plan = Plan.find(params[:id])
     end

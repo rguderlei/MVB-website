@@ -1,20 +1,16 @@
-<div id="container">
-    <%= render :partial=>"events/simplecalendar", :locals=>{:events=>@events, :start_date=>@start_date, :end_date=>@end_date} %>
+<%= render :partial=>"events/simplecalendar", :locals=>{:events=>@events, :start_date=>@start_date, :end_date=>@end_date} %>
 
-    <a href="probenplan/Sinfonieorchester">Probenplan Sinfonieorchester</a><br />
-    <a href="probenplan/Stadtkapelle">Probenplan Stadtkapelle</a>
+<a href="probenplan/Sinfonieorchester">Probenplan Sinfonieorchester</a><br />
+<a href="probenplan/Stadtkapelle">Probenplan Stadtkapelle</a>
 
-    <br clear="all" />
-    <div id="content">
-		<div id="left">
-			<h2>Aktuelles</h2>
-			
-		</div>
-		<div id="center">
-			<h2>N&auml;chstes Konzert Sinfonieorchester</h2>
-		</div>
-		<div id="right">
-			<h2>N&auml;chstes Konzert Stadtkapelle</h2>
-		</div>
-	</div><!-- #content-->
-</div><!-- #container-->
+<br clear="all" />
+<div id="left">
+    <h2>Aktuelles</h2>
+
+</div>
+<div id="center">
+    <h2>N&auml;chstes Konzert Sinfonieorchester</h2>
+</div>
+<div id="right">
+    <h2>N&auml;chstes Konzert Stadtkapelle</h2>
+</div>

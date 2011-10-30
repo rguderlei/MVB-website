@@ -132,22 +132,15 @@ ul#menu{
 -----------------------------------------------------------------------------*/
 
 #content {
-	/*background: $background-color-dark;*/
-	border: 1px solid $background-color-dark;
 	padding: 10px;
-	margin: 50px;
-	@include border-radius(5px);
-	
-	ul {
-		list-style:none;
-		li#hilite {
-			background-color:$background-color-dark;
-		}
-	}
-	
+
 	h1 {
 		margin-top: 15px;
 	}
+
+    ul {
+        margin-left: 15px;
+    }
 
     #left, #center, #right{
 	    border: 1px solid $background-color-dark;

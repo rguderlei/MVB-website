@@ -3,9 +3,18 @@ class HomeController < ApplicationController
     today = Date.today
     @start_date = Date.new(today.year, today.month, 1)
     @end_date = Date.new(today.year, today.month + 1, 1) -1
-    @events = Event.where(:begin=> @start_date..@end_date)
+    @monthly_events = Event.where(:begin=> @start_date..@end_date)
 
-    render :locals=>{:events=>@events, :start_date=>@start_date, :end_date=>@end_date}
+    @latest_info = Info.order("created_at DESC").first
+
+    @next_sinf_concert = Concert.where("begin>=:begin AND orchestra=:orchestra",
+                          {:begin=>Date.today-1, :orchestra=>"Sinfonieorchester"}).order("begin").first
+    @next_skp_concert = Concert.where("begin>=:begin AND orchestra=:orchestra",
+                          {:begin=>Date.today-1, :orchestra=>"Stadtkapelle"}).order("begin").first
+
+    respond_to do |format|
+      format.html
+    end
   end
 
 end

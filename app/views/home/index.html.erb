@@ -1,4 +1,4 @@
-<%= render :partial=>"events/simplecalendar", :locals=>{:events=>@events, :start_date=>@start_date, :end_date=>@end_date} %>
+<%= render :partial=>"events/simplecalendar", :locals=>{:events=>@monthly_events, :start_date=>@start_date, :end_date=>@end_date} %>
 
 <a href="probenplan/Sinfonieorchester">Probenplan Sinfonieorchester</a><br/>
 <a href="probenplan/Stadtkapelle">Probenplan Stadtkapelle</a>
@@ -6,7 +6,8 @@
 <br clear="all"/>
 <div id="left">
   <h2>Aktuelles</h2>
-
+  <h3><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h3>
+  <%=  @latest_info.nil? ? "" : @latest_info.content %>
 </div>
 <div id="center">
   <h2>N&auml;chstes Konzert Sinfonieorchester</h2>

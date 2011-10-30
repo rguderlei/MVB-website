@@ -5,7 +5,6 @@ Mvb::Application.routes.draw do |map|
   resources :users
   resources :photos
   resources :galleries
-  resources :schedules
   resources :events
   resources :concerts
   resources :infos

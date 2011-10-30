@@ -1,40 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<h1> <%= @event.title %> </h1>
+
 <p>
-  <b>Begin:</b>
-  <%= @event.begin %>
+  <b>Orchester:</b> <%= @event.orchestra %> <br />
+  <b>Beginn:</b> <%= l @event.begin, :format=>:short %> <br />
+  <b>Ende:</b> <%= l @event.end, :format=>:short %> <br />
+  <b>Ort:</b> <%= @event.location %>
 </p>
 
 <p>
-  <b>End:</b>
-  <%= @event.end %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @event.location %>
-</p>
-
-<p>
-  <b>Orchestra:</b>
-  <%= @event.orchestra %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @event.description.html_safe %>
 </p>
 
-<p>
-  <b>Public event:</b>
-  <%= @event.public_event %>
-</p>
 
-
-<%= link_to('Edit', edit_event_path(@event)) if user_signed_in? %> |
-<%= link_to 'Back', events_path %>
+<%= link_to('Bearbeiten', edit_event_path(@event)) if user_signed_in? %> |
+<%= link_to 'Zurück zur Übersicht', events_path %>

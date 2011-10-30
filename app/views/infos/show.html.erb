@@ -1,15 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @info.title %>
-</p>
+<h1>  <%= @info.title %> </h1>
+<small> <%= l @info.created_at, :format=>:short %> </small>
 
 <p>
-  <b>Content:</b>
   <%= @info.content %>
 </p>
 
 
-<%= link_to 'Edit', edit_info_path(@info) %> |
-<%= link_to 'Back', infos_path %>
+<%= link_to 'Bearbeiten', edit_info_path(@info) if user_signed_in?%> <br />
+<%= link_to 'Zurück zur Übersicht', infos_path if user_signed_in?%>

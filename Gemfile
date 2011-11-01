@@ -27,6 +27,9 @@ gem 'nested_form'
 # ckeditor - html wysiwyg
 gem "ckeditor"
 
+#event_calendar
+gem 'event-calendar', :require => 'event_calendar'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

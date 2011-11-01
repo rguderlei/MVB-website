@@ -1,11 +1,9 @@
 critical:
     - Layout durchsprechen
-    - Überarbeitung Styling Hauptmenü 
-    - Terminkalender bei INDEX /events
+    - Überarbeitung Styling Hauptmenü
 
 mayor:
-    - Lokalisierung prüfen
-    - vernünftige Datepicker-Komponente
+    - vernünftige Datepicker-Komponente -> jquery ui datepicker
     - Layouting Kalenderleiste
     - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content
     - Detailansicht Konzert: Plakat anzeigen

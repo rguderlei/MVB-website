@@ -24,4 +24,5 @@ Neben Rails kommen noch die folgenden Gems zum Einsatz:
 - [Paperclip](https://github.com/thoughtbot/paperclip) zum Management von Files.
 - [ckeditor](https://github.com/galetahub/rails-ckeditor) als WYSIWYG-Editor der CMS-Komponente
 - [devise](https://github.com/plataformatec/devise) zur Authentifizierung
+- [EventCalendar](https://github.com/elevation/event_calendar) zur Darstellung der Termine
 

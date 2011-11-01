@@ -2,9 +2,9 @@
 <html>
 <head>
   <title></title>
-  <%= stylesheet_link_tag "style", "jquery.lightbox-0.5" %>
+  <%= stylesheet_link_tag "style", "jquery.lightbox-0.5", 'event_calendar' %>
   <%= stylesheet_link_tag "print_style", :media => "print" %>
-  <%= javascript_include_tag :defaults, "nested_form", "jquery.lightbox-0.5.min" %>
+  <%= javascript_include_tag :defaults, "nested_form", "jquery.lightbox-0.5.min", 'event_calendar' %>
   <%= javascript_include_tag :ckeditor %>
   <%= csrf_meta_tag %>
   <%= javascript_tag "$(function() { \n $('a.lightbox').lightBox(); \n });" %>
@@ -18,7 +18,7 @@
 
   <div id="menucontainer">
     <ul id="menu">
-      <li>
+      <li style="width:16px" >
         <a href="/"><img src="/images/logo_mvb.gif" height="11px"/></a>
       </li>
       <li>
@@ -29,6 +29,9 @@
           <li><a href="/static/satzung">Satzung</a></li>
           <li><a href="/static/joi">JOI</a></li>
         </ul>
+      </li>
+      <li>
+        <a href="/events">Termine</a>
       </li>
       <li><a href="/static/stadtkapelle">Stadtkapelle</a>
         <ul>

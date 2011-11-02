@@ -18,7 +18,7 @@ module EventsHelper
   def event_calendar
     calendar event_calendar_options do |args|
       event = args[:event]
-      %(<a href="/events/#{event.id}" title="#{h(event.title)}">#{h(event.title)}</a>)
+      link_to(event.title, polymorphic_path(event), :title => event.title)
     end
   end
 end

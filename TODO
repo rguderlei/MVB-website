@@ -6,7 +6,6 @@ mayor:
     - vernünftige Datepicker-Komponente -> jquery ui datepicker
     - Layouting Kalenderleiste
     - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content
-    - Detailansicht Konzert: Plakat anzeigen
 
 minor:
     - Styling: Buttons

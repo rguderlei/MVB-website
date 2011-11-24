@@ -12,7 +12,35 @@ Features
 User Guide
 ----------
 
-TBD
+Änderungen an den Inhalten der Seite nur von angemeldeten Benutzern vorgenommen werden.
+Neue Einträge (Bildergallerien, Termine, Probenpläne) können über die Übersichtsseiten
+angelegt werden. Bestehende Einträge können über die jeweiligen Detailseiten gepflegt
+werden.
+
+Seiten pflegen
+
+Sobald ein Benutzer angemeldet ist, erscheint auf den pflegbaren Seiten ein Link mit
+der Beschriftung "Bearbeiten". Der Link öffnet die Seite im Bearbeitungsmodus. Über einen
+Word-ähnlichen Editor (WYSIWYG) können Texte, Formatierungen und Bilder auf der Seite verändert
+werden. Nach dem Speichern der Änderungen sind diese sofort sichtbar.
+
+Events verwalten
+
+Über den Link "Termine" im Menü der Seite erreicht man den Terminkalender. Wenn ein Benutzer
+angemeldet ist, erscheit ein Link "neuer Event" bzw. "neues Konzert" über dem eigentlichen Terminkalender.
+Über diesen Link kann ein neuer Termin/Konzert angelegt werden.
+
+Bestehende Termine/Konzerte kann ein angemeldeter Benutzer über die Detail-Seite des Termins/Konzerts
+bearbeiten.
+
+Bildergallerien verwalten
+
+Probenpläne anpassen
+
+Die Probenpläne enthalten automatisch alle für das Orchester relevanten Termine/Konzerte. Zusätzlich kann
+ein Text erfasst werden, der vor den Terminen im Probeplan angezeigt wird.
+
+
 
 Developer Guide
 ---------------

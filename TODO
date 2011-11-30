@@ -1,11 +1,14 @@
-critical:
+before release:
     - Layout durchsprechen
     - Überarbeitung Styling Hauptmenü
-
-mayor:
-    - vernünftige Datepicker-Komponente -> jquery ui datepicker
     - Layouting Kalenderleiste
-    - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content
+    - Header-Image austauschen
+    - Production DB: MySQL oder Postgres?
 
-minor:
+shorly after release:
+    - vernünftige Datepicker-Komponente -> jquery ui datepicker
+
+sometimes:
+    - Upgrade auf Rails 3.1 (-> ckeditor scheint momentan ein Problem zu sein)
+    - Infos: Flag "Dringend", View: Lokalisierung ckeditor für content
     - Styling: Buttons

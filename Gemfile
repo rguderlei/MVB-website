@@ -7,7 +7,7 @@ gem 'rails', '3.0.11'
 
 # sqlite as dev database
 gem 'sqlite3'
-gem 'mysql2', '>=0.2.13'
+gem 'mysql2', '~>0.2.13'
 # Styling Scss
 gem 'haml'
 gem 'sass'

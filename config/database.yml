@@ -18,8 +18,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: mvb
+  database: mvbsite
   pool: 5
-  username: mvb
-  password:
+  username: mvbsite
+  password: mvbsite
   host: localhost

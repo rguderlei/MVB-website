@@ -1,40 +1,19 @@
-<%= nested_form_for @gallery, :html => {:multipart => true} do |f| %>
-    <% if @gallery.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+<%= simple_nested_form_for @gallery, :html => {:multipart => true} do |f| %>
 
-          <ul>
-            <% @gallery.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :name %>
-      <br/>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :context_date, "Datum" %>
-      <br/>
-      <%= f.date_select :context_date %>
-    </div>
+    <%= f.input :name, :label=>'Name'  %>
+    <%= f.input :context_date, :label=>'Datum', :input_html => {:class=>'withdatepicker'} %>
     <h2>Bilder</h2>
-    <% f.fields_for :photos do |photo_form| %>
+    <% f.simple_fields_for :photos do |photo_form| %>
 
         <div class="field">
           <% if photo_form.object.image? %>
               <%= image_tag photo_form.object.image.url(:small) %>
               <%= photo_form.link_to_remove "Bild löschen" %>
           <% else %>
-              <%= photo_form.file_field :image %>
+              <%= photo_form.input :image, :as=>:file, :label=>false %>
           <% end %>
         </div>
     <% end %>
     <p><%= f.link_to_add "Bild hinzufügen", :photos %></p>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+   <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

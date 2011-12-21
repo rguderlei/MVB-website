@@ -31,7 +31,8 @@ module Mvb
     config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    config.action_view.javascript_expansions[:jquery] = %w(jquery-1.6.2.min jquery-ui-1.8.16.custom.min jquery_ujs)
+    config.action_view.javascript_expansions[:defaults] = %w(application)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "UTF-8"

@@ -3,6 +3,20 @@
   <%= link_to('Neue Bildergallerie anlegen', new_gallery_path) if user_signed_in? %>
 </p>
 
+
+    <ul class="mediagrid">
+      <% @galleries.each do |gallery| %>
+        <li>
+          <%= link_to image_tag(gallery.photos.first.image.url(:medium), :class => "thumbnail"), gallery %> <br/>
+          <%= gallery.name %> ( <%= l(gallery.context_date)%> )
+          <%= link_to('Bearbeiten', edit_gallery_path(gallery)) if user_signed_in? %>
+          | <%= link_to('Löschen', gallery, :confirm => 'Sicher?', :method => :delete) if user_signed_in? %>
+        </li>
+      <% end %>
+    </ul>
+
+
+
 <% @galleries.each_slice(6) do |gallery_slice| %>
     <p>
       <% gallery_slice.each do |gallery| %>

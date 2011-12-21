@@ -1,52 +1,11 @@
-<%= form_for(@event) do |f| %>
-    <% if @event.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<%= simple_form_for(@event) do |f| %>
+    <%= f.input :begin, :label=>"Beginn", :as=>:string, :input_html => {:class=>'withdatepicker'} %>
+    <%= f.input :end, :label=>"Ende", :as=>:string, :input_html => { :class=>'withdatepicker'} %>
+    <%= f.input :location, :label=>'Ort'  %>
+    <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
+    <%= f.input :title, :label=>"Titel"  %>
+    <%= f.input :public_event, :label=>"öffentlicher Auftritt?" %>
+    <%= f.cktext_area :description %>
 
-          <ul>
-            <% @event.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label "Beginn" %>
-      <br/>
-      <%= f.datetime_select :begin %>
-    </div>
-    <div class="field">
-      <%= f.label "Ende" %>
-      <br/>
-      <%= f.datetime_select :end %>
-    </div>
-    <div class="field">
-      <%= f.label "Ort" %>
-      <br/>
-      <%= f.text_field :location %>
-    </div>
-    <div class="field">
-      <%= f.label "Orchester" %>
-      <br/>
-      <%= f.select :orchestra, options_for_select(%w{Stadtkapelle Sinfonieorchester }) %>
-    </div>
-    <div class="field">
-      <%= f.label "Titel" %>
-      <br/>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label "Beschreibung" %>
-      <br/>
-      <%= f.cktext_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label "öfffentlich?" %>
-      <br/>
-      <%= f.check_box :public_event %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

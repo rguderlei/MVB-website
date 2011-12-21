@@ -1,70 +1,24 @@
-<%= form_for @concert, :html => {:multipart => true} do |f| %>
-    <% if @concert.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-          <ul>
-            <% @concert.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
+<%= simple_form_for @concert, :html => {:multipart => true} do |f| %>
+    <%= f.input :begin, :label=>"Beginn", :as=>:string, :input_html => {:class=>'withdatepicker'} %>
+    <%= f.input :end, :label=>"Ende", :as=>:string, :input_html => { :class=>'withdatepicker'} %>
+    <%= f.input :location, :label=>'Ort'  %>
+    <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
+    <%= f.input :title, :label=>"Titel"  %>
+    <%= f.input :public_event, :label=>"öffentlicher Auftritt?" %>
 
     <div class="field">
-      <%= f.label "Beginn" %>
-      <br/>
-      <%= f.datetime_select :begin %>
-    </div>
-    <div class="field">
-      <%= f.label "Ende" %>
-      <br/>
-      <%= f.datetime_select :end %>
-    </div>
-    <div class="field">
-      <%= f.label "Ort" %>
-      <br/>
-      <%= f.text_field :location %>
-    </div>
-    <div class="field">
-      <%= f.label "Orchester" %>
-      <br/>
-      <%= f.select :orchestra, options_for_select(%w{Stadtkapelle Sinfonieorchester }) %>
-    </div>
-    <div class="field">
-      <%= f.label "Titel" %>
-      <br/>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label "öffentlich?" %>
-      <br/>
-      <%= f.check_box :public_event, :disabled=>true %>
-    </div>
-    <div class="field">
-      <%= f.label "Konzertankündigung" %>
-      <br/>
-      <%= f.cktext_area :announcement %>
-    </div>
-    <div class="field">
-          <%= f.label "Programm" %>
-          <br/>
-          <%= f.cktext_area :description %>
-        </div>
-    <div class="field">
-      <%= f.label "Plakat" %>
       <% if f.object.image? %>
         <%= image_tag f.object.image.url(:small) %>
+        <%= f.input :image_delete, :as=>:boolean, :label=>"Bild löschen?" %>
+      <% else %>
+        <%= f.input :image, :as=>:file, :label=>'Plakat' %>
       <% end %>
-      <%= f.file_field :image %>
-    </div>
-    <div class="field">
-      <%= f.label "Konzertkritik" %>
-      <br/>
-      <%= f.cktext_area :critique %>
     </div>
 
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+
+    <%= f.cktext_area :description, :label=>"Programm" %>
+    <%= f.cktext_area :announcement, :label=>"Konzertankündigung"%>
+    <%= f.cktext_area :critique, :label=> "Konzertkritik"%>
+
+    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

@@ -60,6 +60,9 @@
 
 .ec-day-name {
   font-weight: normal;
+  line-height: 14px;
+  padding-top: 1px;
+  text-align: center;
 }
 
 /* Rows container and Row */

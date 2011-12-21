@@ -23,7 +23,8 @@ gem 'paperclip'
 gem 'devise', '1.3.4'
 
 # use nested_forms to simplify forms for models with associations
-gem 'nested_form'
+gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
+gem 'simple_form'
 
 # ckeditor - html wysiwyg
 gem "ckeditor"

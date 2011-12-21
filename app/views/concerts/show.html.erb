@@ -13,8 +13,12 @@
   Orchester: <%= @concert.orchestra %>
 </small>
 
+<ul class="media-grid">
+    <li>
+        <%= link_to image_tag(@concert.image.url(:medium)), @concert.image.url(:xlarge), :class=>"thumbnail lightbox" %>
+    </li>
+</ul>
 <p>
-  <%= link_to image_tag(@concert.image.url(:small)), @concert.image.url(:medium), :class=>"lightbox" %>
   <%= @concert.announcement.html_safe %>
 </p>
 
@@ -26,5 +30,5 @@
 </p>
 
 
-<%= link_to('Edit', edit_concert_path(@concert)) if user_signed_in? %> |
-<%= link_to 'Back', concerts_path %>
+<%= link_to('Bearbeiten', edit_concert_path(@concert)) if user_signed_in? %> |
+<%= link_to 'Zurück zur Übersicht', concerts_path %>

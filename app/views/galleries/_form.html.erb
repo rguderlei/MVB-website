@@ -1,19 +1,25 @@
 <%= simple_nested_form_for @gallery, :html => {:multipart => true} do |f| %>
 
     <%= f.input :name, :label=>'Name'  %>
-    <%= f.input :context_date, :label=>'Datum', :input_html => {:class=>'withdatepicker'} %>
+    <%= f.input :context_date, :label=>'Datum',:as=>:string, :input_html => {:class=>'datepicker'} %>
     <h2>Bilder</h2>
+    <ul class="media-grid">
     <% f.simple_fields_for :photos do |photo_form| %>
 
         <div class="field">
           <% if photo_form.object.image? %>
-              <%= image_tag photo_form.object.image.url(:small) %>
-              <%= photo_form.link_to_remove "Bild löschen" %>
+              <li>
+                <%= image_tag photo_form.object.image.url(:small) %>
+                <p><%= photo_form.link_to_remove "Bild löschen" %></p>
+              </li>
           <% else %>
-              <%= photo_form.input :image, :as=>:file, :label=>false %>
+              <li>
+                <%= photo_form.input :image, :as=>:file, :label=>false %>
+              </li>
           <% end %>
         </div>
     <% end %>
+    </ul>
     <p><%= f.link_to_add "Bild hinzufügen", :photos %></p>
    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

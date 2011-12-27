@@ -4,6 +4,11 @@ $(function() {
     $('a.lightbox').lightBox();
 });
 
+$(function() {
+    $('.datepicker').datepicker();
+});
+
+
 $.datepicker.setDefaults($.datepicker.regional['de']);
 
 $.timepicker.regional['de'] = {

@@ -9,14 +9,13 @@
   <%= l(@gallery.context_date) %>
 </p>
 
-<% @gallery.photos.each_slice(5) { |photos| %>
-    <p>
-      <% photos.each { |photo| %>
-          <%= link_to image_tag(photo.image.url(:small)), photo.image.url(:medium), :class=>"lightbox" %>
-      <% } %>
-    </p>
-<% } %>
+<ul class="media-grid">
+  <% @gallery.photos.each do |photo| %>
+    <li>
+      <%= link_to image_tag(photo.image.url(:medium)), photo.image.url(:xlarge), :class=>"lightbox" %>
+    </li>
+  <% end %>
+</ul>
 
-
-<%= link_to 'Bearbeiten', edit_gallery_path(@gallery) if user_signed_in? %>
+<%= link_to 'Bearbeiten', edit_gallery_path(@gallery) if user_signed_in? %>   | <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) if user_signed_in? %> |
 <%= link_to 'Zurück zur Übersicht', galleries_path %>

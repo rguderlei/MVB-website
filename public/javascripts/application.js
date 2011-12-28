@@ -25,11 +25,6 @@ $.timepicker.regional['de'] = {
 
 $.timepicker.setDefaults($.timepicker.regional['de']);
 $(function() {
-    $(".withdatepicker").datetimepicker();
+    $(".datetimepicker").datetimepicker();
 });
 
-/*$(function) {
-    $(".withdatepicker").click(function(){
-        $(this).datetimepicker('setDate', (new Date()) );
-    });
-}  */

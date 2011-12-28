@@ -1,4 +1,21 @@
-<%= render :partial=>"events/simplecalendar", :locals=>{:events=>@monthly_events, :start_date=>@start_date, :end_date=>@end_date} %>
+<div class="row">
+  <div class="span-two-thirds showgrid">
+    <h2>Demnächst im Musikverein</h2>
+    <ul class="unstyled">
+      <% @monthly_events.each do |event| %>
+        <li>
+            <em><%= l event.begin, :format=>:short %>:</em>
+            <%= link_to event.title, event %>
+              (
+              <%= event.orchestra %>
+              )
+        </li>
+
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 <div class="row">
 <div class="span-one-third">
   <h2>Aktuelles</h2>
@@ -6,32 +23,38 @@
   <p><%=  @latest_info.nil? ? "" : @latest_info.content %></p>
   <%= link_to 'mehr ...', infos_url %>
 </div>
-<div class="span-one-third">
-  <h2>Sinfonieorchester</h2>
-  <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
-  <% if !@next_sinf_concert.nil? %>
-    <h3><%= @next_sinf_concert.title %></h3>
-    <%= l @next_sinf_concert.begin, :format=>:short %>, <br /> <%= @next_sinf_concert.location %> <br />
-    <ul class="media-grid">
-        <li>
-            <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
-        </li>
-    </ul>
-    <%= link_to 'mehr ...', @next_sinf_concert %>
-  <% end %>
+<div class="span-two-thirds">
+  <h2>nächste Konzerte:</h2>
+  <div class="row">
+      <div class="span5">
+        <h3>Sinfonieorchester</h3>
+          <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
+          <% if !@next_sinf_concert.nil? %>
+            <h4><%= @next_sinf_concert.title %></h4>
+            <%= l @next_sinf_concert.begin, :format=>:short %>, <br /> <%= @next_sinf_concert.location %> <br />
+            <ul class="media-grid">
+                <li>
+                    <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
+                </li>
+            </ul>
+            <%= link_to 'mehr ...', @next_sinf_concert %>
+          <% end %>
+      </div>
+        <div class="span5">
+          <h3>Stadtkapelle</h3>
+          <a href="probenplan/Stadtkapelle">Probenplan</a>
+          <% if !@next_skp_concert.nil? %>
+            <h4><%= @next_skp_concert.title %></h4>
+            <%= l @next_skp_concert.begin, :format=>:short %>, <br /> <%= @next_skp_concert.location %> <br />
+            <ul class="media-grid">
+                <li>
+                    <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
+                </li>
+            </ul>
+            <%= link_to 'mehr ...', @next_skp_concert %>
+          <% end %>
+        </div>
+  </div>
 </div>
-<div class="span-one-third">
-  <h2>Stadtkapelle</h2>
-  <a href="probenplan/Stadtkapelle">Probenplan</a>
-  <% if !@next_skp_concert.nil? %>
-    <h3><%= @next_skp_concert.title %></h3>
-    <%= l @next_skp_concert.begin, :format=>:short %>, <br /> <%= @next_skp_concert.location %> <br />
-    <ul class="media-grid">
-        <li>
-            <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
-        </li>
-    </ul>
-    <%= link_to 'mehr ...', @next_skp_concert %>
-  <% end %>
-</div>
+
 </div>

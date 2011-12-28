@@ -1,6 +1,13 @@
-<div class="row">
-  <div class="span-two-thirds showgrid">
-    <h2>Demnächst im Musikverein</h2>
+<div class="hero-unit">
+  <h1>
+    Musikverein Biberach e.V.
+  </h1>
+</div>
+
+<section id="termine">
+  <div class="page-header">
+    <h1>Demnächst im Musikverein</h1>
+  </div>
     <ul class="unstyled">
       <% @monthly_events.each do |event| %>
         <li>
@@ -13,12 +20,15 @@
 
       <% end %>
     </ul>
-  </div>
-</div>
+</section>
 
+<section id="aktuelles">
+  <div class="page-header">
+    <h1>Aktuelles</h1>
+  </div>
 <div class="row">
 <div class="span-one-third">
-  <h2>Aktuelles</h2>
+  <h2>&nbsp;</h2>
   <h3><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h3>
   <p><%=  @latest_info.nil? ? "" : @latest_info.content[0..250]  %>
   <%= link_to ' ...', @latest_info %>  </p>
@@ -57,5 +67,5 @@
         </div>
   </div>
 </div>
-
 </div>
+</section>

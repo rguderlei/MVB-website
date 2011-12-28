@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<section id="images">
+<div class="page-header">
 <h1>
   <%= @gallery.name %>
 </h1>
+</div>
 
 <p>
   Datum:
@@ -19,3 +20,4 @@
 
 <%= link_to 'Bearbeiten', edit_gallery_path(@gallery) if user_signed_in? %>   | <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) if user_signed_in? %> |
 <%= link_to 'Zurück zur Übersicht', galleries_path %>
+</section>

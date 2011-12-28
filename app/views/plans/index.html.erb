@@ -1,5 +1,7 @@
-<h1>Probenpläne</h1>
-
+<section id="probenplan">
+  <div class="page-header">
+    <h1>Probenpläne</h1>
+  </div>
 <ul>
   <% @plans.each do |plan| %>
       <li> <%= link_to plan.orchestra, plan %> </li>
@@ -7,3 +9,4 @@
 </ul>
 
 <%= link_to('Neuen Probenplan anlegen', new_plan_path) if user_signed_in? %>
+</section>

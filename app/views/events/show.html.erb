@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
-
+<section id="events">
+<div class="page-header">
 <h1> <%= @event.title %> </h1>
+</div>
 
 <p>
   <b>Orchester:</b> <%= @event.orchestra %> <br />
@@ -16,3 +17,4 @@
 
 <%= link_to('Bearbeiten', edit_event_path(@event)) if user_signed_in? %> |
 <%= link_to 'Zurück zur Übersicht', events_path %>
+</section>

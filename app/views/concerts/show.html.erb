@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<section id="concerts">
+<div class="page-header">
 <h1>
   <%= @concert.title %>
 </h1>
+</div>
 
 <small>
   Beginn:
@@ -32,3 +33,4 @@
 
 <%= link_to('Bearbeiten', edit_concert_path(@concert)) if user_signed_in? %> |
 <%= link_to 'Zurück zur Übersicht', concerts_path %>
+</section>

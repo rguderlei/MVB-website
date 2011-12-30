@@ -12,21 +12,13 @@
   <![endif]-->
 
   <!-- Le styles -->
-  <%= stylesheet_link_tag "bootstrap", "jquery.lightbox-0.5", 'event_calendar' %>
+  <%= stylesheet_link_tag "bootstrap", "bootstrap-custom", "jquery.lightbox-0.5", 'event_calendar' %>
   <%= stylesheet_link_tag "print_style", :media => "print" %>
   <%= stylesheet_link_tag "smoothness/jquery-ui-1.8.16.custom", "timepicker" %>
   <%= javascript_include_tag :jquery, "jquery-ui-timepicker-addon.js", "jquery.ui.datepicker-de", "nested_form", "jquery.lightbox-0.5.min", 'event_calendar', :ckeditor, 'application' %>
 
 
   <%= csrf_meta_tag %>
-
-
-
-  <style type="text/css">
-      body {
-          padding-top: 60px;
-      }
-  </style>
 
   <!-- Le fav and touch icons -->
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -38,11 +30,16 @@
 
 <body>
 
-<div class="topbar" data-dropdown="dropdown">
-  <div class="fill">
+
+
     <div class="container">
-      <a class="brand" href="/"><img src="/images/logo_mvb.gif" height="16px"/></a>
-      <ul class="nav">
+      <a href="/" class="header-image" > <img src="/images/header.jpg" width="940px" alt="Musikverein Biberach e.V."></a>
+      <div class="topbar-wrapper">
+        <div class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+        <div class="container">
+        <a class="brand" href="/"><img src="/images/logo_mvb.gif" height="16px"/></a>
+        <ul class="nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">&uuml;ber uns</a>
           <ul class="dropdown-menu">
@@ -78,13 +75,11 @@
             <li> <%= link_to 'Login', new_user_session_path %></li>
         <% end %>
       </ul>
-
+      </div>
     </div>
   </div>
-
-</div>
-
-<div class="container">
+  </div>
+  <div class="container">
   <%= yield %>
 
   <footer>
@@ -93,7 +88,7 @@
     <div id="span-one-third offset-one-third"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %>     </div>
     </div>
   </footer>
-
+</div>
 </div>
 <!-- /container -->
  <%= javascript_include_tag 'bootstrap-dropdown' %>

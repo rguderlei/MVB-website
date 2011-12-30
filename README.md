@@ -47,7 +47,8 @@ Developer Guide
 Die Seite wird mit [Ruby on Rails](http://www.rubyonrails.org) 3.0.x gebaut.
 Neben Rails kommen noch die folgenden Gems zum Einsatz:
 
-- [Sass](http://sass-lang.com), [bourbon|] CSS3-Templates
+- [Twitter Bootstrap](http://twitter.github.com/bootstrap/) bzw. [Twitter Bootstrap-SASS](https://github.com/jlong/sass-twitter-bootstrap) zum Layouting
+- [Sass](http://sass-lang.com), [bourbon](https://github.com/thoughtbot/bourbon) CSS3-Templates
 - [JQuery](http://jquery.com/) in Form von [Jquery-Rails](https://github.com/indirect/jquery-rails)
 - [Paperclip](https://github.com/thoughtbot/paperclip) zum Management von Files.
 - [ckeditor](https://github.com/galetahub/rails-ckeditor) als WYSIWYG-Editor der CMS-Komponente

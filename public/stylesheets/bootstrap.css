@@ -202,12 +202,12 @@ body {
     margin-left: 240px; }
 
 a {
-  color: #0069d6;
+  color: #a61f2b;
   text-decoration: none;
   line-height: inherit;
   font-weight: inherit; }
   a:hover {
-    color: #00438a;
+    color: #66131a;
     text-decoration: underline; }
 
 .pull-right {
@@ -1580,11 +1580,11 @@ a.menu:after,
     color: white;
     text-decoration: none;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    background-color: #00438a; }
+    background-color: #66131a; }
 .pills .active a {
   color: white;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  background-color: #0069d6; }
+  background-color: #a61f2b; }
 
 .pills-vertical > li {
   float: none; }
@@ -2244,7 +2244,7 @@ input[type=submit].btn::-moz-focus-inner {
     .media-grid a img {
       display: block; }
     .media-grid a:hover {
-      border-color: #0069d6;
+      border-color: #a61f2b;
       -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
       -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
       box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }

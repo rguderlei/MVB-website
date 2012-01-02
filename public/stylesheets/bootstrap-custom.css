@@ -1,6 +1,8 @@
+/* variables.scss
+ * Variables and mixins to pre-ignite any new web development project
+ * ------------------------------------------------------------------ */
 .topbar-wrapper {
   height: 40px;
-  margin: 5px 0 15px;
   position: relative; }
 
 .topbar-wrapper, .topbar, .topbar-inner {
@@ -13,3 +15,13 @@
 
 .hero-unit {
   margin-top: 10px; }
+
+/*
+body {
+    background-color: $gray;
+}
+
+.container .container {
+    background-color: $grayLighter;
+}
+*/

@@ -1,6 +1,8 @@
+@import "variables.scss";
+
 .topbar-wrapper {
     height: 40px;
-    margin: 5px 0 15px;
+    //margin: 5px 0 15px;
     position: relative;
 }
 
@@ -14,8 +16,17 @@
     position: absolute;
 }
 
-
-
 .hero-unit {
     margin-top: 10px;
+   //  background-color: $grayLight;
 }
+
+/*
+body {
+    background-color: $gray;
+}
+
+.container .container {
+    background-color: $grayLighter;
+}
+*/

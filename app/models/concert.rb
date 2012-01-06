@@ -2,6 +2,8 @@ class Concert < Event
   has_event_calendar  :start_at_field  => 'begin', :end_at_field => 'end'
   has_attached_file :image, :styles => {:small=>"90x90#", :medium => "210x150#", :large => "320x230#", :xlarge => "800x800"}
 
+  validates_presence_of :begin, :end, :title, :orchestra
+
   before_save :destroy_image?
 
   def image_delete

@@ -2,7 +2,7 @@
     <%= f.input :begin, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker'} %>
     <%= f.input :end, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker'} %>
     <%= f.input :location, :label=>'Ort'  %>
-    <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
+    <%= f.input :orchestra, :label=>'Betrifft', :collection=>['Stadtkapelle', 'Sinfonieorchester' ,'Gesamtverein' ] %>
     <%= f.input :title, :label=>"Titel"  %>
     <%= f.input :public_event, :label=>"öffentlicher Auftritt?" %>
     <%= f.cktext_area :description %>

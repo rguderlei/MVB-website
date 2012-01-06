@@ -3,7 +3,7 @@
 <h1>Termine</h1>
 </div>
 
-<%= link_to('Neuer Termin', new_event_path) if user_signed_in? %>
+<%= link_to('Neuer Termin', new_event_path) if user_signed_in? %>  |
 <%= link_to('Neues Konzert', new_concert_path) if user_signed_in? %>
 
 <%= event_calendar.html_safe %>

@@ -15,7 +15,9 @@
   position: absolute; }
 
 .hero-unit {
-  margin-top: 10px; }
+  margin-top: 10px;
+  background-color: #bfbfbf;
+  padding: 10px; }
 
 /*
 body {

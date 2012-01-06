@@ -1,13 +1,58 @@
 <div class="hero-unit">
-  <h1>
-    Musikverein Biberach e.V.
-  </h1>
+  Willkommen beim
+  <h2>
+    Musikverein Biberach an der Riss e.V.
+  </h2>
+  gegründet 1768
 </div>
 
+
+
+<section id="aktuelles">
+
+<div class="row">
+    <div class="span-one-third">
+      <h2>Aktuelles</h2>
+      <h3><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h3>
+      <p><%=  @latest_info.nil? ? "" : @latest_info.content[0..250]  %>
+      <%= link_to ' ...', @latest_info %>  </p>
+      <p><%= link_to 'Weiter Meldungen ...',infos_url %>  </p>
+    </div>
+    <div class="span-one-third">
+        <h2>Sinfonieorchester</h2>
+          <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
+          <% if !@next_sinf_concert.nil? %>
+            <h3><%= @next_sinf_concert.title %></h3>
+            <%= l @next_sinf_concert.begin, :format=>:short %>, <br /> <%= @next_sinf_concert.location %> <br />
+            <ul class="media-grid">
+                <li>
+                    <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
+                </li>
+            </ul>
+            <%= link_to 'mehr ...', @next_sinf_concert %>
+          <% end %>
+    </div>
+    <div class="span-one-third">
+          <h2>Stadtkapelle</h2>
+          <a href="probenplan/Stadtkapelle">Probenplan</a>
+          <% if !@next_skp_concert.nil? %>
+            <h3><%= @next_skp_concert.title %></h3>
+            <%= l @next_skp_concert.begin, :format=>:short %>, <br /> <%= @next_skp_concert.location %> <br />
+            <ul class="media-grid">
+                <li>
+                    <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
+                </li>
+            </ul>
+            <%= link_to 'mehr ...', @next_skp_concert %>
+          <% end %>
+    </div>
+</div>
+</section>
+
 <section id="termine">
-  <div class="page-header">
-    <h1>Demnächst im Musikverein</h1>
-  </div>
+
+    <h2>Demnächst im Musikverein</h2>
+
     <ul class="unstyled">
       <% @monthly_events.each do |event| %>
         <li>
@@ -20,52 +65,4 @@
 
       <% end %>
     </ul>
-</section>
-
-<section id="aktuelles">
-  <div class="page-header">
-    <h1>Aktuelles</h1>
-  </div>
-<div class="row">
-<div class="span-one-third">
-  <h2>&nbsp;</h2>
-  <h3><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h3>
-  <p><%=  @latest_info.nil? ? "" : @latest_info.content[0..250]  %>
-  <%= link_to ' ...', @latest_info %>  </p>
-  <p><%= link_to 'Weiter Meldungen ...',infos_url %>  </p>
-</div>
-<div class="span-two-thirds">
-  <h2>nächste Konzerte:</h2>
-  <div class="row">
-      <div class="span5">
-        <h3>Sinfonieorchester</h3>
-          <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
-          <% if !@next_sinf_concert.nil? %>
-            <h4><%= @next_sinf_concert.title %></h4>
-            <%= l @next_sinf_concert.begin, :format=>:short %>, <br /> <%= @next_sinf_concert.location %> <br />
-            <ul class="media-grid">
-                <li>
-                    <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
-                </li>
-            </ul>
-            <%= link_to 'mehr ...', @next_sinf_concert %>
-          <% end %>
-      </div>
-        <div class="span5">
-          <h3>Stadtkapelle</h3>
-          <a href="probenplan/Stadtkapelle">Probenplan</a>
-          <% if !@next_skp_concert.nil? %>
-            <h4><%= @next_skp_concert.title %></h4>
-            <%= l @next_skp_concert.begin, :format=>:short %>, <br /> <%= @next_skp_concert.location %> <br />
-            <ul class="media-grid">
-                <li>
-                    <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
-                </li>
-            </ul>
-            <%= link_to 'mehr ...', @next_skp_concert %>
-          <% end %>
-        </div>
-  </div>
-</div>
-</div>
 </section>

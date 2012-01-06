@@ -3,6 +3,7 @@
  * ------------------------------------------------------------------ */
 .topbar-wrapper {
   height: 40px;
+  margin: 1px 0 1px;
   position: relative; }
 
 .topbar-wrapper, .topbar, .topbar-inner {

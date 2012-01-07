@@ -36,46 +36,46 @@
       <a href="/" class="header-image" > <img src="/images/header.jpg" width="940px" alt="Musikverein Biberach e.V."></a>
       <div class="topbar-wrapper">
         <div class="topbar" data-dropdown="dropdown">
-      <div class="topbar-inner">
-        <div class="container">
-        <a class="brand" href="/"><img src="/images/logo_mvb.gif" height="16px"/></a>
-        <ul class="nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">&uuml;ber uns</a>
-          <ul class="dropdown-menu">
-            <li><a href="/static/about">Musikverein Biberach</a></li>
-            <li><a href="/static/vorstand">Vorstand</a></li>
-            <li><a href="/static/geschichte">Geschichte</a></li>
-            <li><a href="/static/satzung">Satzung</a></li>
-            <li><a href="/static/joi">JOI</a></li>
+          <div class="topbar-inner">
+            <div class="container">
+            <a class="brand" href="/"><img src="/images/logo_mvb.gif" height="16px"/></a>
+            <ul class="nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">&uuml;ber uns</a>
+              <ul class="dropdown-menu">
+                <li><a href="/static/about">Musikverein Biberach</a></li>
+                <li><a href="/static/vorstand">Vorstand</a></li>
+                <li><a href="/static/geschichte">Geschichte</a></li>
+                <li><a href="/static/satzung">Satzung</a></li>
+                <li><a href="/static/joi">JOI</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/events">Termine</a>
+            </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle">Stadtkapelle</a>
+              <ul class="dropdown-menu" >
+                <li><a href="/static/stadtkapelle">Orchester</a></li>
+                <li><a href="/probenplan/Stadtkapelle">Probenplan</a></li>
+                <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle">Sinfonieorchester</a>
+              <ul class="dropdown-menu">
+                <li><a href="/static/sinfonieorchester">Orchester</a></li>
+                <li><a href="/probenplan/Sinfonieorchester">Probenplan</a></li>
+                <li><a href="/static/vorstand_sinfonieorchester">Vorstand</a></li>
+              </ul>
+            </li>
+            <li><a href="/galleries">Bilder</a></li>
+            <li><a href="/static/kontakt">Kontakt</a></li>
+            <% if user_signed_in? %>
+                <li> <%= link_to 'Logout', destroy_user_session_path %></li>
+            <% else %>
+                <li> <%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
           </ul>
-        </li>
-        <li>
-          <a href="/events">Termine</a>
-        </li>
-        <li class="dropdown"><a href="#" class="dropdown-toggle">Stadtkapelle</a>
-          <ul class="dropdown-menu" >
-            <li><a href="/static/stadtkapelle">Orchester</a></li>
-            <li><a href="/probenplan/Stadtkapelle">Probenplan</a></li>
-            <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
-          </ul>
-        </li>
-        <li class="dropdown"><a href="#" class="dropdown-toggle">Sinfonieorchester</a>
-          <ul class="dropdown-menu">
-            <li><a href="/static/sinfonieorchester">Orchester</a></li>
-            <li><a href="/probenplan/Sinfonieorchester">Probenplan</a></li>
-            <li><a href="/static/vorstand_sinfonieorchester">Vorstand</a></li>
-          </ul>
-        </li>
-        <li><a href="/galleries">Bilder</a></li>
-        <li><a href="/static/kontakt">Kontakt</a></li>
-        <% if user_signed_in? %>
-            <li> <%= link_to 'Logout', destroy_user_session_path %></li>
-        <% else %>
-            <li> <%= link_to 'Login', new_user_session_path %></li>
-        <% end %>
-      </ul>
-      </div>
+        </div>
     </div>
   </div>
   </div>

@@ -1,7 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+    <h2><%= @page.name %></h2>
+</div>
 
 <%= @page.main_content.html_safe %>
 
-<%= link_to('Bearbeiten', edit_page_path(@page)) if user_signed_in? %> <br />
-<%= link_to('Zurück zur Übersicht', pages_path) if user_signed_in? %>
+<br />
+<%= link_to('Bearbeiten', edit_page_path(@page)) if user_signed_in? %> | <%= link_to('Zurück zur Übersicht', pages_path) if user_signed_in? %>
 

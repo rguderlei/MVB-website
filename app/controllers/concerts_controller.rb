@@ -3,7 +3,7 @@ class ConcertsController < ApplicationController
   # GET //concerts
   # GET /concerts.xml
   def index
-    @concerts = Concert.all
+    @concerts = Concert.find(:all, :order => "begin DESC")
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @concerts }

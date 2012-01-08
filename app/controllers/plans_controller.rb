@@ -22,7 +22,7 @@ class PlansController < ApplicationController
     end
 
     @events = Event.where("begin>=:begin AND orchestra=:orchestra",
-                          {:begin=>Date.today-1, :orchestra=>@plan.orchestra})
+                          {:begin=>Date.today-1, :orchestra=>@plan.orchestra}).order("begin")
 
     respond_to do |format|
       format.html

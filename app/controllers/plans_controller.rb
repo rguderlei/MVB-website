@@ -26,6 +26,15 @@ class PlansController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.ics do
+        calendar = Icalendar::Calendar.new
+        @events.each{ |event|
+          calendar.add_event(event.to_ics( polymorphic_url(event)))
+        }
+        headers['Content-Type'] = "text/calendar; charset=UTF-8"
+        calendar.publish
+        render :text => calendar.to_ical
+      end
     end
   end
 

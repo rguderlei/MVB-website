@@ -2,7 +2,11 @@
   <div class="page-header">
     <h1>Probenplan <%= @plan.orchestra %></h1>
   </div>
-<small>Datum: <%= l Date.today, :format=>:long %> </small>
+<p><small>Stand: <%= l Date.today, :format=>:long %> </small></p>
+<p>
+   Probenplan als iCalendar: <%= link_to request.url + ".ics", :format=>:ics %>
+</p>
+
 
 <div class="probenplan_anmerkung">
   <%= link_to('Bearbeiten', edit_plan_path(@plan)) if user_signed_in? %>
@@ -14,6 +18,7 @@
     <th>Beginn</th>
     <th>Ort</th>
     <th>Veranstaltung</th>
+    <th></th>
   </tr>
 
   <% @events.each do |event| %>
@@ -21,6 +26,7 @@
         <td><%= l event.begin, :format=>:short %></td>
         <td><%= event.location %></td>
         <td><%= event.title %></td>
+        <td><%= link_to "Anzeigen", polymorphic_path(event) %></td>
       </tr>
   <% end %>
 </table>

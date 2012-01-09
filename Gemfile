@@ -31,6 +31,7 @@ gem "ckeditor"
 
 #event_calendar
 gem 'event-calendar', :require => 'event_calendar'
+gem 'icalendar'
 
 # Use unicorn as the web server
 # gem 'unicorn'

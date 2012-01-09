@@ -17,7 +17,7 @@ Mvb::Application.routes.draw do |map|
   root :to => "home#index"
 
   map.static "static/:permalink", :controller=>"pages", :action=>"show"
-  map.static "probenplan/:orchestra", :controller=>"plans", :action=>"show"
+  map.static "probenplan/:orchestra(.:format)", :controller=>"plans", :action=>"show"
 
   map.static "admin", :controller=>"admin", :action=>"index"
 

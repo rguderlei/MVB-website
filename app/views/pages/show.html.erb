@@ -4,6 +4,8 @@
 
 <%= @page.main_content.html_safe %>
 
-<br />
-<%= link_to('Bearbeiten', edit_page_path(@page)) if user_signed_in? %> | <%= link_to('Zurück zur Übersicht', pages_path) if user_signed_in? %>
+<% if user_signed_in? then %>
+    <br />
+    <%= link_to('Bearbeiten', edit_page_path(@page)) %> | <%= link_to('Zurück zur Übersicht', pages_path) %>
+<% end %>
 

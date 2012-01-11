@@ -9,9 +9,11 @@
      <div class="span3"><%= l info.created_at, :format=>:short %></div>
      <div class="span9"><%= info.title %></div>
      <div class="span4">
-       <%= link_to 'Anzeigen', info %> |
-       <%= link_to 'Bearbeiten', edit_info_path(info) if user_signed_in? %> |
-       <%= link_to 'Löschen', info, :confirm => 'Sicher?', :method => :delete if user_signed_in? %>
+       <%= link_to 'Anzeigen', info %>
+       <% if user_signed_in? then %>
+           | <%= link_to 'Bearbeiten', edit_info_path(info) %> |
+           <%= link_to 'Löschen', info, :confirm => 'Sicher?', :method => :delete %>
+       <% end %>
      </div>
      <div class="row">
        <div class="span9 offset4"><%=info.content[0...250] + " ..." %></div>

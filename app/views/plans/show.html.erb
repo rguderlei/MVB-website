@@ -10,7 +10,7 @@
 
 <div class="probenplan_anmerkung">
   <%= link_to('Bearbeiten', edit_plan_path(@plan)) if user_signed_in? %>
-  <%= @plan.header.html_safe %>
+  <p><%= @plan.header.html_safe %></p>
 </div>
 
 <table>

@@ -9,7 +9,9 @@
       <%= @info.content %>
   </p>
 
-
-  <%= link_to 'Bearbeiten', edit_info_path(@info) if user_signed_in?%> <br />
-  <%= link_to 'Zurück zur Übersicht', infos_path if user_signed_in?%>
+ <% if user_signed_in? then %>
+  <%= link_to 'Bearbeiten', edit_info_path(@info) %> |
+  <%= link_to('Löschen', @info, :confirm => 'Sicher?', :method => :delete) %> |
+  <%= link_to 'Zurück zur Übersicht', infos_path %>
+ <% end %>
 </section>

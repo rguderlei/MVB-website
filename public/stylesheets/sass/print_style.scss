@@ -1,6 +1,6 @@
 @import 'bourbon/bourbon';
 
-a#header-image {
+a.header-image {
     display: none;
     visibility: hidden;
     img {
@@ -9,20 +9,22 @@ a#header-image {
     }
 }
 
-#topbar-wrapper {
+.topbar-wrapper {
     display: none;
     visibility: hidden;
-    #topbar{
+    .topbar{
         display: none;
         visibility: hidden;
-        #topbar-inner {
-            display: none;
-            visibility: hidden;
-        }
+
     }
 }
 
-ul#nav {
+.topbar-inner {
+    display: none;
+    visibility: hidden;
+}
+
+ul.nav {
         display: none;
         visibility: hidden;
 }

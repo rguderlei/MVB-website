@@ -1,4 +1,5 @@
 @import 'bourbon/bourbon';
+@import 'bootstrap';
 
 a.header-image {
     display: none;
@@ -25,6 +26,11 @@ a.header-image {
 }
 
 ul.nav {
+        display: none;
+        visibility: hidden;
+}
+
+.noprint, p.noprint, th.noprint, td.noprint {
         display: none;
         visibility: hidden;
 }

@@ -3,7 +3,7 @@
     <h1>Probenplan <%= @plan.orchestra %></h1>
   </div>
 <p><small>Stand: <%= l Date.today, :format=>:long %> </small></p>
-<p>
+<p class="noprint">
    Probenplan als iCalendar: <%= link_to request.url + ".ics", :format=>:ics %>
 </p>
 
@@ -18,7 +18,7 @@
     <th>Beginn</th>
     <th>Ort</th>
     <th>Veranstaltung</th>
-    <th></th>
+    <th class="noprint"></th>
   </tr>
 
   <% @events.each do |event| %>
@@ -26,7 +26,7 @@
         <td><%= l event.begin, :format=>:short %></td>
         <td><%= event.location %></td>
         <td><%= event.title %></td>
-        <td><%= link_to "Anzeigen", polymorphic_path(event) %></td>
+        <td class="noprint"><%= link_to "Anzeigen", polymorphic_path(event) %></td>
       </tr>
   <% end %>
 </table>

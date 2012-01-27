@@ -3,7 +3,7 @@
   <h2>
     Musikverein Biberach an der Riss e.V.
   </h2>
-  gegründet 1768
+  Löbliche Musikgesellschaft von 1768
 </div>
 
 
@@ -23,7 +23,7 @@
           <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
           <% if !@next_sinf_concert.nil? %>
             <h3><%= @next_sinf_concert.title %></h3>
-            <%= l @next_sinf_concert.begin, :format=>:short %>, <br /> <%= @next_sinf_concert.location %> <br />
+            <%= l @next_sinf_concert.begin, :format=>:short_with_day %>, <br /> <%= @next_sinf_concert.location %> <br />
             <ul class="media-grid">
                 <li>
                     <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
@@ -37,7 +37,7 @@
           <a href="probenplan/Stadtkapelle">Probenplan</a>
           <% if !@next_skp_concert.nil? %>
             <h3><%= @next_skp_concert.title %></h3>
-            <%= l @next_skp_concert.begin, :format=>:short %>, <br /> <%= @next_skp_concert.location %> <br />
+            <%= l @next_skp_concert.begin, :format=>:short_with_day %>, <br /> <%= @next_skp_concert.location %> <br />
             <ul class="media-grid">
                 <li>
                     <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
@@ -56,7 +56,7 @@
     <ul class="unstyled">
       <% @monthly_events.each do |event| %>
         <li>
-            <em><%= l event.begin, :format=>:short %>:</em>
+            <em><%= l event.begin, :format=>:short_with_day %>:</em>
             <%= link_to event.title, event %>
               (
               <%= event.orchestra %>

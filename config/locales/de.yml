@@ -65,6 +65,7 @@ de:
     formats:
       default: "%A, %d. %B %Y, %H:%M Uhr"
       short: "%d.%m.%Y, %H:%M Uhr"
+      short_with_day: "%a %d.%m.%Y, %H:%M Uhr"
       long: "%A, %d. %B %Y, %H:%M Uhr"
       time: "%H:%M"
       only_date: "%d.%m.%Y"

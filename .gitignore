@@ -3,6 +3,7 @@ log/*.log
 tmp/**/*
 public/stylesheets/style.css
 public/stylesheets/print_style.css
+public/stylesheets/bootstrap*.css
 public/system
 public/ckeditor_assets
 .redcar/

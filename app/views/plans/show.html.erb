@@ -23,7 +23,7 @@
 
   <% @events.each do |event| %>
       <tr>
-        <td><%= l event.begin, :format=>:short %></td>
+        <td><%= l event.begin, :format=>"%a %d.%m.%Y, %H:%M Uhr" %></td>
         <td><%= event.location %></td>
         <td><%= event.title %></td>
         <td class="noprint"><%= link_to "Anzeigen", polymorphic_path(event) %></td>

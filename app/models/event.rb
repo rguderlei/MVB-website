@@ -1,14 +1,18 @@
 class Event < ActiveRecord::Base
-  has_event_calendar  :start_at_field  => 'begin', :end_at_field => 'end'
-  validates_presence_of :begin, :end, :title, :orchestra
+  has_event_calendar
+  validates_presence_of :start_at, :end_at, :title, :orchestra
+
+
   def color
     return (orchestra=='Stadtkapelle')? 'blue': (orchestra=='Sinfonieorchester')? 'orange': 'green' ;
   end
 
+
+
   def to_ics (url)
     event = Icalendar::Event.new
-    event.start = self.begin.strftime("%Y%m%dT%H%M%S")
-    event.end = self.end.strftime("%Y%m%dT%H%M%S")
+    event.start = self.start_at.strftime("%Y%m%dT%H%M%S")
+    event.end = self.end_at.strftime("%Y%m%dT%H%M%S")
     event.summary = self.title
     event.description = self.description
     event.location = self.location

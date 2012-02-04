@@ -9,3 +9,4 @@ public/ckeditor_assets
 .redcar/
 .idea
 .bundle
+.sass-cache/

@@ -5,8 +5,8 @@
 
 <p>
   <b>Orchester:</b> <%= @event.orchestra %> <br />
-  <b>Beginn:</b> <%= l @event.begin, :format=>:long %> <br />
-  <b>Ende:</b> <%= l @event.end, :format=>:long %> <br />
+  <b>Beginn:</b> <%= l @event.start_at, :format=>:long %> <br />
+  <b>Ende:</b> <%= l @event.end_at, :format=>:long %> <br />
   <b>Ort:</b> <%= @event.location %>
 </p>
 

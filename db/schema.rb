@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111021193919) do
+ActiveRecord::Schema.define(:version => 20120204202146) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20111021193919) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "events", :force => true do |t|
-    t.datetime "begin"
-    t.datetime "end"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.string   "location"
     t.string   "orchestra"
     t.string   "title"

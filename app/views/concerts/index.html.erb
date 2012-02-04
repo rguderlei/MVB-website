@@ -17,8 +17,8 @@
 
   <% @concerts.each do |concert| %>
       <tr>
-        <td><%= l concert.begin, :format=>:short if !concert.begin.nil? %></td>
-        <td><%= l concert.end, :format=>:time if !concert.end.nil? %></td>
+        <td><%= l concert.start_at, :format=>:short if !concert.start_at.nil? %></td>
+        <td><%= l concert.end_at, :format=>:time if !concert.end_at.nil? %></td>
         <td><%= concert.location %></td>
         <td><%= concert.orchestra %></td>
         <td><%= concert.title %></td>

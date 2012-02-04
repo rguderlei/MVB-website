@@ -1,4 +1,6 @@
-Mvb::Application.routes.draw do |map|
+Mvb::Application.routes.draw do 
+
+  mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
 
@@ -16,10 +18,13 @@ Mvb::Application.routes.draw do |map|
 
   root :to => "home#index"
 
-  map.static "static/:permalink", :controller=>"pages", :action=>"show"
-  map.static "probenplan/:orchestra(.:format)", :controller=>"plans", :action=>"show"
+  #map.static "static/:permalink", :controller=>"pages", :action=>"show"
+  match 'static/:permalink', :to => 'pages#show' 
+  #map.static "probenplan/:orchestra(.:format)", :controller=>"plans", :action=>"show"
+  match 'probenplan/:orchestra(.:format)', :to => 'plans#show'
 
-  map.static "admin", :controller=>"admin", :action=>"index"
+  #map.static "admin", :controller=>"admin", :action=>"index"
+  match 'admin', :to => 'admin#index'
 
   match '/events(/:year(/:month))' => 'events#index', :as => :events, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 

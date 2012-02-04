@@ -12,10 +12,9 @@
   <![endif]-->
 
   <!-- Le styles -->
-  <%= stylesheet_link_tag "bootstrap", "bootstrap-custom", "jquery.lightbox-0.5", 'event_calendar' %>
-  <%= stylesheet_link_tag "print_style", :media => "print" %>
-  <%= stylesheet_link_tag "smoothness/jquery-ui-1.8.16.custom", "timepicker" %>
-  <%= javascript_include_tag :jquery, "jquery-ui-timepicker-addon.js", "jquery.ui.datepicker-de", "nested_form", "jquery.lightbox-0.5.min", 'event_calendar', :ckeditor, 'application' %>
+  <%= stylesheet_link_tag "application" %>
+  <!-- %= stylesheet_link_tag "application-print", :media => "print" % -->
+  <%= javascript_include_tag 'application' %>
 
 
   <%= csrf_meta_tag %>
@@ -29,18 +28,15 @@
 </head>
 
 <body>
-
-
-
-    <div class="container">
-      <a href="/" class="header-image" > <img src="/images/header_neu.jpg" width="940px" alt="Musikverein Biberach e.V."></a>
+   <div class="container">
+      <a href="/" class="header-image" > <%= image_tag( "header_neu.jpg",  :size=>"940x120", :alt=>"Musikverein Biberach e.V.") %></a>
 
       <div class="topbar-wrapper">
 
         <div class="topbar" data-dropdown="dropdown">
           <div class="topbar-inner">
             <div class="container">
-            <a class="brand" href="/"><img src="/images/logo_mvb.gif" height="16px"/></a>
+            <a class="brand" href="#"><%= image_tag("logo_mvb.gif",  :size=>"24x16") %></a>
             <ul class="nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle">&uuml;ber uns</a>

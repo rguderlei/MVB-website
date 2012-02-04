@@ -1,0 +1,60 @@
+@import "bootstrap";
+@import 'bourbon/bourbon';
+
+.topbar-wrapper {
+    height: 40px;
+    margin: 1px 0 1px;
+    position: relative;
+}
+
+.topbar-wrapper, .topbar, .topbar-inner {
+      @include border-radius(6px);
+     z-index:100;
+}
+
+.topbar {
+    margin: 0 -20px;
+    position: absolute;
+}
+
+.hero-unit {
+   margin-top: 5px;
+   background-color: $grayLight;
+   padding: 10px;
+}
+
+a.header-image {
+    img {
+        margin-top:5px;
+        @include border-radius(6px);
+    }
+}
+
+span.legende{
+    @include border-radius(4px);
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+}
+
+span.sinf{
+    background-color: orange;
+}
+
+span.skp{
+    background-color: blue;
+}
+
+span.mvb{
+    background-color: green;
+}
+
+/*
+body {
+    background-color: $gray;
+}
+
+.container .container {
+    background-color: $grayLighter;
+}
+*/

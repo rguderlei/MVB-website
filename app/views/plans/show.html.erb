@@ -23,7 +23,7 @@
 
   <% @events.each do |event| %>
       <tr>
-        <td><%= l event.begin, :format=>:short_with_day %></td>
+        <td><%= l event.start_at, :format=>:short_with_day %></td>
         <td><%= event.location %></td>
         <td><%= event.title %></td>
         <td class="noprint"><%= link_to "Anzeigen", polymorphic_path(event) %></td>

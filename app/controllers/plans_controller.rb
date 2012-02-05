@@ -21,8 +21,8 @@ class PlansController < ApplicationController
       @plan = Plan.find(params[:id])
     end
 
-    @events = Event.where("begin>=:begin AND (orchestra=:orchestra OR orchestra='Gesamtverein')",
-                          {:begin=>Date.today-1, :orchestra=>@plan.orchestra}).order("begin")
+    @events = Event.where("start_at>=:start_at AND (orchestra=:orchestra OR orchestra='Gesamtverein')",
+                          {:start_at=>Date.today-1, :orchestra=>@plan.orchestra}).order("start_at")
 
     respond_to do |format|
       format.html

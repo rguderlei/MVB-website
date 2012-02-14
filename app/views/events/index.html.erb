@@ -3,12 +3,15 @@
 <h1>Termine</h1>
 </div>
 <% if user_signed_in? then %>
-<%= link_to('Neuer Termin', new_event_path) %>  |
-<%= link_to('Neues Konzert', new_concert_path) %>
+<p>
+    <%= link_to('Neuer Termin', new_event_path) %>  |
+    <%= link_to('Neues Konzert', new_concert_path) %>
+</p>
 <% end %>
 
 <span class="legende sinf">Sinfonieorchester</span> &nbsp;
 <span class="legende skp">Stadtkapelle</span> &nbsp;
 <span class="legende mvb">Gesamtverein</span>
+<p>&nbsp;</p>
 <%= event_calendar.html_safe %>
 </section>

@@ -92,7 +92,7 @@
   # config.translate = true
 #end
 SimpleForm.setup do |config|
-    SimpleForm.form_class = nil
+    SimpleForm.form_class = 'form-horizontal'
     SimpleForm.wrapper_class = 'clearfix'
     SimpleForm.wrapper_error_class = 'error'
     SimpleForm.error_class = 'help-inline'

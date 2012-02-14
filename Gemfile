@@ -19,7 +19,7 @@ gem 'jquery-rails'
 gem 'therubyracer'
     
 gem 'bourbon' # Bourbon css3/sass mixins
-gem 'bootstrap-sass', '~> 1.4.4'
+gem 'bootstrap-sass', '~> 2.0.0'
 
 # use paperclip to handle attachments
 gem 'paperclip'

@@ -6,9 +6,9 @@
 
 <% @infos.each do |info| %>
    <div class="row">
-     <div class="span3"><%= l info.created_at, :format=>:short %></div>
-     <div class="span9"><%= info.title %></div>
-     <div class="span4">
+     <div class="span2"><%= l info.created_at, :format=>:short %></div>
+     <div class="span7"><%= info.title %></div>
+     <div class="span3">
        <%= link_to 'Anzeigen', info %>
        <% if user_signed_in? then %>
            | <%= link_to 'Bearbeiten', edit_info_path(info) %> |
@@ -16,7 +16,7 @@
        <% end %>
      </div>
      <div class="row">
-       <div class="span9 offset4"><%=info.content[0...250] + " ..." %></div>
+       <div class="span8 offset2"><%=info.content[0...250] + " ..." %></div>
      </div>
    </div>
   <% end %>

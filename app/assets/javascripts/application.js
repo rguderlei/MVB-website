@@ -1,7 +1,7 @@
-//= require bootstrap
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require bootstrap-dropdown
 //= require jquery.lightbox-0.5.min
 //= require jquery.ui.datepicker-de
 //= require jquery-ui-timepicker-addon
@@ -19,6 +19,9 @@ $(function() {
     $('.datepicker').datepicker();
 });
 
+$(function() {
+    $('.dropdown-toggle').dropdown()
+});
 
 $.datepicker.setDefaults($.datepicker.regional['de']);
 

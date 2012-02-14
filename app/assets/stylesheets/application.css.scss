@@ -1,8 +1,13 @@
+
 /*
-*= require sass/bootstrap-custom.scss
-*= require_self
 *= require smoothness/jquery-ui-1.8.16.custom.css
 *= require event_calendar.css
 *= require jquery.lightbox-0.5.css
 *= require timepicker.css
+*= require_self
 */
+
+@import 'bourbon';
+@import 'sass/bootstrap-custom.scss';
+
+

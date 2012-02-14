@@ -31,14 +31,14 @@
    <header class="container">
       <a href="/" class="header-image" > <%= image_tag( "header_neu.jpg",  :size=>"940x120", :alt=>"Musikverein Biberach e.V.") %></a>
 
-      <div class="topbar-wrapper">
 
-        <div class="topbar" data-dropdown="dropdown">
-          <div class="topbar-inner">
+
+        <div class="navbar" data-dropdown="dropdown">
+          <div class="navbar-inner">
             <div class="container">
                 <ul class="nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle">&uuml;ber uns</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">&uuml;ber uns <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="/static/about">Musikverein Biberach</a></li>
                 <li><a href="/static/vorstand">Vorstand</a></li>
@@ -50,14 +50,15 @@
             <li>
               <a href="/events">Termine</a>
             </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">Stadtkapelle</a>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stadtkapelle <b class="caret"></b></a>
               <ul class="dropdown-menu" >
                 <li><a href="/static/stadtkapelle">Orchester</a></li>
                 <li><a href="/probenplan/Stadtkapelle">Probenplan</a></li>
                 <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">Sinfonieorchester</a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Sinfonieorchester<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="/static/sinfonieorchester">Orchester</a></li>
                 <li><a href="/probenplan/Sinfonieorchester">Probenplan</a></li>
@@ -75,21 +76,19 @@
             </div>
           </div>
         </div>
-      </div>
    </header>
   <div class="content-wrapper">
       <div class="container">
         <%= yield %>
       </div>
   </div>
-  <footer class="container">
+  <footer class="container footer">
     <div class="row show-grid">
     <div class="span5"> &copy; 2011 Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a></div>
-    <div class="span3 offset8"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %>     </div>
+    <div class="span3 offset4"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %>     </div>
     </div>
   </footer>
 <!-- /container -->
- <%= javascript_include_tag 'bootstrap-dropdown' %>
 
 </body>
 </html>

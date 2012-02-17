@@ -2,7 +2,9 @@
 <div class="page-header">
 <h1>Konzerte</h1>
 </div>
-
+ <p>
+  <%= link_to('Neues Konzert anlegen', new_concert_path) if user_signed_in? %>
+ </p>
 <table  class="table">
   <tr>
     <th>Beginn</th>
@@ -31,5 +33,4 @@
 
 <br/>
 
-<%= link_to('Neues Konzert anlegen', new_concert_path) if user_signed_in? %>
 </section>

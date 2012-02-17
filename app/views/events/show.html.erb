@@ -2,7 +2,13 @@
 <div class="page-header">
 <h1> <%= @event.title %> </h1>
 </div>
-
+  <% if user_signed_in? then %>
+   <p>
+     <%= link_to('Bearbeiten', edit_event_path(@event)) %> |
+     <%= link_to('Löschen', @event, :confirm => 'Sicher?', :method => :delete) %> |
+     <%= link_to 'Zurück zur Übersicht', events_path %>
+   </p>
+  <% end %>
 <p>
   <b>Orchester:</b> <%= @event.orchestra %> <br />
   <b>Beginn:</b> <%= l @event.start_at, :format=>:long %> <br />
@@ -14,9 +20,5 @@
   <%= @event.description.html_safe %>
 </p>
 
- <% if user_signed_in? then %>
-    <%= link_to('Bearbeiten', edit_event_path(@event)) %> |
-    <%= link_to('Löschen', @event, :confirm => 'Sicher?', :method => :delete) %> |
-    <%= link_to 'Zurück zur Übersicht', events_path %>
- <% end %>
+
 </section>

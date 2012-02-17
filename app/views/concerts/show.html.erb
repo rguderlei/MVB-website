@@ -4,7 +4,13 @@
   <%= @concert.title %>
 </h1>
 </div>
-
+  <% if user_signed_in? then %>
+       <p>
+         <%= link_to('Bearbeiten', edit_concert_path(@concert)) %> |
+         <%= link_to('Löschen', @concert, :confirm => 'Sicher?', :method => :delete) %> |
+         <%= link_to 'Zurück zur Übersicht', concerts_path %>
+       </p>
+  <% end %>
 <small>
   Beginn:
   <%= l @concert.start_at, :format=>:long %>
@@ -14,7 +20,7 @@
   Orchester: <%= @concert.orchestra %>
 </small>
 
-<ul class="media-grid">
+<ul class="thumbnails">
     <li>
         <%= link_to image_tag(@concert.image.url(:medium)), @concert.image.url(:xlarge), :class=>"thumbnail lightbox" %>
     </li>
@@ -30,9 +36,4 @@
   <%= @concert.description.html_safe %>
 </p>
 
- <% if user_signed_in? then %>
-      <%= link_to('Bearbeiten', edit_concert_path(@concert)) %> |
-      <%= link_to('Löschen', @concert, :confirm => 'Sicher?', :method => :delete) %> |
-      <%= link_to 'Zurück zur Übersicht', concerts_path %>
- <% end %>
 </section>

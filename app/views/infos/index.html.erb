@@ -2,7 +2,7 @@
   <div class="page-header">
     <h1>Aktuelles</h1>
   </div>
-<%= link_to 'Neue Info anlegen', new_info_path if user_signed_in? %>
+<p><%= link_to 'Neue Info anlegen', new_info_path if user_signed_in? %></p>
 
 <% @infos.each do |info| %>
    <div class="row">

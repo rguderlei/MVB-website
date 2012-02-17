@@ -4,14 +4,14 @@
      <h1>  <%= @info.title %> </h1>
   </div>
   <small> <%= l @info.created_at, :format=>:short %> </small>
-
+  <% if user_signed_in? then %>
+   <p>
+     <%= link_to 'Bearbeiten', edit_info_path(@info) %> |
+     <%= link_to('Löschen', @info, :confirm => 'Sicher?', :method => :delete) %> |
+     <%= link_to 'Zurück zur Übersicht', infos_path %>
+   </p>
+  <% end %>
   <p>
       <%= @info.content %>
   </p>
-
- <% if user_signed_in? then %>
-  <%= link_to 'Bearbeiten', edit_info_path(@info) %> |
-  <%= link_to('Löschen', @info, :confirm => 'Sicher?', :method => :delete) %> |
-  <%= link_to 'Zurück zur Übersicht', infos_path %>
- <% end %>
 </section>

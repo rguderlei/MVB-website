@@ -4,7 +4,13 @@
   <%= @gallery.name %>
 </h1>
 </div>
-
+  <% if user_signed_in? then %>
+      <p>
+       <%= link_to 'Bearbeiten', edit_gallery_path(@gallery)%>   |
+       <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) %> |
+       <%= link_to 'Zurück zur Übersicht', galleries_path %>
+      </p>
+  <% end %>
 <p>
   Datum:
   <%= l(@gallery.context_date) %>
@@ -18,9 +24,5 @@
   <% end %>
 </ul>
 
-   <% if user_signed_in? then %>
-        <%= link_to 'Bearbeiten', edit_gallery_path(@gallery)%>   |
-        <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) %> |
-        <%= link_to 'Zurück zur Übersicht', galleries_path %>
-   <% end %>
+
 </section>

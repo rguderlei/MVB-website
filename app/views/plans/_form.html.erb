@@ -1,4 +1,4 @@
-<%= simple_form_for(@plan) do |f| %>
+<%= simple_form_for(@plan, :html => {:class => 'form-horizontal' }) do |f| %>
     <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
     <%= f.cktext_area :header %>
     <%= f.button :submit, 'Speichern', :class=>'btn primary' %>

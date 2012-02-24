@@ -1,4 +1,4 @@
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
     <%= f.input :email, :label=>'Email-Addresse'  %>
     <%= f.input :password, :as=>:password, :label=>'Passwort'  %>
     <%= f.input :password_confirmation, :as=>:password, :label=>'Passwort-Bestätigung'  %>

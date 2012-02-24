@@ -1,6 +1,6 @@
-<%= simple_form_for(@page) do |f| %>
+<%= simple_form_for(@page, :html => {:class => 'form-horizontal' }) do |f| %>
     <%= f.input :name %>
     <%= f.input :permalink %>
-    <%= f.ckeditor :main_content, :label => false %>
+    <%= f.cktext_area :main_content, :label => false %>
     <%= f.button :submit, 'Speichern', :class=>'btn primary'%>
 <% end %>

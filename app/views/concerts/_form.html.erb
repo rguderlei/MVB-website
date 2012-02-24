@@ -1,4 +1,4 @@
-<%= simple_form_for @concert, :html => {:multipart => true} do |f| %>
+<%= simple_form_for @concert, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
     <%= f.input :start_at, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker'} %>
     <%= f.input :end_at, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker'} %>
     <%= f.input :location, :label=>'Ort'  %>

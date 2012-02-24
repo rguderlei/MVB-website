@@ -1,4 +1,4 @@
-<%= simple_nested_form_for @gallery, :html => {:multipart => true} do |f| %>
+<%= simple_nested_form_for @gallery, :html => {:multipart => true, :class => 'form-horizontal'} do |f| %>
 
     <%= f.input :name, :label=>'Name'  %>
     <%= f.input :context_date, :label=>'Datum',:as=>:string, :input_html => {:class=>'datepicker'} %>

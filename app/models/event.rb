@@ -1,14 +1,16 @@
 class Event < ActiveRecord::Base
+  attr_accessible :press_articles, :press_articles_attributes
   has_event_calendar
   validates_presence_of :start_at, :end_at, :title, :orchestra
 
+  has_many :press_articles, :dependent => :destroy
+  accepts_nested_attributes_for :press_articles
 
   def color
     return (orchestra=='Stadtkapelle')? 'blue': (orchestra=='Sinfonieorchester')? 'orange': 'green' ;
   end
 
-
-
+  # TODO: render HTML as Markdown in ics
   def to_ics (url)
     event = Icalendar::Event.new
     event.start = self.start_at.strftime("%Y%m%dT%H%M%S")

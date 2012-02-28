@@ -3,13 +3,13 @@
     <%= f.input :name, :label=>'Name'  %>
     <%= f.input :context_date, :label=>'Datum',:as=>:string, :input_html => {:class=>'datepicker'} %>
     <h2>Bilder</h2>
-    <ul class="media-grid">
+    <ul class="thumbnails">
     <% f.simple_fields_for :photos do |photo_form| %>
 
         <div class="field">
           <% if photo_form.object.image? %>
               <li>
-                <%= image_tag photo_form.object.image.url(:small) %>
+                <%= image_tag photo_form.object.image.url(:small), :class => 'thumbnail'%>
                 <p><%= photo_form.link_to_remove "Bild löschen" %></p>
               </li>
           <% else %>

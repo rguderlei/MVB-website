@@ -29,11 +29,12 @@
   <%= @concert.announcement.html_safe %>
 </p>
 
-
-
 <h2>Programm:</h2>
 <p>
   <%= @concert.description.html_safe %>
-</p>
+</p>%
+
+# TODO provide events as locals for partial
+<% render 'events/press_articles' %>
 
 </section>

@@ -1,5 +1,7 @@
 <h2>In der Presse</h2>
+<ul>
 <% press_articles.each { |article|%>
-   <%= article.title %> ( <%= article.publisher %> vom <%= l article.print_date %>)
-   <%= link_to article.url 'Download' %>
+   <li><%= article.title %> ( <%= article.publisher %> vom <%= l article.print_date %>)
+   <%= link_to article.url 'Download' %> </li>
 <% } %>
+</ul>

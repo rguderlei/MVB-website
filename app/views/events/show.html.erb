@@ -20,7 +20,6 @@
   <%= @event.description.html_safe %>
 </p>
 
-# TODO provide events as locals for partial
-<% render 'press_articles' %>
+<%= render :partial => 'press_articles', :locals => {:press_articles => @event.press_articles} %>
 
 </section>

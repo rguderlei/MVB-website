@@ -34,7 +34,6 @@
   <%= @concert.description.html_safe %>
 </p>%
 
-# TODO provide events as locals for partial
-<% render 'events/press_articles' %>
+<%= render :partial => 'events/press_articles', :locals => {:press_articles => @concert.press_articles} %>
 
 </section>

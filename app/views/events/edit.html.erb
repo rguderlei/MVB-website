@@ -2,8 +2,11 @@
 <div class="page-header">
 <h1>Termin bearbeiten</h1>
 </div>
+<p>
+  <%= link_to 'Anzeigen', @event %> |
+  <%= link_to 'Zurück', events_path %>
+</p>
 <%= render 'form' %>
 
-<%= link_to 'Anzeigen', @event %> |
-<%= link_to 'Zurück', events_path %>
+
 </section>

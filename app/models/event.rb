@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :press_articles, :press_articles_attributes
+  attr_accessible :title, :public_event, :start_at, :end_at, :description, :location, :orchestra, :press_articles, :press_articles_attributes
   has_event_calendar
   validates_presence_of :start_at, :end_at, :title, :orchestra
 

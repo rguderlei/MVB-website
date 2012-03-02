@@ -1,4 +1,6 @@
 class Concert < Event
+  attr_accessible :title, :public_event, :image, :image_delete, :start_at, :end_at, :description, :location, :orchestra, :press_articles, :press_articles_attributes
+
   has_attached_file :image, :styles => {:small=>"90x90#", :medium => "210x150#", :large => "320x230#", :xlarge => "800x800"}
 
 

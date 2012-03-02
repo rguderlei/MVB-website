@@ -2,9 +2,11 @@
 <div class="page-header">
 <h1>Konzert bearbeiten</h1>
 </div>
-
+<p>
+  <%= link_to 'Anzeigen', @concert %> |
+  <%= link_to 'Zurück zur Übersicht', concerts_path %>
+</p>
 <%= render 'form' %>
 
-<%= link_to 'Anzeigen', @concert %> |
-<%= link_to 'Zurück zur Übersicht', concerts_path %>
-</section>>
+
+</section>

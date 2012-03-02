@@ -24,7 +24,7 @@
           <% if !@next_sinf_concert.nil? %>
             <h3><%= @next_sinf_concert.title %></h3>
             <%= l @next_sinf_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_sinf_concert.location %> <br />
-            <ul class="media-grid">
+            <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
                 </li>
@@ -38,7 +38,7 @@
           <% if !@next_skp_concert.nil? %>
             <h3><%= @next_skp_concert.title %></h3>
             <%= l @next_skp_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_skp_concert.location %> <br />
-            <ul class="media-grid">
+            <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
                 </li>

@@ -5,7 +5,7 @@
 //= require jquery.lightbox-0.5.min
 //= require jquery.ui.datepicker-de
 //= require jquery-ui-timepicker-addon
-//= require ckeditor/ckeditor
+//= require ckeditor/init
 //= require nested_form
 //= require_self
 

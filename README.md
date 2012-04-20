@@ -4,9 +4,9 @@ Website des Musikverein Biberach
 Features
 --------
 
-- einfaches CMS zur Verwaltung der Inhalte
-- Veranstaltungskalender
-- Probenpläne
+- einfaches CMS zur Verwaltung der statischen Inhalte der Website
+- Veranstaltungskalender (incl. ICal)
+- Probenpläne für die Orchester
 - Bildergalerien
 
 User Guide
@@ -44,14 +44,15 @@ ein Text erfasst werden, der vor den Terminen im Probeplan angezeigt wird.
 
 Developer Guide
 ---------------
-Die Seite wird mit [Ruby on Rails](http://www.rubyonrails.org) 3.0.x gebaut.
+Die Seite wird mit [Ruby on Rails](http://www.rubyonrails.org) 3.2.x gebaut.
 Neben Rails kommen noch die folgenden Gems zum Einsatz:
 
-- [Twitter Bootstrap](http://twitter.github.com/bootstrap/) bzw. [Twitter Bootstrap-SASS](https://github.com/jlong/sass-twitter-bootstrap) zum Layouting
+- [Twitter Bootstrap](http://twitter.github.com/bootstrap/) bzw. [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) zum Layouting
 - [Sass](http://sass-lang.com), [bourbon](https://github.com/thoughtbot/bourbon) CSS3-Templates
 - [JQuery](http://jquery.com/) in Form von [Jquery-Rails](https://github.com/indirect/jquery-rails)
 - [Paperclip](https://github.com/thoughtbot/paperclip) zum Management von Files.
 - [ckeditor](https://github.com/galetahub/rails-ckeditor) als WYSIWYG-Editor der CMS-Komponente
 - [devise](https://github.com/plataformatec/devise) zur Authentifizierung
 - [EventCalendar](https://github.com/elevation/event_calendar) zur Darstellung der Termine
+- [iCalendar](http://icalendar.rubyforge.org/) um Termine im iCal-Format anzubieten
 

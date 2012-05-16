@@ -25,7 +25,7 @@
       <tr>
         <td><%= l event.start_at, :format=>:short_with_day %></td>
         <td><%= event.location %></td>
-        <td><%= event.title %> <br> <%= event.description.html_safe %></td>
+        <td><b><%= event.title %></b> <br> <%= event.description.html_safe %></td>
         <td class="noprint"><%= link_to "Anzeigen", polymorphic_path(event) %></td>
       </tr>
   <% end %>

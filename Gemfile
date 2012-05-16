@@ -32,7 +32,7 @@ gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
 gem 'simple_form', '~> 2.0.0'
 
 # ckeditor - html wysiwyg
-gem "ckeditor", "3.7.0.rc3"
+gem "ckeditor", "3.7.0"
 
 #event_calendar
 gem 'event-calendar', :require => 'event_calendar'

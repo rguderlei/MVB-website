@@ -29,7 +29,7 @@
 <h2>Programm:</h2>
 <p>
   <%= @concert.description.html_safe %>
-</p>%
+</p>
 
 <%= render :partial => 'events/press_articles', :locals => {:press_articles => @concert.press_articles} %>
 

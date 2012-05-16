@@ -1,3 +1,4 @@
+<% if !press_articles.empty? then %>
 <h2>In der Presse</h2>
 <ul>
 <% press_articles.each { |article|%>
@@ -5,3 +6,4 @@
    <%= link_to 'Download', article.article.url  %> </li>
 <% } %>
 </ul>
+<% end %>

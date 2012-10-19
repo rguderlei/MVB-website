@@ -6,7 +6,7 @@
 //= require jquery.ui.datepicker-de
 //= require jquery-ui-timepicker-addon
 //= require ckeditor/init
-//= require nested_form
+//= require jquery_nested_form
 //= require_self
 
 

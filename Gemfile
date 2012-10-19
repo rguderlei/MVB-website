@@ -1,9 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.2.8'
 
 # sqlite as dev database
 gem 'sqlite3'
@@ -19,7 +16,7 @@ gem 'jquery-rails'
 gem 'therubyracer'
     
 gem 'bourbon' # Bourbon css3/sass mixins
-gem 'bootstrap-sass', '~> 2.0.0'
+gem 'bootstrap-sass', '~> 2.1.0.1'
 
 # use paperclip to handle attachments
 gem 'paperclip'
@@ -32,7 +29,7 @@ gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
 gem 'simple_form', '~> 2.0.0'
 
 # ckeditor - html wysiwyg
-gem "ckeditor", "3.7.0"
+gem "ckeditor", "3.7.3"
 
 #event_calendar
 gem 'event-calendar', :require => 'event_calendar'

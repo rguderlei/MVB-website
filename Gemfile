@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.10'
 
 # sqlite as dev database
 gem 'sqlite3'
@@ -14,6 +14,7 @@ end
 # use jquery as js framework
 gem 'jquery-rails'
 gem 'therubyracer'
+gem 'libv8', '~> 3.11.8'
     
 gem 'bourbon' # Bourbon css3/sass mixins
 gem 'bootstrap-sass', '~> 2.1.0.1'

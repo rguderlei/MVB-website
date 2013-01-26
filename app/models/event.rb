@@ -16,7 +16,8 @@ class Event < ActiveRecord::Base
     event.start = self.start_at.strftime("%Y%m%dT%H%M%S")
     event.end = self.end_at.strftime("%Y%m%dT%H%M%S")
     event.summary = self.title
-    event.description = self.description
+    p = HTMLPage.new :contents => self.description
+    event.description = p.markdown
     event.location = self.location
     event.klass = "PUBLIC"
     event.created = self.created_at

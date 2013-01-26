@@ -35,5 +35,6 @@ gem "ckeditor", "3.7.3"
 #event_calendar
 gem 'event-calendar', :require => 'event_calendar'
 gem 'icalendar'
+gem 'html2markdown'
 
 

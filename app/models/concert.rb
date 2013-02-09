@@ -5,7 +5,7 @@ class Concert < Event
       :url => "/system/:attachment/:id/:style/:filename", :styles => {:small=>"90x90#", :medium => "210x150#", :large => "320x230#", :xlarge => "800x800"}
 
 
-  validates_presence_of :start_at, :end_at, :title, :orchestra
+  validates :start_at, :end_at, :title, :orchestra, :presence => true
   has_event_calendar
 
   before_save :destroy_image?

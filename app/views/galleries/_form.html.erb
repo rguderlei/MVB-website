@@ -3,23 +3,24 @@
     <%= f.input :name, :label=>'Name'  %>
     <%= f.input :context_date, :label=>'Datum',:as=>:string, :input_html => {:class=>'datepicker', :value => @gallery.context_date.nil? ? '' : l(@gallery.context_date)} %>
     <h2>Bilder</h2>
-    <ul class="thumbnails">
+    <ul class="thumbnails unstyled">
     <%= f.simple_fields_for :photos do |photo_form| %>
-
         <div class="field">
           <% if photo_form.object.image? %>
-              <li>
+              <li class="span2">
                 <%= image_tag photo_form.object.image.url(:small), :class => 'thumbnail'%>
-                <p><%= photo_form.link_to_remove "Bild löschen" %></p>
+                <div class="caption">
+                  <%= photo_form.link_to_remove "Bild löschen", :class=>"btn" %>
+                </div>
               </li>
           <% else %>
               <li>
-                <%= photo_form.input :image, :as=>:file, :label=>false %>
+                <%= photo_form.input :image, :as=>:file, :label=>"Bild auswählen:" %>
               </li>
           <% end %>
         </div>
     <% end %>
     </ul>
-    <p><%= f.link_to_add "Bild hinzufügen", :photos %></p>
+    <p><%= f.link_to_add "Bild hinzufügen", :photos, :class=>"btn" %></p>
    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

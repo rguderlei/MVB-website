@@ -14,10 +14,7 @@
       <%= link_to gallery do %>
       <%= image_tag(gallery.photos.first.image.url(:medium)) unless gallery.photos.first.nil?%>
       <% end %>
-      <p><%= gallery.name %> ( <%= l(gallery.context_date)%> )</p>
-      <!-- <p><%= link_to('Bearbeiten', edit_gallery_path(gallery)) if user_signed_in? %>
-      | <%= link_to('Löschen', gallery, :confirm => 'Sicher?', :method => :delete) if user_signed_in? %></p> -->
-
+      <p><small><%= gallery.name %></small> <br> <small class="muted">(<%= l(gallery.context_date)%>)</small> </p>
       </div>
     </li>
   <% end %>

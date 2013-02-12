@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # sqlite as dev database
 gem 'sqlite3'
@@ -26,7 +26,7 @@ gem 'paperclip'
 gem 'devise'
 
 # use nested_forms to simplify forms for models with associations
-gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
+gem 'nested_form'
 gem 'simple_form', '~> 2.0.0'
 
 # ckeditor - html wysiwyg

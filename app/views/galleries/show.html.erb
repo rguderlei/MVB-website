@@ -1,28 +1,30 @@
 <section id="images">
-<div class="page-header">
-<h1>
-  <%= @gallery.name %>
-</h1>
-</div>
-  <% if user_signed_in? then %>
-      <p>
-       <%= link_to 'Bearbeiten', edit_gallery_path(@gallery)%>   |
-       <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) %> |
-       <%= link_to 'Zurück zur Übersicht', galleries_path %>
-      </p>
-  <% end %>
-<p>
-  Datum:
-  <%= l(@gallery.context_date) %>
-</p>
+  <div class="page-header">
+    <h1>
+      <%= @gallery.name %>
+    </h1>
+  </div>
 
-<ul class="thumbnails">
-  <% @gallery.photos.each do |photo| %>
-    <li class="span3">
-      <%= link_to image_tag(photo.image.url(:medium)), photo.image.url(:xlarge), :class=>"lightbox thumbnail" %>
-    </li>
-  <% end %>
-</ul>
+  <p>
+    <% if user_signed_in? then %>
+        <%= link_to 'Bearbeiten', edit_gallery_path(@gallery) %>   |
+        <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) %> |
+    <% end %>
+    <%= link_to 'Zurück zur Übersicht', galleries_path %>
+  </p>
+
+  <p>
+    Datum:
+    <%= l(@gallery.context_date) %>
+  </p>
+
+  <ul class="thumbnails">
+    <% @gallery.photos.each do |photo| %>
+        <li class="span3">
+          <%= link_to image_tag(photo.image.url(:medium)), photo.image.url(:xlarge), :class => "lightbox thumbnail" %>
+        </li>
+    <% end %>
+  </ul>
 
 
 </section>

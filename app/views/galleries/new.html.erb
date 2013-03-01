@@ -1,6 +1,7 @@
+<% content_for :title, "Neue Bildergallerie" %>
 <section id="images">
 <div class="page-header">
-<h1>Neue Bildergallerie</h1>
+  <h1><%= yield :title %></h1>
 </div>
 
 <%= render 'form' %>

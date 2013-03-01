@@ -1,6 +1,7 @@
+<% content_for :title, "Probenplan " + @plan.orchestra %>
 <section id="probenplan">
   <div class="page-header">
-    <h1>Probenplan <%= @plan.orchestra %></h1>
+    <h1><%= yield :title %></h1>
   </div>
 <p><small>Stand: <%= l Date.today, :format=>:long %> </small></p>
 <p class="noprint">

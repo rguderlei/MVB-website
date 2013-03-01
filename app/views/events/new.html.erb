@@ -1,6 +1,7 @@
+<% content_for :title, "Neuer Termin" %>
 <section id="events">
 <div class="page-header">
-<h1>Neuer Termin</h1>
+<h1><%= yield :title %></h1>
   </div>
 
 <%= render 'form' %>

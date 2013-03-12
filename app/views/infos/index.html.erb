@@ -6,7 +6,7 @@
 
 <% @infos.each do |info| %>
    <div class="row">
-     <div class="span2"><%= l info.created_at, :format=>:only_date %></div>
+     <div class="span2"><%= l info.created_at, :format=>:date_and_day %><br><%= l info.created_at, :format=>:time %></div>
      <div class="span7"><b><%= info.title %></b>
          <div class="row">
                 <div class="span7"><%=truncate(info.content, :length=>250) %></div>

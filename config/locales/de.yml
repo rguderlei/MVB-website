@@ -69,6 +69,7 @@ de:
       long: "%A, %d. %B %Y, %H:%M Uhr"
       time: "%H:%M"
       only_date: "%d.%m.%Y"
+      date_and_day: "%a, %d.%m.%Y"
 
     am: "vormittags"
     pm: "nachmittags"

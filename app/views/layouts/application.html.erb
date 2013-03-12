@@ -13,7 +13,7 @@
 
   <!-- Le styles -->
   <%= stylesheet_link_tag "application" %>
-  <%= stylesheet_link_tag "application-print", :media => "print"  %>
+  <%= stylesheet_link_tag "application-print", :media => "print" %>
   <%= javascript_include_tag 'application' %>
 
 
@@ -28,15 +28,21 @@
 </head>
 
 <body>
-   <header class="container">
-      <a href="/" class="header-image" > <%= image_tag( "header_neu.jpg",  :size=>"940x120", :alt=>"Musikverein Biberach e.V.") %></a>
+<header class="container">
+  <a href="/" class="header-image"> <%= image_tag("header_neu.jpg", :size => "940x120", :alt => "Musikverein Biberach e.V.") %></a>
 
 
+  <div class="navbar" data-dropdown="dropdown">
+    <div class="navbar-inner">
+      <div class="container">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
 
-        <div class="navbar" data-dropdown="dropdown">
-          <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav">
+        <div class="nav-collapse">
+          <ul class="nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">&uuml;ber uns <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -52,14 +58,15 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stadtkapelle <b class="caret"></b></a>
-              <ul class="dropdown-menu" >
+              <ul class="dropdown-menu">
                 <li><a href="/static/stadtkapelle">Orchester</a></li>
                 <li><a href="/static/mitglieder_stadtkapelle">Mitglieder</a></li>
                 <li><a href="/probenplan/Stadtkapelle">Probenplan</a></li>
                 <li><a href="/static/vorstand_stadtkapelle">Vorstand</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Sinfonieorchester<b class="caret"></b></a>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sinfonieorchester<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="/static/sinfonieorchester">Orchester</a></li>
                 <li><a href="/static/mitglieder_sinfonieorchester">Mitglieder</a></li>
@@ -75,21 +82,22 @@
                 <li> <%= link_to 'Login', new_user_session_path %></li>
             <% end %>
           </ul>
-            </div>
-          </div>
         </div>
-   </header>
-  <div class="content-wrapper">
-      <div class="container">
-        <%= yield %>
       </div>
+    </div>
   </div>
-  <footer class="container footer">
-    <div class="row show-grid">
+</header>
+<div class="content-wrapper">
+  <div class="container">
+    <%= yield %>
+  </div>
+</div>
+<footer class="container footer">
+  <div class="row show-grid">
     <div class="span5"> &copy; 2011 Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a></div>
     <div class="span3 offset4"> <%= link_to 'Verwaltung', '/admin' if user_signed_in? %>     </div>
-    </div>
-  </footer>
+  </div>
+</footer>
 <!-- /container -->
 
 </body>

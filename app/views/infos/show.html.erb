@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <section id="infos">
   <div class="page-header">
-     <h1>  <%= @info.title %> </h1>
+     <h3>  <%= @info.title %> </h3>
   </div>
   <small> <%= l @info.created_at, :format=>:short %> </small>
   <% if user_signed_in? then %>

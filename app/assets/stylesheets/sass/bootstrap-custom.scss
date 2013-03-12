@@ -2,6 +2,7 @@ $darkRed: #A61F2B;
 $linkColor: $darkRed;
 
 @import "bootstrap";
+@import "bootstrap-responsive";
 @import 'bourbon';
 
 .footer {
@@ -17,7 +18,13 @@ $linkColor: $darkRed;
 }
 
 a.header-image {
+
     img {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
         margin-top:5px;
         @include border-radius(6px);
     }
@@ -46,12 +53,10 @@ span.mvb{
     background-color: green;
 }
 
-/*
-body {
-    background-color: $gray;
+@media (min-width: 1200px) {
+  .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    width: 940px;
+  }
 }
-
-.container .container {
-    background-color: $grayLighter;
-}
-*/

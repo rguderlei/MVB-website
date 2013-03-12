@@ -17,7 +17,7 @@ gem 'therubyracer'
 gem 'libv8', '~> 3.11.8'
     
 gem 'bourbon' # Bourbon css3/sass mixins
-gem 'bootstrap-sass', '~> 2.1.0.1'
+gem 'bootstrap-sass', '~> 2.3.0.1'
 
 # use paperclip to handle attachments
 gem 'paperclip'

@@ -11,25 +11,30 @@
          <%= link_to 'Zurück zur Übersicht', concerts_path %>
        </p>
   <% end %>
-<small>
-  Beginn:
-  <%= l @concert.start_at, :format=>:long %>
-  <br />
-  Ort:  <%= @concert.location %>
-  <br />
-  Orchester: <%= @concert.orchestra %>
-</small>
+<div class="row">
+  <div class="span4">
+    <small>
+      Beginn:
+      <%= l @concert.start_at, :format=>:long %>
+      <br />
+      Ort:  <%= @concert.location %>
+      <br />
+      Orchester: <%= @concert.orchestra %>
+    </small>
 
-<ul class="thumbnails">
-    <li>
-        <%= link_to image_tag(@concert.image.url(:medium)), @concert.image.url(:xlarge), :class=>"thumbnail lightbox" %>
-    </li>
-</ul>
-
-<h2>Programm:</h2>
-<p>
-  <%= @concert.description.html_safe %>
-</p>
+    <ul class="thumbnails">
+        <li>
+            <%= link_to image_tag(@concert.image.url(:medium)), @concert.image.url(:xlarge), :class=>"thumbnail lightbox" %>
+        </li>
+    </ul>
+  </div>
+  <div class="span8">
+    <h2>Programm:</h2>
+    <p>
+      <%= @concert.description.html_safe %>
+    </p>
+  </div>
+</div>
 
 <%= render :partial => 'events/press_articles', :locals => {:press_articles => @concert.press_articles} %>
 

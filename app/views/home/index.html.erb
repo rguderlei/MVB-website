@@ -1,12 +1,9 @@
 <div class="hero-unit visible-desktop">
-  Willkommen beim
   <h2>
     Musikverein Biberach an der Riss e.V.
   </h2>
   Löbliche Musikgesellschaft von 1768
 </div>
-
-
 
 <section id="aktuelles">
 
@@ -23,13 +20,12 @@
           <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
           <% if !@next_sinf_concert.nil? %>
             <h4><%= @next_sinf_concert.title %></h4>
-            <%= l @next_sinf_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_sinf_concert.location %> <br />
+            <small><%= l @next_sinf_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_sinf_concert.location %> </small>
             <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
                 </li>
             </ul>
-            <%= link_to 'mehr ...', @next_sinf_concert %>
           <% end %>
     </div>
     <div class="span4">
@@ -37,13 +33,12 @@
           <a href="probenplan/Stadtkapelle">Probenplan</a>
           <% if !@next_skp_concert.nil? %>
             <h4><%= @next_skp_concert.title %></h4>
-            <%= l @next_skp_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_skp_concert.location %> <br />
+            <small><%= l @next_skp_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_skp_concert.location %> </small>
             <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
                 </li>
             </ul>
-            <%= link_to 'mehr ...', @next_skp_concert %>
           <% end %>
     </div>
 </div>
@@ -51,12 +46,12 @@
 
 <section id="termine">
     <div class="page-header">
-        <h3>Demnächst im Musikverein</h3>
+        <h3>Konzerte des Musikverein</h3>
     </div>
     <ul class="unstyled">
-      <% @monthly_events.each do |event| %>
+      <% @next_concerts.each do |event| %>
         <li>
-            <em><%= l event.start_at, :format=>:short_with_day %>:</em>
+            <%= l event.start_at, :format=>:short_with_day %>, <%= event.location %>:
             <%= link_to event.title, event %>
               (
               <%= event.orchestra %>

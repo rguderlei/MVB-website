@@ -14,8 +14,7 @@ $gridGutterWidth1200: 20px;
 }
 
 .hero-unit {
-   margin-top: 5px;
-   background-color: $grayLight;
+   background-color: lighten($grayLight, 30%);
    padding: 10px;
 }
 
@@ -33,7 +32,7 @@ a.header-image {
 }
 
 .content-wrapper{
-    margin-top:10px;
+    margin-top:1px;
 }
 
 span.legende{

@@ -12,6 +12,7 @@ pages = Page.create([
 {:name=>"Vorstand", :permalink=>"vorstand", :main_content=>"TBD"},
 {:name=>"Geschichte", :permalink=>"geschichte", :main_content=>"TBD"},
 {:name=>"Satzung", :permalink=>"satzung", :main_content=>"TBD"},
+{:name=>"Vereinsordnung", :permalink=>"vereinsordnung", :main_content=>"TBD"},
 {:name=>"JOI", :permalink=>"joi", :main_content=>"TBD"},
 {:name=>"Stadtkapelle", :permalink=>"stadtkapelle", :main_content=>"TBD"},
 {:name=>"Vorstand", :permalink=>"vorstand_stadtkapelle", :main_content=>"TBD"},

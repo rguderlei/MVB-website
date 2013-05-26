@@ -1,5 +1,5 @@
 <%= simple_form_for(@info, :html => {:class => 'form-horizontal' }) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :content, :as=>:text, :input_html => { :cols => 50, :rows => 5 }%>
+    <%= f.input :title, :label=>'Überschrift' %>
+    <%= f.input :content, :label=>'Text', :as=>:text, :input_html => { :cols => 200, :rows => 5, :class=>'span6' }%>
     <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

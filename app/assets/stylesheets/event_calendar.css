@@ -44,6 +44,7 @@
   position: relative;
   border-right: 1px solid #303030;
   white-space: nowrap;
+  margin-top: 10px;
 }
 
 /* Day names */

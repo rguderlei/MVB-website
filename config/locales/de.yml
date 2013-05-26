@@ -70,6 +70,7 @@ de:
       time: "%H:%M Uhr"
       only_date: "%d.%m.%Y"
       date_and_day: "%a, %d.%m.%Y"
+      datetime_for_edit: "%d.%m.%Y %H:%M"
 
     am: "vormittags"
     pm: "nachmittags"

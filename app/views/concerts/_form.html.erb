@@ -1,6 +1,6 @@
 <%= simple_nested_form_for @concert, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
-    <%= f.input :start_at, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  @concert.start_at.nil? ? '' : l(@concert.start_at) } %>
-        <%= f.input :end_at, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker', :value => @concert.end_at.nil? ? '' : l(@concert.end_at)} %>
+    <%= f.input :start_at, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  @concert.start_at.nil? ? '' : l(@concert.start_at, :format=>:datetime_for_edit) } %>
+    <%= f.input :end_at, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker', :value => @concert.end_at.nil? ? '' : l(@concert.end_at, :format=>:datetime_for_edit)} %>
     <%= f.input :location, :label=>'Ort'  %>
     <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
     <%= f.input :title, :label=>"Titel"  %>

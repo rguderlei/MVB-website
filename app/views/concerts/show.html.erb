@@ -8,7 +8,9 @@
        <p>
          <%= link_to('Bearbeiten', edit_concert_path(@concert)) %> |
          <%= link_to('Löschen', @concert, :confirm => 'Sicher?', :method => :delete) %> |
-         <%= link_to 'Zurück zur Übersicht', concerts_path %>
+         <%= link_to 'Zurück zum Terminkalender', events_path %> |
+         <%= link_to('Neuer Termin', new_event_path) %> |
+         <%= link_to('Neues Konzert', new_concert_path) %>
        </p>
   <% end %>
 <div class="row">

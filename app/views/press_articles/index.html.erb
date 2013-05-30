@@ -1,0 +1,21 @@
+<h1>Listing press_articles</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @press_articles.each do |press_article| %>
+  <tr>
+    <td><%= link_to 'Show', press_article %></td>
+    <td><%= link_to 'Edit', edit_press_article_path(press_article) %></td>
+    <td><%= link_to 'Destroy', press_article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Press article', new_press_article_path %>

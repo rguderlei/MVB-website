@@ -12,6 +12,7 @@ Mvb::Application.routes.draw do
   resources :infos
   resources :pages
   resources :plans
+  resources :press_articles
 
   get "home/index"
   get "admin/index"

@@ -5,12 +5,15 @@
     <%= link_to('neuer Pressebericht', new_press_article_path)  if user_signed_in? %>
 </p>
 
-<% @press_articles.each do |press_article| %>
-    <div class="row">
-      <div class="span9">
-        <%= press_article.title %> (<%= press_article.publisher %> vom <%= l press_article.print_date unless  press_article.print_date.nil? %> )
-      </div>
-      <div class="span3"><%= link_to 'Download', press_article.article.url  %></div>
-    </div>
+<% @press_articles.each do |year, articles| %>
+    <h4><%=  year %></h4>
+    <% articles.each do |press_article| %>
+        <div class="row">
+          <div class="span9">
+            <%= press_article.title %> (<%= press_article.publisher %> vom <%= l press_article.print_date unless  press_article.print_date.nil? %> )
+          </div>
+          <div class="span3"><%= link_to 'Download', press_article.article.url  %></div>
+        </div>
+    <% end %>
 <% end %>
 

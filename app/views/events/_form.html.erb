@@ -5,27 +5,29 @@
     <%= f.input :orchestra, :label=>'Betrifft', :collection=>['Stadtkapelle', 'Sinfonieorchester' ,'Gesamtverein' ] %>
     <%= f.input :title, :label=>"Titel"  %>
     <%= f.input :public_event, :label=>"öffentlicher Auftritt?" %>
+    <h5>Beschreibung</h5>
     <%= f.cktext_area :description %>
 
+    <h5>Presseberichte</h5>
 
-          <%= f.simple_fields_for :press_articles do |article_form| %>
-              <div class="well">
-                <h3>Artikel</h3>
-                <%= article_form.input :title, :label => 'Titel', :as => :string %>
-                <%= article_form.input :publisher, :label => 'Quelle', :as => :string %>
-                <%= article_form.input :print_date, :label => 'Datum', :as => :string, :input_html => {:class => 'datepicker', :value => article_form.object.print_date.nil? ? '' : l(article_form.object.print_date)} %>
-                <div class="field">
-                  <% if article_form.object.article? %>
-                      <%= article_form.object.article_file_name %>
-                      <%= article_form.link_to_remove "Datei löschen" %>
-                  <% else %>
-                      <%= article_form.input :article, :as => :file, :label => 'Datei' %>
-                  <% end %>
-                </div>
-              </div>
-          <% end %>
+      <%= f.simple_fields_for :press_articles do |article_form| %>
+          <div class="well">
+            <h3>Artikel</h3>
+            <%= article_form.input :title, :label => 'Titel', :as => :string %>
+            <%= article_form.input :publisher, :label => 'Quelle', :as => :string %>
+            <%= article_form.input :print_date, :label => 'Datum', :as => :string, :input_html => {:class => 'datepicker', :value => article_form.object.print_date.nil? ? '' : l(article_form.object.print_date)} %>
+            <div class="field">
+              <% if article_form.object.article? %>
+                  <%= article_form.object.article_file_name %>
+                  <%= article_form.link_to_remove "Datei löschen" %>
+              <% else %>
+                  <%= article_form.input :article, :as => :file, :label => 'Datei' %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
 
-        <p><%= f.link_to_add "Artikel hinzufügen", :press_articles %></p>
+    <p><%= f.link_to_add "Artikel hinzufügen", :press_articles %></p>
 
     <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

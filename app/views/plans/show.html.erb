@@ -29,7 +29,7 @@
         </div>
       <div class="row">
         <div class="span2"><%= l event.start_at, :format=>:date_and_day %><br><%= l event.start_at, :format=>:time %></div>
-        <div class="span2"><%= event.location %></div>
+        <div class="span2"><%= link_to_location event.location %></div>
         <div class="span7"><b><%= event.title %></b> <br> <%= event.description.html_safe %></div>
         <div class="span1 noprint"><%= link_to "Anzeigen", polymorphic_path(event) %></div>
       </div>

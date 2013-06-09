@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require bootstrap-dropdown
 //= require bootstrap-collapse
+//= require bootstrap-tooltip
 //= require jquery.lightbox-0.5.min
 //= require jquery.ui.datepicker-de
 //= require jquery-ui-timepicker-addon
@@ -19,6 +20,11 @@ $(function() {
 $(function() {
     $('.datepicker').datepicker();
 });
+
+$(function() {
+    $('.event-location').tooltip();
+});
+
 
 $(function() {
     $('.dropdown-toggle').dropdown()
@@ -52,3 +58,5 @@ $(document).on('nested:fieldAdded', function(event){
   // and activate datepicker on it
   dateField.datepicker();
 })
+
+

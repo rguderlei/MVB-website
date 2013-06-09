@@ -15,7 +15,7 @@
                  <%= image_tag(concert.image.url(:medium)) %>
              <% end %>
              <p>
-               <small><%= concert.title %></small>
+               <small><%= truncate(concert.title, :length => 35, :separator => ' ') %></small>
              </p>
            </div>
          </li>

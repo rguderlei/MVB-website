@@ -20,7 +20,7 @@
           <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
           <% if !@next_sinf_concert.nil? %>
             <h4><%= @next_sinf_concert.title %></h4>
-            <small><%= l @next_sinf_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_sinf_concert.location %> </small>
+            <small><%= l @next_sinf_concert.start_at, :format=>:short_with_day %>, <br /> <div class="event-location"><%= @next_sinf_concert.location %></div> </small>
             <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
@@ -33,7 +33,7 @@
           <a href="probenplan/Stadtkapelle">Probenplan</a>
           <% if !@next_skp_concert.nil? %>
             <h4><%= @next_skp_concert.title %></h4>
-            <small><%= l @next_skp_concert.start_at, :format=>:short_with_day %>, <br /> <%= @next_skp_concert.location %> </small>
+            <small><%= l @next_skp_concert.start_at, :format=>:short_with_day %>, <br /> <div class="event-location"><%= @next_skp_concert.location %></div> </small>
             <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
@@ -51,7 +51,7 @@
     <ul class="unstyled">
       <% @next_concerts.each do |event| %>
         <li>
-            <%= l event.start_at, :format=>:short_with_day %>, <%= event.location %>:
+            <%= l event.start_at, :format=>:short_with_day %>,<div class="event-location"><%= event.location %></div>:
             <%= link_to event.title, event %>
               (
               <%= event.orchestra %>

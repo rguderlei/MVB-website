@@ -19,7 +19,7 @@
       Beginn:
       <%= l @concert.start_at, :format=>:long %>
       <br />
-      Ort:  <%= @concert.location %>
+      Ort: <div class="event-location"><%= @concert.location %></div>
       <br />
       Orchester: <%= @concert.orchestra %>
     </small>

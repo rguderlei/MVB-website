@@ -12,7 +12,7 @@ group :assets do
     gem 'uglifier', ">=1.0.3"
 end
 # use jquery as js framework
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.3.0'
 gem 'therubyracer'
 gem 'libv8', '~> 3.11.8'
     
@@ -27,10 +27,10 @@ gem 'devise'
 
 # use nested_forms to simplify forms for models with associations
 gem 'nested_form'
-gem 'simple_form', '~> 2.0.0'
+gem 'simple_form'
 
 # ckeditor - html wysiwyg
-gem "ckeditor", "3.7.3"
+gem "ckeditor"
 
 #event_calendar
 gem 'event-calendar', :require => 'event_calendar'

@@ -21,7 +21,7 @@ module ApplicationHelper
     location_long.default = location
 
     href = "http://maps.google.de/maps?q=#{location_long[location]}"
-    output = "<a class=\"event-location\" target=\"_blank\" title=\"\" data-placement=\"right\" data-toggle=\"tooltip\" href=\"#{href}\" data-original-title=\"#{location_long[location]}\">#{location}</a>"
+    output = "#{location} <a class=\"event-location noprint\" target=\"_blank\" title=\"\" data-placement=\"right\" data-toggle=\"tooltip\" href=\"#{href}\" data-original-title=\"#{location_long[location]}\"><i class=\"icon-globe\"></i></a>"
 
     output.html_safe
   end

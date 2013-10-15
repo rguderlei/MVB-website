@@ -1,5 +1,8 @@
 Mvb::Application.routes.draw do 
 
+  resources :event_locations
+
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users

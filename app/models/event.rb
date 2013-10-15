@@ -1,13 +1,27 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :public_event, :start_at, :end_at, :description, :location, :orchestra, :press_articles, :press_articles_attributes
+  attr_accessible :title, :public_event, :start_at, :event_location_id, :end_at, :description, :location, :orchestra, :press_articles, :press_articles_attributes
   has_event_calendar
   validates :start_at, :end_at, :title, :orchestra, :presence => true
 
   has_many :press_articles, :dependent => :destroy
   accepts_nested_attributes_for :press_articles
 
+  belongs_to :event_location
+
   def color
     return (orchestra=='Stadtkapelle')? 'blue': (orchestra=='Sinfonieorchester')? 'orange': 'green' ;
+  end
+
+  def location_name
+    if event_location.nil?
+      if location.nil?
+        return ""
+      else
+        return location
+      end
+    else
+      return event_location.short_name
+    end
   end
 
   # TODO: render HTML as Markdown in ics

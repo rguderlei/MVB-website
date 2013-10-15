@@ -1,0 +1,11 @@
+<% content_for :title, "Veranstaltungsort bearbeiten" %>
+<section id="event_locations">
+<div class="page-header">
+<h3><%= yield :title %></h3>
+</div>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @event_location %> |
+<%= link_to 'Back', event_locations_path %>
+</section>

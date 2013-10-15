@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228154916) do
+ActiveRecord::Schema.define(:version => 20131015184211) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(:version => 20120228154916) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "event_locations", :force => true do |t|
+    t.string   "short_name"
+    t.string   "long_name"
+    t.string   "street"
+    t.integer  "zipcode"
+    t.string   "city"
+    t.string   "country"
+    t.decimal  "lat"
+    t.decimal  "long"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.datetime "start_at"
@@ -44,7 +57,11 @@ ActiveRecord::Schema.define(:version => 20120228154916) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "location_id"
+    t.integer  "event_location_id"
   end
+
+  add_index "events", ["event_location_id"], :name => "index_events_on_event_location_id"
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
@@ -58,6 +75,17 @@ ActiveRecord::Schema.define(:version => 20120228154916) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "street"
+    t.integer  "zipcode"
+    t.string   "city"
+    t.float    "lat"
+    t.float    "long"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|

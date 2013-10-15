@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Short name:</b>
+  <%= @event_location.short_name %>
+</p>
+
+<p>
+  <b>Long name:</b>
+  <%= @event_location.long_name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @event_location.street %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @event_location.zipcode %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @event_location.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @event_location.country %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @event_location.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @event_location.long %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_location_path(@event_location) %> |
+<%= link_to 'Back', event_locations_path %>

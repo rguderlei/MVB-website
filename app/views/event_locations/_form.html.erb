@@ -1,0 +1,19 @@
+<%= simple_form_for(@event_location,  :html => {:class => 'form-horizontal'}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :short_name, :label=>"Name" %>
+    <%= f.input :long_name, :label=>"alternativer Name" %>
+    <%= f.input :street, :label=>"Straße" %>
+    <%= f.input :zipcode, :label=>"PLZ", :input_html=>{:value=>"88400"} %>
+    <%= f.input :city, :label=>"Stadt", :input_html=>{:value=>"Biberach"} %>
+    <%= f.input :country, :label=>"Land", :as=>:string, :input_html=>{:value=>"Deutschland"} %>
+  <span>optional, falls Addresse für Darstellung in Google Maps nicht ausreicht </span>
+    <%= f.input :lat, :label=>"geogr. Breite" %>
+    <%= f.input :long, :label=>"geogr. Länge" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

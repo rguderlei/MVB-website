@@ -9,8 +9,8 @@
     <%= f.input :city, :label=>"Stadt", :input_html=>{:value=>"Biberach"} %>
     <%= f.input :country, :label=>"Land", :as=>:string, :input_html=>{:value=>"Deutschland"} %>
   <span>optional, falls Addresse für Darstellung in Google Maps nicht ausreicht </span>
-    <%= f.input :lat, :label=>"geogr. Breite" %>
-    <%= f.input :long, :label=>"geogr. Länge" %>
+    <%= f.input :lat, :label=>"geogr. Breite", :input_html=>{:value=>"0"} %>
+    <%= f.input :long, :label=>"geogr. Länge", :input_html=>{:value=>"0"} %>
   </div>
 
   <div class="form-actions">

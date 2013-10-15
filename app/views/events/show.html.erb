@@ -16,7 +16,7 @@
   <b>Orchester:</b> <%= @event.orchestra %> <br />
   <b>Beginn:</b> <%= l @event.start_at, :format=>:long %> <br />
   <b>Ende:</b> <%= l @event.end_at, :format=>:long %> <br />
-  <b>Ort:</b> <%= link_to_location @event.location %>
+  <b>Ort:</b> <%= link_to_location @event %>
 </p>
 
 <p>

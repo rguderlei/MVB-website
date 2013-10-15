@@ -8,20 +8,10 @@ module ApplicationHelper
     output
   end
 
-  def link_to_location(location)
-    location_long = {"BFM"=>"Bruno-Frey-Musikschule Wielandstr. 27 88400 Biberach",
-                    "Marktplatz" => "Marktplatz Biberach",
-                    "St. Martin" => "Kirchplatz 1 Biberach",
-                    "St.-Martins-Kirche" => "Kirchplatz 1 Biberach",
-                    "St. Martin Biberach" => "Kirchplatz 1 Biberach",
-                    "Museumshof" => "Braith-Mali-Museum Biberach",
-                    "Stadtgarten" =>"48.096869,9.785511",
-                    "PG-Innenhof" => "Pestalozzi-Gymnasium Biberach"
-                    }
-    location_long.default = location
+  def link_to_location(event)
 
-    href = "http://maps.google.de/maps?q=#{location_long[location]}"
-    output = "#{location} <a class=\"event-location noprint\" target=\"_blank\" title=\"\" data-placement=\"right\" data-toggle=\"tooltip\" href=\"#{href}\" data-original-title=\"#{location_long[location]}\"><i class=\"icon-globe\"></i></a>"
+    href = "http://maps.google.de/maps?q=#{event.google_maps_query}"
+    output = "#{event.location_name} <a class=\"event-location noprint\" target=\"_blank\" title=\"\" data-placement=\"right\" data-toggle=\"tooltip\" href=\"#{href}\" data-original-title=\"#{event.location_tooltip}\"><i class=\"icon-globe\"></i></a>"
 
     output.html_safe
   end

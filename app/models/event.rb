@@ -24,6 +24,30 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def location_tooltip
+    if event_location.nil?
+      if location.nil?
+        return ""
+      else
+        return location
+      end
+    else
+      return event_location.location_tooltip
+    end
+  end
+
+  def google_maps_query
+    if event_location.nil?
+      if location.nil?
+        return ""
+      else
+        return location
+      end
+    else
+      return event_location.google_maps_query
+    end
+  end
+
   # TODO: render HTML as Markdown in ics
   def to_ics (url)
     event = Icalendar::Event.new

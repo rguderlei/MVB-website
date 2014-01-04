@@ -7,6 +7,8 @@ class EventDate < ActiveRecord::Base
   belongs_to :event_location
 
   validates :start_at, :end_at, :event_location, :presence => true
+  validates :start_at, :date => true
+  validates :end_at, :date => { :after=>:start_at }
 
    def color
      return (event.orchestra=='Stadtkapelle')? 'blue': (event.orchestra=='Sinfonieorchester')? 'orange': 'green' ;

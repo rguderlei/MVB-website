@@ -236,3 +236,9 @@ de:
 
       full_messages:
         format: "%{attribute} %{message}"
+
+      models:
+        event_date:
+          attributes:
+            end_at:
+              after: "Ende-Datum muss nach dem Begin-Datum liegen"

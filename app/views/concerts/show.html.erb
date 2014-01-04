@@ -17,9 +17,9 @@
   <div class="span4">
     <small>
       Beginn:
-      <%= l @concert.start_at, :format=>:long %>
+      <%= l @concert.event_dates.first.start_at, :format=>:long %>
       <br />
-      Ort: <%= link_to_location @concert %>
+      Ort: <%= link_to_location @concert.event_dates.first %>
       <br />
       Orchester: <%= @concert.orchestra %>
     </small>

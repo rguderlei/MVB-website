@@ -1,10 +1,14 @@
 <%= simple_nested_form_for @concert, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
-    <%= f.input :start_at, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  @concert.start_at.nil? ? '' : l(@concert.start_at, :format=>:datetime_for_edit) } %>
-    <%= f.input :end_at, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker', :value => @concert.end_at.nil? ? '' : l(@concert.end_at, :format=>:datetime_for_edit)} %>
-    <%= f.association :event_location, :label=>"Veranstaltungsort", :label_method=>:short_name %>
-    <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
     <%= f.input :title, :label=>"Titel"  %>
+    <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
     <%= f.input :public_event, :label=>"öffentlicher Auftritt?" %>
+    <h5>Termine</h5>
+    <%= f.simple_fields_for :event_dates do |date_form| %>
+        <%= date_form.input :start_at, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit) } %>
+        <%= date_form.input :end_at, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit)} %>
+        <%= date_form.association :event_location, :label=>"Veranstaltungsort", :label_method=>:short_name %>
+    <% end %>
+    <p><%= f.link_to_add "Termin hinzufügen", :event_dates, :class=>"btn btn-primary" %></p>
 
     <div class="field">
       <% if f.object.image? %>

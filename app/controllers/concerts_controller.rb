@@ -25,6 +25,8 @@ class ConcertsController < ApplicationController
   # GET /concerts/new.xml
   def new
     @concert = Concert.new
+    @concert.event_dates.build
+
     @concert.public_event = true
     respond_to do |format|
       format.html # new.html.erb

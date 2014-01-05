@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(:version => 20140104101615) do
     t.datetime "start_at"
     t.datetime "end_at"
     t.string   "location"
+    t.string   "additional_description"
     t.integer  "event_location_id"
     t.integer  "event_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "event_locations", :force => true do |t|

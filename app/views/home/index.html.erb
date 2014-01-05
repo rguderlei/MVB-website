@@ -20,7 +20,11 @@
           <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
           <% if !@next_sinf_concert.nil? %>
             <h4><%= @next_sinf_concert.title %></h4>
-            <small><%= l @next_sinf_concert.event_dates.first.start_at, :format=>:short_with_day %>, <br /> <%= link_to_location @next_sinf_concert.event_dates.first %> </small>
+            <small>
+              <% @next_sinf_concert.event_dates.each do |event_date| %>
+              <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
+              <% end %>
+            </small>
             <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
@@ -33,7 +37,11 @@
           <a href="probenplan/Stadtkapelle">Probenplan</a>
           <% if !@next_skp_concert.nil? %>
             <h4><%= @next_skp_concert.title %></h4>
-            <small><%= l @next_skp_concert.event_dates.first.start_at, :format=>:short_with_day %>, <br /> <%= link_to_location @next_skp_concert.event_dates.first %> </small>
+            <small>
+              <% @next_skp_concert.event_dates.each do |event_date| %>
+              <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
+              <% end %>
+            </small>
             <ul class="thumbnails">
                 <li>
                     <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
@@ -48,16 +56,25 @@
     <div class="page-header">
         <h3>Nächste Konzerte des Musikvereins</h3>
     </div>
-    <ul class="unstyled">
-      <% @next_concerts.each do |event| %>
-        <li>
-            <%= l event.event_dates.first.start_at, :format=>:short_with_day %>, <%= link_to_location event.event_dates.first %>:
-            <%= link_to event.title, event %>
-              (
-              <%= event.orchestra %>
-              )
-        </li>
 
+      <% @next_concerts.each do |event| %>
+      <div class="row">
+        <div class="span3">
+          <%= link_to event.title, event %> (<%= event.orchestra %>)
+        </div>
+        <div class="span4">
+          <% event.event_dates.each do |event_date| %>
+          <div class="row">
+            <div class="span4">
+              <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12"><hr></div>
+      </div>
       <% end %>
-    </ul>
+
 </section>

@@ -4,6 +4,7 @@ class CreateEventDates < ActiveRecord::Migration
       t.datetime :start_at
       t.datetime :end_at
       t.string :location
+      t.string :additional_description
       t.integer :event_location_id
       t.integer :event_id
 

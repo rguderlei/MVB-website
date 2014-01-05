@@ -1,25 +1,26 @@
 <%= simple_nested_form_for @concert, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
-    <%= f.input :title, :label=>"Titel"  %>
+    <%= f.input :title, :label=>'Titel'  %>
     <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
-    <%= f.input :public_event, :label=>"öffentlicher Auftritt?" %>
+    <%= f.input :public_event, :label=>'öffentlicher Auftritt?' %>
     <h5>Termine</h5>
     <%= f.simple_fields_for :event_dates do |date_form| %>
-        <%= date_form.input :start_at, :label=>"Beginn", :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit) } %>
-        <%= date_form.input :end_at, :label=>"Ende", :as=>:string, :input_html => { :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit)} %>
-        <%= date_form.association :event_location, :label=>"Veranstaltungsort", :label_method=>:short_name %>
+        <%= date_form.input :start_at, :label=>'Beginn', :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit) } %>
+        <%= date_form.input :end_at, :label=>'Ende', :as=>:string, :input_html => { :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit)} %>
+        <%= date_form.association :event_location, :label=>'Veranstaltungsort', :label_method=>:short_name %>
+        <%= date_form.input :additional_description, :label => 'Zusatzinfo zum Termin', :as=>:string %>
     <% end %>
-    <p><%= f.link_to_add "Termin hinzufügen", :event_dates, :class=>"btn btn-primary" %></p>
+    <p><%= f.link_to_add 'Termin hinzufügen', :event_dates, :class=>'btn btn-primary' %></p>
 
     <div class="field">
       <% if f.object.image? %>
         <%= image_tag f.object.image.url(:small) %>
-        <%= f.input :image_delete, :as=>:boolean, :label=>"Bild löschen?" %>
+        <%= f.input :image_delete, :as=>:boolean, :label=>'Bild löschen?' %>
       <% else %>
         <%= f.input :image, :as=>:file, :label=>'Plakat' %>
       <% end %>
     </div>
     <h5>Beschreibung</h5>
-    <%= f.cktext_area :description, :label=>"Programm" %>
+    <%= f.cktext_area :description, :label=>'Programm' %>
     <h5>Presseberichte</h5>
     <%= f.simple_fields_for :press_articles do |article_form| %>
       <div class="well">
@@ -30,7 +31,7 @@
         <div class="field">
           <% if article_form.object.article? %>
               <%= article_form.object.article_file_name %>
-              <%= article_form.link_to_remove "Datei löschen" %>
+              <%= article_form.link_to_remove 'Datei löschen' %>
           <% else %>
               <%= article_form.input :article, :as => :file, :label => 'Datei' %>
           <% end %>
@@ -38,7 +39,7 @@
       </div>
   <% end %>
 
-    <p><%= f.link_to_add "Artikel hinzufügen", :press_articles %></p>
+    <p><%= f.link_to_add 'Artikel hinzufügen', :press_articles %></p>
     
-    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
+    <%= f.button :submit, 'Speichern', :class=>'btn btn-info' %>
 <% end %>

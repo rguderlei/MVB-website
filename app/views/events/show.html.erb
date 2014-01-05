@@ -20,6 +20,7 @@
   <b>Beginn:</b> <%= l event_date.start_at, :format=>:long %> <br />
   <b>Ende:</b> <%= l event_date.end_at, :format=>:long %> <br />
   <b>Ort:</b> <%= link_to_location event_date %>
+  <b>Zusatzinfo:</b> <%= event_date.additional_description %>
 </p>
 <% end %>
 <p>

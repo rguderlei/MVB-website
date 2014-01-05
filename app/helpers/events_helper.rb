@@ -18,8 +18,10 @@ module EventsHelper
 
   def event_calendar
     calendar event_calendar_options do |args|
+      logger.info args
       event = args[:event]
-      link_to(event.title, polymorphic_path(event), :title => event.title)
+
+      link_to(event.event.title, polymorphic_path(event.event), :title => event.event.title)
     end
   end
 end

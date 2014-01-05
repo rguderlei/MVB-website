@@ -16,22 +16,21 @@ class PlansController < ApplicationController
   def show
     if params[:orchestra]
       @plan = Plan.find_by_orchestra(params[:orchestra])
-      raise ActiveRecord::RecordNotFound, "Seite nicht gefunden" if @plan.nil?
+      raise ActiveRecord::RecordNotFound, 'Seite nicht gefunden' if @plan.nil?
     else
       @plan = Plan.find(params[:id])
     end
 
-    @events = Event.where("start_at>=:start_at AND (orchestra=:orchestra OR orchestra='Gesamtverein')",
-                          {:start_at=>Date.today-1, :orchestra=>@plan.orchestra}).order("start_at")
+    @events = EventDate.where('start_at>=:start_at', {:start_at=>Date.today-1}).joins(:event).where('orchestra=:orchestra OR orchestra="Gesamtverein"', {:orchestra=>@plan.orchestra}).order("start_at")
 
     respond_to do |format|
       format.html
       format.ics do
         calendar = Icalendar::Calendar.new
         @events.each{ |event|
-          calendar.add_event(event.to_ics( polymorphic_url(event)))
+          calendar.add_event(event.to_ics( polymorphic_url(event.event)))
         }
-        headers['Content-Type'] = "text/calendar; charset=UTF-8"
+        headers['Content-Type'] = 'text/calendar; charset=UTF-8'
         calendar.publish
         render :text => calendar.to_ical
       end
@@ -64,7 +63,7 @@ class PlansController < ApplicationController
         format.html { redirect_to(@plan, :notice => 'plan was successfully created.') }
         format.xml { render :xml => @plan, :status => :created, :location => @plan }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => 'new' }
         format.xml { render :xml => @plan.errors, :status => :unprocessable_entity }
       end
     end
@@ -80,7 +79,7 @@ class PlansController < ApplicationController
         format.html { redirect_to(@plan, :notice => 'plan was successfully updated.') }
         format.xml { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.xml { render :xml => @plan.errors, :status => :unprocessable_entity }
       end
     end

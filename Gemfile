@@ -28,9 +28,10 @@ gem 'devise'
 # use nested_forms to simplify forms for models with associations
 gem 'nested_form'
 gem 'simple_form'
+gem 'date_validator'
 
 # ckeditor - html wysiwyg
-gem "ckeditor"
+gem 'ckeditor'
 
 #event_calendar
 gem 'event-calendar', :require => 'event_calendar'

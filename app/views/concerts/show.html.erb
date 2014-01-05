@@ -1,43 +1,55 @@
 <section id="concerts">
-<div class="page-header">
-<h3>
-  <%= @concert.title %>
-</h3>
-</div>
+  <div class="page-header">
+    <h3>
+      <%= @concert.title %>
+    </h3>
+  </div>
   <% if user_signed_in? then %>
-       <p>
-         <%= link_to('Bearbeiten', edit_concert_path(@concert)) %> |
-         <%= link_to('Löschen', @concert, :confirm => 'Sicher?', :method => :delete) %> |
-         <%= link_to 'Zurück zum Terminkalender', events_path %> |
-         <%= link_to('Neuer Termin', new_event_path) %> |
-         <%= link_to('Neues Konzert', new_concert_path) %>
-       </p>
+      <p>
+        <%= link_to('Bearbeiten', edit_concert_path(@concert)) %> |
+        <%= link_to('Löschen', @concert, :confirm => 'Sicher?', :method => :delete) %> |
+        <%= link_to 'Zurück zum Terminkalender', events_path %> |
+        <%= link_to('Neuer Termin', new_event_path) %> |
+        <%= link_to('Neues Konzert', new_concert_path) %>
+      </p>
   <% end %>
-<div class="row">
-  <div class="span4">
-    <small>
-      Beginn:
-      <%= l @concert.start_at, :format=>:long %>
-      <br />
-      Ort: <%= link_to_location @concert %>
-      <br />
-      Orchester: <%= @concert.orchestra %>
-    </small>
+  <small>
+    Orchester: <%= @concert.orchestra %>
+  </small>
 
-    <ul class="thumbnails">
+  <h4>Termine</h4>
+
+  <div class="row">
+    <div class="span4">
+      <% @concert.event_dates.each do |event_date| %>
+          <div class="row">
+            <div class="span4">
+              <small>
+                <b>Beginn: </b>
+                <%= l event_date.start_at, :format => :long %>
+                <br/>
+                <b>Ort: </b><%= link_to_location event_date %>
+                <br> <%= event_date.additional_description %>
+              </small>
+              <hr>
+            </div>
+          </div>
+      <% end %>
+      <ul class="thumbnails">
         <li>
-            <%= link_to image_tag(@concert.image.url(:medium)), @concert.image.url(:xlarge), :class=>"thumbnail lightbox" %>
+          <%= link_to image_tag(@concert.image.url(:medium)), @concert.image.url(:xlarge), :class => "thumbnail lightbox" %>
         </li>
-    </ul>
-  </div>
-  <div class="span8">
-    <h2>Programm:</h2>
-    <p>
-      <%= @concert.description.html_safe %>
-    </p>
-  </div>
-</div>
+      </ul>
+    </div>
+    <div class="span8">
+      <h2>Programm:</h2>
 
-<%= render :partial => 'events/press_articles', :locals => {:press_articles => @concert.press_articles} %>
+      <p>
+        <%= @concert.description.html_safe %>
+      </p>
+    </div>
+  </div>
+
+  <%= render :partial => 'events/press_articles', :locals => {:press_articles => @concert.press_articles} %>
 
 </section>

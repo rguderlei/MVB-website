@@ -57,6 +57,10 @@ $(document).on('nested:fieldAdded', function(event){
   var dateField = field.find('.datepicker');
   // and activate datepicker on it
   dateField.datepicker();
+
+  var dateField = field.find('.datetimepicker');
+  // and activate datepicker on it
+  dateField.datetimepicker();
 })
 
 

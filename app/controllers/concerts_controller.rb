@@ -3,7 +3,7 @@ class ConcertsController < ApplicationController
   # GET //concerts
   # GET /concerts.xml
   def index
-    @concerts = Concert.find(:all, :order => "start_at DESC")
+    @concerts = Concert.joins(:event_dates).order('start_at DESC')
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @concerts }
@@ -25,6 +25,8 @@ class ConcertsController < ApplicationController
   # GET /concerts/new.xml
   def new
     @concert = Concert.new
+    @concert.event_dates.build
+
     @concert.public_event = true
     respond_to do |format|
       format.html # new.html.erb
@@ -47,7 +49,7 @@ class ConcertsController < ApplicationController
         format.html { redirect_to(@concert, :notice => 'Concert was successfully created.') }
         format.xml { render :xml => @concert, :status => :created, :location => @concert }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => 'new' }
         format.xml { render :xml => @concert.errors, :status => :unprocessable_entity }
       end
     end
@@ -63,7 +65,7 @@ class ConcertsController < ApplicationController
         format.html { redirect_to(@concert, :notice => 'Concert was successfully updated.') }
         format.xml { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.xml { render :xml => @concert.errors, :status => :unprocessable_entity }
       end
     end

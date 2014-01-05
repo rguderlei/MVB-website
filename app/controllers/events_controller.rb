@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @year = (params[:year] || Time.zone.now.year).to_i
     @shown_month = Date.civil(@year, @month)
     @first_day_of_week = 1
-    @event_strips = Event.event_strips_for_month(@shown_month, @first_day_of_week)
+    @event_strips = EventDate.event_strips_for_month(@shown_month, @first_day_of_week)
   end
 
   # GET /events/1
@@ -25,6 +25,7 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new
+    @event.event_dates.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
+
 
     respond_to do |format|
       if @event.save

@@ -11,6 +11,7 @@ class EventLocation < ActiveRecord::Base
   end
 
   def location_tooltip
-    return "#{long_name}, #{street}, #{city}"
+    location_name = long_name.blank? ? short_name : long_name
+    return "#{location_name}, #{street}, #{city}"
   end
 end

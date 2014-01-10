@@ -20,7 +20,7 @@
   <strong>Beginn:</strong> <%= l event_date.start_at, :format=>:long %> <br />
   <strong>Ende:</strong> <%= l event_date.end_at, :format=>:long %> <br />
   <strong>Ort:</strong> <%= link_to_location event_date %> <br />
-  <% if !event_date.additional_description.nil? and event_date.additional_description.length>0 %>
+  <% if !event_date.additional_description.blank? %>
     <strong>Zusatzinfo:</strong> <%= event_date.additional_description %>
   <% end %>
 </p>

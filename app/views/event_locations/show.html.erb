@@ -1,45 +1,47 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title, @event_location.short_name %>
+<section id="event_locations">
+<div class="page-header">
+<h3> <%= @event_location.short_name %> </h3>
+</div>
+  <% if user_signed_in? then %>
+   <p>
+     <%= link_to('Bearbeiten', edit_event_location_path(@event_location)) %> |
+     <%= link_to('Löschen', @event_location, :confirm => 'Sicher?', :method => :delete) %> |
+     <%= link_to 'Zurück zur Übersicht', event_locations_path %> |
+     <%= link_to('Neuer Veranstaltungsort', new_event_location_path) %> ||
+     <%= link_to 'Zurück zum Terminkalender', events_path %>
+   </p>
+  <% end %>
+  <p>
+    <b>Name:</b> <%= @event_location.short_name %>
+  </p>
 
-<p>
-  <b>Name:</b>
-  <%= @event_location.short_name %>
-</p>
+  <p>
+    <b>alternativer Name:</b> <%= @event_location.long_name %>
+  </p>
 
-<p>
-  <b>alternativer Name:</b>
-  <%= @event_location.long_name %>
-</p>
+  <p>
+    <b>Straße:</b> <%= @event_location.street %>
+  </p>
 
-<p>
-  <b>Straße:</b>
-  <%= @event_location.street %>
-</p>
+  <p>
+    <b>Plz:</b> <%= @event_location.zipcode %>
+  </p>
 
-<p>
-  <b>Plz:</b>
-  <%= @event_location.zipcode %>
-</p>
+  <p>
+    <b>Stadt:</b> <%= @event_location.city %>
+  </p>
 
-<p>
-  <b>Stadt:</b>
-  <%= @event_location.city %>
-</p>
+  <p>
+    <b>Land:</b> <%= @event_location.country %>
+  </p>
 
-<p>
-  <b>Land:</b>
-  <%= @event_location.country %>
-</p>
+  <p>
+    <b>geo. Breite:</b> <%= @event_location.lat %>
+  </p>
 
-<p>
-  <b>geo. Breite:</b>
-  <%= @event_location.lat %>
-</p>
+  <p>
+    <b>geo. Länge:</b> <%= @event_location.long %>
+  </p>
 
-<p>
-  <b>geo. Länge:</b>
-  <%= @event_location.long %>
-</p>
-
-
-<%= link_to 'Edit', edit_event_location_path(@event_location) %> |
-<%= link_to 'Back', event_locations_path %>
+</section>

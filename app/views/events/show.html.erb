@@ -13,14 +13,16 @@
    </p>
   <% end %>
   <p>
-    <b>Orchester:</b> <%= @event.orchestra %> <br />
+    <strong>Orchester:</strong> <%= @event.orchestra %> <br />
   </p>
 <% @event.event_dates.each do |event_date| %>
 <p>
-  <b>Beginn:</b> <%= l event_date.start_at, :format=>:long %> <br />
-  <b>Ende:</b> <%= l event_date.end_at, :format=>:long %> <br />
-  <b>Ort:</b> <%= link_to_location event_date %>
-  <b>Zusatzinfo:</b> <%= event_date.additional_description %>
+  <strong>Beginn:</strong> <%= l event_date.start_at, :format=>:long %> <br />
+  <strong>Ende:</strong> <%= l event_date.end_at, :format=>:long %> <br />
+  <strong>Ort:</strong> <%= link_to_location event_date %> <br />
+  <% if !event_date.additional_description.nil? and event_date.additional_description.length>0 %>
+    <strong>Zusatzinfo:</strong> <%= event_date.additional_description %>
+  <% end %>
 </p>
 <% end %>
 <p>

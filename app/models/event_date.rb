@@ -60,8 +60,8 @@ class EventDate < ActiveRecord::Base
     event.description = p.markdown
     event.location = self.location_name
     event.klass = "PUBLIC"
-    event.created = self.created_at
-    event.last_modified = self.updated_at
+    event.created = self.created_at.strftime("%Y%m%dT%H%M%S")
+    event.last_modified = self.updated_at.strftime("%Y%m%dT%H%M%S")
     event.uid = url
     event
   end

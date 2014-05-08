@@ -3,7 +3,7 @@ class InfosController < ApplicationController
   # GET /infos
   # GET /infos.xml
   def index
-    @infos = Info.find(:all, :order=>"created_at DESC")
+    @infos = Info.order("created_at DESC").all
 
     respond_to do |format|
       format.html # index.html.erb

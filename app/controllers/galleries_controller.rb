@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.xml
   def index
-    @galleries = Gallery.find(:all, :order=>"context_date DESC")
+    @galleries = Gallery.order("context_date DESC").all
 
     respond_to do |format|
       format.html # index.html.erb

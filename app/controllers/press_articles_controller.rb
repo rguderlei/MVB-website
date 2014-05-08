@@ -3,7 +3,7 @@ class PressArticlesController < ApplicationController
   # GET /press_articles
   # GET /press_articles.json
   def index
-    @press_articles = PressArticle.find(:all, :order=>"print_date DESC").group_by{ |a| a.print_date.nil? ? 0: a.print_date.year }
+    @press_articles = PressArticle.order("print_date DESC").all().group_by{ |a| a.print_date.nil? ? 0: a.print_date.year }
 
     respond_to do |format|
       format.html # index.html.erb

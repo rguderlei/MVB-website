@@ -10,4 +10,28 @@
 @import 'bourbon';
 @import 'sass/bootstrap-custom.scss';
 
+.calendar.month {
+  width: 100%;
+
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 5px;
+    td {
+      padding: 5px;
+      border: 1px solid #E5E5E5;
+      @include border-radius(5px);
+    }
+
+    th {
+          padding: 5px;
+          border: 1px solid #E5E5E5;
+          @include border-radius(5px);
+    }
+
+  }
+}
+
 

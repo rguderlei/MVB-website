@@ -39,7 +39,8 @@ gem 'date_validator'
 gem 'ckeditor'
 
 #event_calendar
-gem 'event-calendar', :require => 'event_calendar'
+# gem 'event-calendar', :require => 'event_calendar'
+gem 'calendrier'
 gem 'icalendar'
 gem 'html2markdown'
 

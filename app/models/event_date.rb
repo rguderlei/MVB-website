@@ -1,7 +1,7 @@
 class EventDate < ActiveRecord::Base
   attr_accessible :start_at, :event_location_id, :end_at, :event_id, :location, :additional_description
 
-  has_event_calendar
+ # has_event_calendar
 
   belongs_to :event
   belongs_to :event_location

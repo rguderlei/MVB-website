@@ -10,7 +10,28 @@
 </p>
 <% end %>
 
-<%= event_calendar.html_safe %>
+<div class="row">
+  <div class="span1 offset4">
+    <%= link_to events_path(:year=>(@shown_month - 1.month).year, :month=>(@shown_month - 1.month).month) do %>
+        <i class="icon-arrow-left"></i>
+    <% end %>
+  </div>
+  <div class="span2">
+    <strong><%= l(@shown_month, :format=> :month_and_year) %></strong>
+  </div>
+  <div class="span1">
+    <%= link_to events_path(:year=>(@shown_month + 1.month).year, :month=>(@shown_month + 1.month).month) do %>
+            <i class="icon-arrow-right"></i>
+        <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+        <%= calendrier(:year => @year, :month => @month, :day => 1, :start_on_monday => true, :display => :month, :title => "") %>
+  </div>
+</div>
+
 <p>&nbsp;</p>
 <span class="legende sinf">Sinfonieorchester</span> &nbsp;
 <span class="legende skp">Stadtkapelle</span> &nbsp;

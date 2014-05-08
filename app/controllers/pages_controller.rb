@@ -31,7 +31,7 @@ class PagesController < ApplicationController
   # GET /pages/new
   # GET /pages/new.xml
   def new
-    @page = Page.new
+    @page = Page.new(page_params)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -86,5 +86,10 @@ class PagesController < ApplicationController
       format.html { redirect_to(pages_url) }
       format.xml { head :ok }
     end
+  end
+
+  private
+  def page_params
+    params.require(:page).permit(:name, :permalink, :main_content)
   end
 end

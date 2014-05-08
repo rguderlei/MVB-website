@@ -10,7 +10,7 @@ Mvb::Application.routes.draw do
   resources :users
   resources :photos
   resources :galleries
-  resources :events
+  resources :events, only: [:show, :create, :new, :edit, :update, :destroy]
   resources :concerts
   resources :infos
   resources :pages
@@ -27,5 +27,5 @@ Mvb::Application.routes.draw do
 
   get 'admin', :to => 'admin#index'
 
-  get '/events(/:year(/:month))' => 'events#index', :as => :events, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  get '/events(/:year(/:month))', :to => 'events#index', :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 end

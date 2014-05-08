@@ -10,12 +10,14 @@ gem 'protected_attributes'
 gem 'sqlite3'
 gem 'mysql2'
 # Styling Scss
-gem 'sass-rails', "~> 3.2.3"
-gem 'coffee-rails', "~> 3.2.1"
-gem 'uglifier', ">=1.0.3"
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 # use jquery as js framework
-gem 'jquery-rails', '~> 2.3.0'
+gem 'jquery-rails'
+gem "jquery-ui-rails"
+
 gem 'therubyracer'
 gem 'libv8', '~> 3.11.8'
     

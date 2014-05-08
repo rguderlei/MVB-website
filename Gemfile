@@ -1,16 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem 'rails', '4.1.0'
+
+#smooth migration to rails 4
+gem 'protected_attributes'
+
 
 # sqlite as dev database
 gem 'sqlite3'
 gem 'mysql2'
 # Styling Scss
-group :assets do
-    gem 'sass-rails', "~> 3.2.3"
-    gem 'coffee-rails', "~> 3.2.1"
-    gem 'uglifier', ">=1.0.3"
-end
+gem 'sass-rails', "~> 3.2.3"
+gem 'coffee-rails', "~> 3.2.1"
+gem 'uglifier', ">=1.0.3"
+
 # use jquery as js framework
 gem 'jquery-rails', '~> 2.3.0'
 gem 'therubyracer'

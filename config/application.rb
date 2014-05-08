@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :productio
 
 if defined?(Bundler)
-    Bundler.require *Rails.groups(:assets => %w(development test))
+  Bundler.require(:default, Rails.env)
 #  If you want your assets lazily compiled in production,
 #  use this line
     # Bundler.require(:default, :assets, Rails.env)
@@ -31,10 +31,6 @@ module Mvb
     
     # Enable the asset pipeline
     config.assets.enabled = true
-
-    # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
-
 
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.

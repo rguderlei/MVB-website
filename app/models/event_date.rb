@@ -10,8 +10,16 @@ class EventDate < ActiveRecord::Base
   validates :start_at, :date => true
   validates :end_at, :date => { :after=>:start_at }
 
-   def color
-     return (event.orchestra=='Stadtkapelle')? 'blue': (event.orchestra=='Sinfonieorchester')? 'orange': 'green' ;
+   def context_class
+     return (event.orchestra=='Stadtkapelle')? 'skp': (event.orchestra=='Sinfonieorchester')? 'sinf': 'mvb' ;
+   end
+
+   def begin_time
+     start_at
+   end
+
+   def end_time
+     end_at
    end
 
    def location_name

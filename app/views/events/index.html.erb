@@ -28,13 +28,34 @@
 
 <div class="row">
   <div class="span12">
-        <%= calendrier(:year => @year, :month => @month, :day => 1, :start_on_monday => true, :display => :month, :title => "") %>
+        <%= calendrier(:year => @year, :month => @month, :day => 1, :start_on_monday => true, :display => :month, :title => "") do |cell_begin_time, cell_end_time| %>
+        <% if count_sorted_events(@events_by_date, cell_begin_time, cell_end_time) > 0 %>
+          <!-- this code is run only there is at least one event between cell begin and end -->
+
+          <ul>
+          <% yield_sorted_events(@events_by_date, cell_begin_time, cell_end_time) do |obj| %>
+            <!-- you may handle event/meeting/... with the obj variable -->
+            <li>
+              <span class="calendar-event context-<%= obj.context_class %>">
+              <%= link_to obj.event.title[0..14],
+                            polymorphic_path(obj.event), :title => '', :class => 'calendar-event',
+                            :data=>{:placement=>"right", :toggle=>"tooltip", :original_title=>obj.event.title}%></li>
+              </span>
+          <% end %>
+
+          </ul>
+        <% end %>
+
+      <% end %>
   </div>
 </div>
 
 <p>&nbsp;</p>
-<span class="legende sinf">Sinfonieorchester</span> &nbsp;
-<span class="legende skp">Stadtkapelle</span> &nbsp;
-<span class="legende mvb">Gesamtverein</span>
-
+<div class="row">
+<div class="span6">
+  <span class="legende context-sinf">Sinfonieorchester</span> &nbsp;
+  <span class="legende context-skp">Stadtkapelle</span> &nbsp;
+  <span class="legende context-mvb">Gesamtverein</span>
+</div>
+</div>
 </section>

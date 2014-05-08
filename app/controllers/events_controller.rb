@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include Calendrier::EventExtension
   before_filter :authenticate_user!, :except => [:index, :show]
   # GET /events
   # GET /events.xml
@@ -7,7 +8,8 @@ class EventsController < ApplicationController
     @year = (params[:year] || Time.zone.now.year).to_i
     @shown_month = Date.civil(@year, @month)
     @first_day_of_week = 1
-   # @event_strips = EventDate.event_strips_for_month(@shown_month, @first_day_of_week)
+    event_strips = EventDate.where(:start_at => (@shown_month.beginning_of_month .. @shown_month.end_of_month))
+    @events_by_date = sort_events(event_strips)
   end
 
   # GET /events/1

@@ -23,6 +23,7 @@ $(function() {
 
 $(function() {
     $('.event-location').tooltip();
+    $('.calendar-event').tooltip();
 });
 
 

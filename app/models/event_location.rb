@@ -1,6 +1,6 @@
 class EventLocation < ActiveRecord::Base
   #attr_accessible :city, :country, :lat, :long, :long_name, :short_name, :street, :zipcode
-  has_many :events
+  has_many :event_dates
 
   def google_maps_query
       if lat == 0 && long == 0

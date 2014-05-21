@@ -42,7 +42,7 @@ class ConcertsController < ApplicationController
   # POST /concerts
   # POST /concerts.xml
   def create
-    @concert = Concert.new(params[:concert])
+    @concert = Concert.new(concert_params)
 
     respond_to do |format|
       if @concert.save
@@ -61,7 +61,7 @@ class ConcertsController < ApplicationController
     @concert = Concert.find(params[:id])
 
     respond_to do |format|
-      if @concert.update_attributes(params[:concert])
+      if @concert.update_attributes(concert_params)
         format.html { redirect_to(@concert, :notice => 'Concert was successfully updated.') }
         format.xml { head :ok }
       else
@@ -81,5 +81,12 @@ class ConcertsController < ApplicationController
       format.html { redirect_to(concerts_url) }
       format.xml { head :ok }
     end
+  end
+
+  private
+  def concert_params
+    params.require(:concert).permit(:title, :public_event, :image, :image_delete, :description, :orchestra,
+                                    :press_articles_attributes=> [:id, :title, :publisher, :print_date, :article],
+                                    :event_dates_attributes => [:id, :start_at, :event_location_id, :end_at, :additional_description])
   end
 end

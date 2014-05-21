@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :image, :gallery_id
+  #attr_accessible :image, :gallery_id
   belongs_to :gallery
 
   has_attached_file :image, :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

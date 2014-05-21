@@ -1,3 +1,3 @@
 class Info < ActiveRecord::Base
-  attr_accessible :title, :content
+  #attr_accessible :title, :content
 end

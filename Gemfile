@@ -2,10 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '4.1.0'
 
-#smooth migration to rails 4
-gem 'protected_attributes'
-
-
 # sqlite as dev database
 gem 'sqlite3'
 gem 'mysql2'

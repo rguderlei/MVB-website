@@ -41,7 +41,7 @@ class InfosController < ApplicationController
   # POST /infos
   # POST /infos.xml
   def create
-    @info = Info.new(params[:info])
+    @info = Info.new(info_params)
 
     respond_to do |format|
       if @info.save
@@ -60,7 +60,7 @@ class InfosController < ApplicationController
     @info = Info.find(params[:id])
 
     respond_to do |format|
-      if @info.update_attributes(params[:info])
+      if @info.update_attributes(info_params)
         format.html { redirect_to(@info, :notice => 'Info was successfully updated.') }
         format.xml { head :ok }
       else
@@ -80,5 +80,10 @@ class InfosController < ApplicationController
       format.html { redirect_to(infos_url) }
       format.xml { head :ok }
     end
+  end
+
+  private
+  def info_params
+    params.require(:info).permit(:title, :content)
   end
 end

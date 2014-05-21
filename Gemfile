@@ -12,7 +12,7 @@ gem 'uglifier'
 
 # use jquery as js framework
 gem 'jquery-rails'
-gem "jquery-ui-rails"
+gem 'jquery-ui-rails'
 
 gem 'therubyracer'
 gem 'libv8', '~> 3.11.8'

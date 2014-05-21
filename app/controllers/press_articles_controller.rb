@@ -41,7 +41,7 @@ class PressArticlesController < ApplicationController
   # POST /press_articles
   # POST /press_articles.json
   def create
-    @press_article = PressArticle.new(params[:press_article])
+    @press_article = PressArticle.new(press_article_params)
 
     respond_to do |format|
       if @press_article.save
@@ -60,7 +60,7 @@ class PressArticlesController < ApplicationController
     @press_article = PressArticle.find(params[:id])
 
     respond_to do |format|
-      if @press_article.update_attributes(params[:press_article])
+      if @press_article.update_attributes(press_article_params)
         format.html { redirect_to @press_article, notice: 'Press article was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,5 +80,10 @@ class PressArticlesController < ApplicationController
       format.html { redirect_to press_articles_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def press_article_params
+    params.require(:press_article).permit(:title, :publisher, :print_date, :article, :event_id)
   end
 end

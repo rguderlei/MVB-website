@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.xml
   def index
-    @galleries = Gallery.order("context_date DESC").all
+    @galleries = Gallery.order('context_date DESC').all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,14 +42,14 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.xml
   def create
-    @gallery = Gallery.new(params[:gallery])
+    @gallery = Gallery.new(gallery_params)
 
     respond_to do |format|
       if @gallery.save
         format.html { redirect_to(@gallery, :notice => 'Gallery was successfully created.') }
         format.xml { render :xml => @gallery, :status => :created, :location => @gallery }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => 'new' }
         format.xml { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
@@ -61,11 +61,11 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.find(params[:id])
 
     respond_to do |format|
-      if @gallery.update_attributes(params[:gallery])
+      if @gallery.update_attributes(gallery_params)
         format.html { redirect_to(@gallery, :notice => 'Gallery was successfully updated.') }
         format.xml { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.xml { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
@@ -81,5 +81,10 @@ class GalleriesController < ApplicationController
       format.html { redirect_to(galleries_url) }
       format.xml { head :ok }
     end
+  end
+
+  private
+  def gallery_params
+    params.require(:gallery).permit(:name, :context_date, :photos_attributes => [:image, :id])
   end
 end

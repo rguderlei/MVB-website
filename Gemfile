@@ -1,18 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem 'rails', '4.1.1'
 
 # sqlite as dev database
 gem 'sqlite3'
 gem 'mysql2'
 # Styling Scss
-group :assets do
-    gem 'sass-rails', "~> 3.2.3"
-    gem 'coffee-rails', "~> 3.2.1"
-    gem 'uglifier', ">=1.0.3"
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+
 # use jquery as js framework
-gem 'jquery-rails', '~> 2.3.0'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 gem 'therubyracer'
 gem 'libv8', '~> 3.11.8'
     
@@ -34,7 +35,8 @@ gem 'date_validator'
 gem 'ckeditor'
 
 #event_calendar
-gem 'event-calendar', :require => 'event_calendar'
+# gem 'event-calendar', :require => 'event_calendar'
+gem 'calendrier'
 gem 'icalendar'
 gem 'html2markdown'
 

@@ -35,25 +35,6 @@ a.header-image {
     margin-top:1px;
 }
 
-span.legende{
-    @include border-radius(4px);
-    padding: 2px;
-    color: white;
-    font-weight: bold;
-}
-
-span.sinf{
-    background-color: orange;
-}
-
-span.skp{
-    background-color: blue;
-}
-
-span.mvb{
-    background-color: green;
-}
-
 @media (min-width: 1200px) {
   .container,
   .navbar-fixed-top .container,

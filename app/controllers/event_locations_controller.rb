@@ -41,7 +41,7 @@ class EventLocationsController < ApplicationController
   # POST /event_locations
   # POST /event_locations.json
   def create
-    @event_location = EventLocation.new(params[:event_location])
+    @event_location = EventLocation.new(event_location_params)
 
     respond_to do |format|
       if @event_location.save
@@ -60,7 +60,7 @@ class EventLocationsController < ApplicationController
     @event_location = EventLocation.find(params[:id])
 
     respond_to do |format|
-      if @event_location.update_attributes(params[:event_location])
+      if @event_location.update_attributes(event_location_params)
         format.html { redirect_to @event_location, notice: 'Event location was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,5 +80,10 @@ class EventLocationsController < ApplicationController
       format.html { redirect_to event_locations_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def event_location_params
+    params.require(:event_location).permit(:city, :country, :lat, :long, :long_name, :short_name, :street, :zipcode)
   end
 end

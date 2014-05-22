@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :public_event, :description, :orchestra, :press_articles, :press_articles_attributes, :event_dates, :event_dates_attributes
+  #attr_accessible :title, :public_event, :description, :orchestra, :press_articles, :press_articles_attributes, :event_dates, :event_dates_attributes
 
   validates :title, :orchestra, :presence => true
 

@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery-ui
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require bootstrap-dropdown
 //= require bootstrap-collapse
@@ -23,6 +23,7 @@ $(function() {
 
 $(function() {
     $('.event-location').tooltip();
+    $('.calendar-event').tooltip();
 });
 
 

@@ -1,6 +1,6 @@
 Mvb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+  config.eager_load = true
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -47,7 +47,7 @@ Mvb::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   # Compress JavaScript and CSS
-  config.assets.compress = true
+  config.assets.js_compressor = :uglifier
 
   # Don't fallback to assets pipeline
   config.assets.compile = false

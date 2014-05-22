@@ -47,7 +47,7 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.xml
   def create
-    @page = Page.new(params[:page])
+    @page = Page.new(page_params)
 
     respond_to do |format|
       if @page.save
@@ -66,7 +66,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
 
     respond_to do |format|
-      if @page.update_attributes(params[:page])
+      if @page.update_attributes(page_params)
         format.html { redirect_to(@page, :notice => 'Page was successfully updated.') }
         format.xml { head :ok }
       else
@@ -86,5 +86,10 @@ class PagesController < ApplicationController
       format.html { redirect_to(pages_url) }
       format.xml { head :ok }
     end
+  end
+
+  private
+  def page_params
+    params.require(:page).permit(:name, :permalink, :main_content)
   end
 end

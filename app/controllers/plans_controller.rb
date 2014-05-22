@@ -56,7 +56,7 @@ class PlansController < ApplicationController
   # POST /pages
   # POST /pages.xml
   def create
-    @plan = Plan.new(params[:plan])
+    @plan = Plan.new(plan_params)
 
     respond_to do |format|
       if @plan.save
@@ -75,7 +75,7 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
 
     respond_to do |format|
-      if @plan.update_attributes(params[:plan])
+      if @plan.update_attributes(plan_params)
         format.html { redirect_to(@plan, :notice => 'plan was successfully updated.') }
         format.xml { head :ok }
       else
@@ -83,6 +83,11 @@ class PlansController < ApplicationController
         format.xml { render :xml => @plan.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  private
+  def plan_params
+    params.require(:plan).permit(:header, :orchestra)
   end
 
 

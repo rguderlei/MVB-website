@@ -10,6 +10,7 @@ de:
       short: "%e. %b"
       long: "%e. %B %Y"
       only_day: "%e"
+      month_and_year: "%B %Y"
 
 
     day_names:

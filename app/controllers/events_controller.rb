@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include Calendrier::EventExtension
   before_filter :authenticate_user!, :except => [:index, :show]
   # GET /events
   # GET /events.xml
@@ -7,7 +8,8 @@ class EventsController < ApplicationController
     @year = (params[:year] || Time.zone.now.year).to_i
     @shown_month = Date.civil(@year, @month)
     @first_day_of_week = 1
-    @event_strips = EventDate.event_strips_for_month(@shown_month, @first_day_of_week)
+    event_strips = EventDate.where(:start_at => (@shown_month.beginning_of_month .. @shown_month.end_of_month))
+    @events_by_date = sort_events(event_strips)
   end
 
   # GET /events/1
@@ -41,7 +43,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
 
 
     respond_to do |format|
@@ -61,7 +63,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(event_params)
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
         format.xml { head :ok }
       else
@@ -81,5 +83,12 @@ class EventsController < ApplicationController
       format.html { redirect_to(events_url) }
       format.xml { head :ok }
     end
+  end
+
+  private
+  def event_params
+    params.require(:event).permit(:title, :public_event, :description, :orchestra,
+                                  :press_articles_attributes => [:id, :title, :publisher, :print_date, :article],
+                                  :event_dates_attributes => [:id, :start_at, :event_location_id, :end_at, :additional_description])
   end
 end

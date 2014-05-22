@@ -44,7 +44,7 @@ ein Text erfasst werden, der vor den Terminen im Probeplan angezeigt wird.
 
 Developer Guide
 ---------------
-Die Seite wird mit [Ruby on Rails](http://www.rubyonrails.org) 3.2.x gebaut.
+Die Seite wird mit [Ruby on Rails](http://www.rubyonrails.org) 4.1.x gebaut.
 Neben Rails kommen noch die folgenden Gems zum Einsatz:
 
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/) bzw. [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) zum Layouting
@@ -53,6 +53,5 @@ Neben Rails kommen noch die folgenden Gems zum Einsatz:
 - [Paperclip](https://github.com/thoughtbot/paperclip) zum Management von Files.
 - [ckeditor](https://github.com/galetahub/rails-ckeditor) als WYSIWYG-Editor der CMS-Komponente
 - [devise](https://github.com/plataformatec/devise) zur Authentifizierung
-- [EventCalendar](https://github.com/elevation/event_calendar) zur Darstellung der Termine
 - [iCalendar](http://icalendar.rubyforge.org/) um Termine im iCal-Format anzubieten
 

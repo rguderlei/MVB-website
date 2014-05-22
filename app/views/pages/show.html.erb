@@ -1,12 +1,21 @@
 <% content_for :title, @page.name %>
 <div class="page-header">
-    <h3><%= @page.name %></h3>
+  <div class="row">
+    <div class="span10">
+      <h3><%= @page.name %></h3>
+    </div>
+    <div class="span2">
+      <% if user_signed_in? then %>
+          <%= link_to('Bearbeiten', edit_page_path(@page), :class => 'btn btn-primary') %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<%= @page.main_content.html_safe %>
+<div class="row">
+  <div class="span12"><%= @page.main_content.html_safe %></div>
+</div>
 
-<% if user_signed_in? then %>
-    <br />
-    <%= link_to('Bearbeiten', edit_page_path(@page)) %> | <%= link_to('Zurück zur Übersicht', pages_path) %>
-<% end %>
+
+
 

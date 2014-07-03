@@ -54,5 +54,5 @@ Mvb::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-  config.assets.precompile += %w( application-print.css '*.png')
+  config.assets.precompile += %w( application-print.css 'glyphicons-halflings.png' 'glyphicons-halflings-white.png')
 end

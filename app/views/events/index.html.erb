@@ -41,7 +41,7 @@
             <!-- you may handle event/meeting/... with the obj variable -->
             <li>
               <span class="calendar-event context-<%= obj.context_class %>">
-              <%= link_to obj.event.title[0..13],
+              <%= link_to obj.event.title,
                             polymorphic_path(obj.event), :title => '', :class => 'calendar-event',
                             :data=>{:placement=>"right", :toggle=>"tooltip", :original_title=>obj.event.title}%></li>
               </span>

@@ -53,6 +53,12 @@ span.calendar-event {
   @include border-radius(4px);
   padding: 5px;
   display:inline-block;
+  a {
+    display:inline;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    hyphens: auto;
+  }
 }
 
 span.legende{

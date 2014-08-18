@@ -1,7 +1,8 @@
-$darkRed: #A61F2B;
+$darkRed: #9e2639;
 $linkColor: $darkRed;
 $gridColumnWidth1200: 60px;
 $gridGutterWidth1200: 20px;
+$baseFontFamily: 'Fira Sans', sans-serif;
 
 @import "bootstrap";
 @import "bootstrap-responsive";
@@ -28,6 +29,7 @@ a.header-image {
 
         margin-top:5px;
         @include border-radius(6px);
+        border: 1px lighten($grayLight, 30%) solid;
     }
 }
 

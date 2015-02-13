@@ -5,10 +5,11 @@
   <div class="span8">
     <h3>Termine</h3>
   </div>
+  </div>
+  <div class="row">
   <div class="span4">
     <% if user_signed_in? then %>
-        <%= link_to('Neuer Termin', new_event_path, :class=>'btn btn-primary') %>
-        <%= link_to('Neues Konzert', new_concert_path, :class=>'btn btn-primary') %>
+        <%= link_to('Neuer Termin', new_event_path) %> | <%= link_to('Neues Konzert', new_concert_path) %>
     <% end %>
   </div>
 </div>

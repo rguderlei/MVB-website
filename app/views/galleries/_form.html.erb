@@ -20,7 +20,8 @@
           <% end %>
         </div>
     <% end %>
+      <p><%= f.link_to_add "Bild hinzufügen", :photos, :class=>"btn" %></p>
     </ul>
-    <p><%= f.link_to_add "Bild hinzufügen", :photos, :class=>"btn" %></p>
+
    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

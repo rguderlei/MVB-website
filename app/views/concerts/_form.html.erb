@@ -9,7 +9,7 @@
         <%= date_form.association :event_location, :label=>'Veranstaltungsort', :label_method=>:short_name %>
         <%= date_form.input :additional_description, :label => 'Zusatzinfo zum Termin', :as=>:string %>
     <% end %>
-    <p><%= f.link_to_add 'Termin hinzufügen', :event_dates, :class=>'btn btn-primary' %></p>
+    <p><%= f.link_to_add 'weiteren Termin hinzufügen', :event_dates, :class=>'btn btn-small' %></p>
 
     <div class="field">
       <% if f.object.image? %>
@@ -41,5 +41,5 @@
 
     <p><%= f.link_to_add 'Artikel hinzufügen', :press_articles %></p>
     
-    <%= f.button :submit, 'Speichern', :class=>'btn btn-info' %>
+    <%= f.button :submit, 'Speichern', :class=>'btn btn-danger' %>
 <% end %>

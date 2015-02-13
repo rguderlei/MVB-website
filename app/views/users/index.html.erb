@@ -13,7 +13,7 @@
           <tr>
             <td><%= user.email %> </td>
             <td><%= link_to 'Bearbeiten', edit_user_path(user) %></td>
-            <td><%= link_to 'Löschen', user, :confirm => 'Sicher?', :method => :delete %></td>
+            <td><%= link_to 'Löschen', user, data: { confirm: "Soll der Benutzer wirklich gelöscht werden?" }, :method => :delete %></td>
           </tr>
       <% end %>
     </table>

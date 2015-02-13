@@ -9,7 +9,7 @@
   <p>
     <% if user_signed_in? then %>
         <%= link_to 'Bearbeiten', edit_gallery_path(@gallery) %>   |
-        <%= link_to('Löschen', @gallery, :confirm => 'Sicher?', :method => :delete) %> |
+        <%= link_to('Löschen', @gallery, data: { confirm: "Soll die Bildergallerie wirklich gelöscht werden?" }, :method => :delete) %> |
     <% end %>
     <%= link_to 'Zurück zur Übersicht', galleries_path %>
   </p>

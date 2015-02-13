@@ -16,7 +16,7 @@
        <%= link_to 'Anzeigen', info %>
        <% if user_signed_in? then %>
            | <%= link_to 'Bearbeiten', edit_info_path(info) %> |
-           <%= link_to 'Löschen', info, :confirm => 'Sicher?', :method => :delete %>
+           <%= link_to 'Löschen', info, data: { confirm: "Soll die Meldung wirklich gelöscht werden?" }, :method => :delete %>
        <% end %>
      </div>
    </div>

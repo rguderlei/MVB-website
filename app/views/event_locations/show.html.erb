@@ -6,7 +6,7 @@
   <% if user_signed_in? then %>
    <p>
      <%= link_to('Bearbeiten', edit_event_location_path(@event_location)) %> |
-     <%= link_to('Löschen', @event_location, :confirm => 'Sicher?', :method => :delete) %> |
+     <%= link_to('Löschen', @event_location, data: { confirm: "Soll der Veranstaltungsort wirklich gelöscht werden?" }, :method => :delete) %> |
      <%= link_to 'Zurück zur Übersicht', event_locations_path %> |
      <%= link_to('Neuer Veranstaltungsort', new_event_location_path) %> ||
      <%= link_to 'Zurück zum Terminkalender', events_path %>

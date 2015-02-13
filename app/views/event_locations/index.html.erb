@@ -29,7 +29,7 @@
             <td><%= event_location.long_name %></td>
             <td><%= link_to 'Anzeigen', event_location %></td>
             <td><%= link_to('Bearbeiten', edit_event_location_path(event_location)) if user_signed_in? %></td>
-            <td><%= link_to('Löschen', event_location, method: :delete, data: { confirm: 'Are you sure?' }) if user_signed_in? %></td>
+            <td><%= link_to('Löschen', event_location, method: :delete, data: { confirm: 'Soll der Veranstaltungsort wirklich gelöscht werden?' }) if user_signed_in? %></td>
           </tr>
       <% end %>
     </table>

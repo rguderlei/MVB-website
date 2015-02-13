@@ -7,7 +7,7 @@
   <% if user_signed_in? then %>
       <p>
         <%= link_to('Bearbeiten', edit_concert_path(@concert)) %> |
-        <%= link_to('Löschen', @concert, :confirm => 'Sicher?', :method => :delete) %> |
+        <%= link_to('Löschen', @concert, data: { confirm: "Soll das Konzert wirklich gelöscht werden?" }, :method => :delete) %> |
         <%= link_to 'Zurück zum Terminkalender', events_path %> |
         <%= link_to('Neuer Termin', new_event_path) %> |
         <%= link_to('Neues Konzert', new_concert_path) %>

@@ -1,26 +1,39 @@
 <h3>Veranstaltungsorte</h3>
+<div class="row">
+  <div class="span6">
+    <%= link_to('Neuen Veranstaltungsort anlegen', new_event_location_path) if user_signed_in? %>
+  </div>
+</div>
 
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>alt. Name</th>
+<div class="row">
+  <div class="span6">
+    &nbsp;
+  </div>
+</div>
 
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row">
+  <div class="span12">
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>alt. Name</th>
 
-<% @event_locations.each do |event_location| %>
-  <tr>
-    <td><%= event_location.short_name %></td>
-    <td><%= event_location.long_name %></td>
-    <td><%= link_to 'Anzeigen', event_location %></td>
-    <td><%= link_to('Bearbeiten', edit_event_location_path(event_location)) if user_signed_in? %></td>
-    <td><%= link_to('Löschen', event_location, method: :delete, data: { confirm: 'Are you sure?' }) if user_signed_in? %></td>
-  </tr>
-<% end %>
-</table>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<br />
+      <% @event_locations.each do |event_location| %>
+          <tr>
+            <td><%= event_location.short_name %></td>
+            <td><%= event_location.long_name %></td>
+            <td><%= link_to 'Anzeigen', event_location %></td>
+            <td><%= link_to('Bearbeiten', edit_event_location_path(event_location)) if user_signed_in? %></td>
+            <td><%= link_to('Löschen', event_location, method: :delete, data: { confirm: 'Are you sure?' }) if user_signed_in? %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
-<%= link_to('Neuen Veranstaltungsort anlegen', new_event_location_path) if user_signed_in? %>
+

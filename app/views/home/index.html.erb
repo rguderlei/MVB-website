@@ -1,47 +1,48 @@
-<section id="aktuelles">
+<main id="aktuelles">
 
-<div class="row">
-    <div class="span4">
-      <h3>Aktuelles</h3>
-      <h4><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h4>
-      <p><%=  @latest_info.nil? ? "" : truncate(@latest_info.content, omission: '', length:250, separator: ' ') {link_to ' ...', @latest_info}  %>
-      <p><%= link_to 'Weitere Meldungen ...',infos_url %>  </p>
-    </div>
-    <div class="span4">
-        <h3>Sinfonieorchester</h3>
-          <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
-          <% if !@next_sinf_concert.nil? %>
-            <h4><%= @next_sinf_concert.title %></h4>
-            <small>
-              <% @next_sinf_concert.event_dates.each do |event_date| %>
+<section>
+  <article>
+    <h3>Aktuelles</h3>
+    <h4><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h4>
+    <p><%=  @latest_info.nil? ? "" : truncate(@latest_info.content, omission: '', length:250, separator: ' ') {link_to ' ...', @latest_info}  %>
+    <p><%= link_to 'Weitere Meldungen ...',infos_url %>  </p>
+  </article>
+
+  <article>
+    <h3>Sinfonieorchester</h3>
+    <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
+    <% if !@next_sinf_concert.nil? %>
+        <h4><%= @next_sinf_concert.title %></h4>
+        <small>
+          <% @next_sinf_concert.event_dates.each do |event_date| %>
               <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
-              <% end %>
-            </small>
-            <ul class="thumbnails">
-                <li>
-                    <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
-                </li>
-            </ul>
           <% end %>
-    </div>
-    <div class="span4">
-          <h3>Stadtkapelle</h3>
-          <a href="probenplan/Stadtkapelle">Probenplan</a>
-          <% if !@next_skp_concert.nil? %>
-            <h4><%= @next_skp_concert.title %></h4>
-            <small>
-              <% @next_skp_concert.event_dates.each do |event_date| %>
+        </small>
+        <ul class="thumbnails">
+          <li>
+            <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
+          </li>
+        </ul>
+    <% end %>
+  </article>
+
+  <article>
+    <h3>Stadtkapelle</h3>
+    <a href="probenplan/Stadtkapelle">Probenplan</a>
+    <% if !@next_skp_concert.nil? %>
+        <h4><%= @next_skp_concert.title %></h4>
+        <small>
+          <% @next_skp_concert.event_dates.each do |event_date| %>
               <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
-              <% end %>
-            </small>
-            <ul class="thumbnails">
-                <li>
-                    <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
-                </li>
-            </ul>
           <% end %>
-    </div>
-</div>
+        </small>
+        <ul class="thumbnails">
+          <li>
+            <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
+          </li>
+        </ul>
+    <% end %>
+  </article>
 </section>
 
 <section id="termine">
@@ -68,5 +69,6 @@
         <div class="span12"><hr class="list-separator"></div>
       </div>
       <% end %>
-
 </section>
+
+</main>

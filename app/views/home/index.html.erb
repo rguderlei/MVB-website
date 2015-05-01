@@ -1,14 +1,14 @@
 <main id="aktuelles">
 
 <section>
-  <article>
+  <article class="col-3">
     <h3>Aktuelles</h3>
     <h4><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h4>
     <p><%=  @latest_info.nil? ? "" : truncate(@latest_info.content, omission: '', length:250, separator: ' ') {link_to ' ...', @latest_info}  %>
     <p><%= link_to 'Weitere Meldungen ...',infos_url %>  </p>
   </article>
 
-  <article>
+  <article class="col-3">
     <h3>Sinfonieorchester</h3>
     <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
     <% if !@next_sinf_concert.nil? %>
@@ -26,7 +26,7 @@
     <% end %>
   </article>
 
-  <article>
+  <article class="col-3">
     <h3>Stadtkapelle</h3>
     <a href="probenplan/Stadtkapelle">Probenplan</a>
     <% if !@next_skp_concert.nil? %>
@@ -46,6 +46,7 @@
 </section>
 
 <section id="termine">
+  <article class="col-1">
     <div class="page-header">
         <h3>Nächste Konzerte des Musikvereins</h3>
     </div>
@@ -69,6 +70,7 @@
         <div class="span12"><hr class="list-separator"></div>
       </div>
       <% end %>
+  </article>
 </section>
 
 </main>

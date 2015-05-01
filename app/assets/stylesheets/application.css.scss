@@ -12,68 +12,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'sass/bootstrap-custom.scss';
+@import "sass/calendar";
 
-.calendar.month {
-  width: 100%;
-
-
-  table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 5px;
-    td {
-      padding: 5px;
-      border: 1px solid #E5E5E5;
-      border-radius: 5px;
-      vertical-align: top;
-
-      ul {
-        list-style-type: none;
-        margin-top: 10px;
-        margin-left:0;
-        li {
-           margin-top: 15px;
-           a {
-             color: white;
-           }
-        }
-      }
-    }
-
-    th {
-      padding: 5px;
-      border: 1px solid #E5E5E5;
-      border-radius: 5px;
-      background-color: #E5E5E5;
-    }
-
-  }
+section {
+  @include make-row();
 }
 
-span.calendar-event {
-  border-radius: 5px;
-  padding: 5px;
-  display:inline-block;
+article.col-1 {
+  @include make-md-column(12);
 }
 
-span.legende{
-    border-radius: 5px;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
+article.col-3 {
+  @include make-md-column(4);
 }
-
-span.context-sinf{
-    background-color: orange;
-}
-
-span.context-skp{
-    background-color: blue;
-}
-
-span.context-mvb{
-    background-color: green;
-}
-
-

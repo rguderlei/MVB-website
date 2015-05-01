@@ -1,12 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 
 # sqlite as dev database
 gem 'sqlite3'
 gem 'mysql2'
 # Styling Scss
-gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
+gem 'bourbon' # Bourbon css3/sass mixins
 gem 'coffee-rails'
 gem 'uglifier'
 
@@ -16,9 +18,6 @@ gem 'jquery-ui-rails'
 
 gem 'therubyracer'
 gem 'libv8', '~> 3.11.8'
-    
-gem 'bourbon' # Bourbon css3/sass mixins
-gem 'bootstrap-sass', '~> 2.3.0.1'
 
 # use paperclip to handle attachments
 gem 'paperclip'
@@ -35,7 +34,6 @@ gem 'date_validator'
 gem 'ckeditor'
 
 #event_calendar
-# gem 'event-calendar', :require => 'event_calendar'
 gem 'calendrier'
 gem 'icalendar'
 gem 'html2markdown'

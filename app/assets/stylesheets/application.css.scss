@@ -8,20 +8,12 @@
 *= require_self
 */
 
+
 @import 'bourbon';
 @import "bootstrap-sprockets";
+@import "sass/variables";
 @import "bootstrap";
 @import 'sass/bootstrap-custom.scss';
 @import "sass/calendar";
 
-section {
-  @include make-row();
-}
 
-article.col-1 {
-  @include make-md-column(12);
-}
-
-article.col-3 {
-  @include make-md-column(4);
-}

@@ -1,22 +1,3 @@
-$darkRed: #9e2639;
-$lightBlue: #009de0;
-$linkColor: $darkRed;
-$gridColumnWidth1200: 60px;
-$gridGutterWidth1200: 20px;
-$baseFontFamily: 'Fira Sans', sans-serif;
-
-@import url(http://fonts.googleapis.com/css?family=Fira+Sans);
-
-.footer {
-    border-top: 1px solid #E5E5E5;
-    margin-top: 45px;
-    padding: 35px 0 36px;
-}
-
-.hero-unit {
-   background-color: lighten($gray-light, 30%);
-   padding: 10px;
-}
 
 a.header-image {
 
@@ -30,18 +11,6 @@ a.header-image {
         border-radius: 5px;
         border: 1px lighten($gray-light, 30%) solid;
     }
-}
-
-.content-wrapper{
-    margin-top:1px;
-}
-
-@media (min-width: 1200px) {
-  .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
-    width: 940px;
-  }
 }
 
 hr.list-separator {

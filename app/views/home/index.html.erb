@@ -53,13 +53,13 @@
 
       <% @next_concerts.each do |event| %>
       <div class="row">
-        <div class="span5">
+        <div class="col-md-5">
           <%= link_to event.title, event %> (<%= event.orchestra %>)
         </div>
-        <div class="span7">
+        <div class="col-md-7">
           <% event.event_dates.each do |event_date| %>
           <div class="row">
-            <div class="span7">
+            <div class="col-md-7">
               <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %>
             </div>
           </div>
@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="span12"><hr class="list-separator"></div>
+        <div class="col-md-12"><hr class="list-separator"></div>
       </div>
       <% end %>
   </article>

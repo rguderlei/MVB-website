@@ -1,5 +1,10 @@
-<%= simple_form_for(@plan, :html => {:class => 'form-horizontal' }) do |f| %>
-    <%= f.input :orchestra, :label=>'Orchester', :collection=>['Stadtkapelle', 'Sinfonieorchester' ] %>
-    <%= f.cktext_area :header %>
-    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
+<%= bootstrap_form_for(@plan, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    <%= f.select :orchestra, ['Stadtkapelle', 'Sinfonieorchester' ], :label=>'Orchester' %>
+    <div class="form-group">
+      <%= f.cktext_area :header %>
+    </div>
+    <p>
+      <%= f.submit 'Speichern', :class=>'btn btn-primary' %>
+    </p>
+
 <% end %>

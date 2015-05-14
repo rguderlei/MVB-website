@@ -1,40 +1,54 @@
 <% content_for :title, "Probenplan " + @plan.orchestra %>
-<section id="probenplan">
-  <div class="page-header">
-    <h3><%= yield :title %></h3>
-  </div>
-<p><small>Stand: <%= l Date.today, :format=>:long %> </small></p>
-<p class="noprint">
-   Probenplan als iCalendar: <%= link_to request.url + '.ics', :format=>:ics %>
-</p>
+<section>
+  <article class="col-1">
+      <div class="page-header">
+        <h3><%= yield :title %></h3>
+      </div>
+      <p>
+        <small>Stand: <%= l Date.today, :format => :long %> </small>
+      </p>
+      <p class="noprint">
+        Probenplan als iCalendar: <%= link_to request.url + '.ics', :format => :ics %>
+      </p>
+  </article>
+</section>
 
-
-<div class="probenplan_anmerkung">
-  <%= link_to('Bearbeiten', edit_plan_path(@plan), :class=>'noprint') if user_signed_in? %>
-  <p><%= @plan.header.html_safe %></p>
-</div>
-  <div class="row">
-       <div class="span12"><hr></div>
-    </div>
 <div class="row">
-  <div class="span2"><b>Beginn</b></div>
-  <div class="span2">Ort</div>
-  <div class="span7">Veranstaltung</div>
-  <div class="span1 noprint"></div>
+    <div class="probenplan_anmerkung col-md-12">
+      <%= link_to('Bearbeiten', edit_plan_path(@plan), :class => 'noprint') if user_signed_in? %>
+      <p><%= @plan.header.html_safe %></p>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-2"><b>Beginn</b></div>
+  <div class="col-md-2">Ort</div>
+  <div class="col-md-7">Veranstaltung</div>
+  <div class="col-md-1 noprint"></div>
 </div>
 
 <% @events.each do |event| %>
-      <div class="row">
-           <div class="span12"><hr></div>
-        </div>
-      <div class="row">
-        <div class="span2"><%= l event.start_at, :format=>:date_and_day %><br><%= l event.start_at, :format=>:time %></div>
-        <div class="span2"><%= link_to_location event %></div>
-        <div class="span7"><b><%= event.event.title %></b> <br> <%= event.event.description.html_safe %></div>
-        <div class="span1 noprint"><%= link_to 'Anzeigen', polymorphic_path(event.event) %></div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"><%= l event.start_at, :format => :date_and_day %><br><%= l event.start_at, :format => :time %>
+      </div>
+      <div class="col-md-2"><%= link_to_location event %></div>
+      <div class="col-md-7"><b><%= event.event.title %></b> <br> <%= event.event.description.html_safe %></div>
+      <div class="col-md-1 noprint"><%= link_to 'Anzeigen', polymorphic_path(event.event) %></div>
+    </div>
 <% end %>
-  <div class="row">
-     <div class="span12"><hr class="list-separator"></div>
+<div class="row">
+  <div class="col-md-12">
+    <hr class="list-separator">
   </div>
-</section>
+</div>

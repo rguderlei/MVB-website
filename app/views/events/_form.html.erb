@@ -9,7 +9,7 @@
     <%= f.fields_for :event_dates do |date_form| %>
         <%= date_form.datetime_field :start_at, :label=>'Beginn', :class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit)  %>
         <%= date_form.datetime_field :end_at, :label=>'Ende', :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit) %>
-        <%= date_form.collection_select :event_location, EventLocation.all, :id, :short_name, :label=>'Veranstaltungsort' %>
+        <%= date_form.collection_select :event_location_id, EventLocation.all, :id, :short_name, :label=>'Veranstaltungsort' %>
         <%= date_form.text_field :additional_description, :label => 'Zusatzinfo zum Termin' %>
     <% end %>
     <p><%= f.link_to_add 'weiteren Termin hinzufügen', :event_dates, :class=>'btn btn-small' %></p>

@@ -1,40 +1,46 @@
-<%= simple_nested_form_for(@event, :html => {:class => 'form-horizontal', :multipart => true }) do |f| %>
-    <%= f.input :title, :label=>'Titel'  %>
-    <%= f.input :orchestra, :label=>'Betrifft', :collection=>['Stadtkapelle', 'Sinfonieorchester' ,'Gesamtverein' ] %>
-    <%= f.input :public_event, :label=>'öffentlicher Auftritt?' %>
+<%= bootstrap_nested_form_for(@event, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    <%= f.text_field :title, :label=>'Titel'  %>
+    <%= f.select :orchestra, ['Stadtkapelle', 'Sinfonieorchester' ,'Gesamtverein'], :label=>'Betrifft' %>
+    <div class="form-group">
+        <%= f.check_box :public_event, :label=>'öffentlicher Auftritt?' %>
+    </div>
 
-    <h5>Termine</h5>
-    <%= f.simple_fields_for :event_dates do |date_form| %>
-        <%= date_form.input :start_at, :label=>'Beginn', :as=>:string, :input_html => {:class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit) } %>
-        <%= date_form.input :end_at, :label=>'Ende', :as=>:string, :input_html => { :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit)} %>
-        <%= date_form.association :event_location, :label=>'Veranstaltungsort', :label_method=>:short_name %>
-        <%= date_form.input :additional_description, :label => 'Zusatzinfo zum Termin', :as=>:string %>
+    <h3>Termine</h3>
+    <%= f.fields_for :event_dates do |date_form| %>
+        <%= date_form.datetime_field :start_at, :label=>'Beginn', :class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit)  %>
+        <%= date_form.datetime_field :end_at, :label=>'Ende', :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit) %>
+        <%= date_form.collection_select :event_location, EventLocation.all, :id, :short_name, :label=>'Veranstaltungsort' %>
+        <%= date_form.text_field :additional_description, :label => 'Zusatzinfo zum Termin' %>
     <% end %>
     <p><%= f.link_to_add 'weiteren Termin hinzufügen', :event_dates, :class=>'btn btn-small' %></p>
 
-    <h5>Beschreibung</h5>
-    <%= f.cktext_area :description %>
+    <h3>Beschreibung</h3>
+    <div class="form-group">
+      <%= f.cktext_area :description %>
+    </div>
 
-    <h5>Presseberichte</h5>
+    <h3>Presseberichte</h3>
 
-      <%= f.simple_fields_for :press_articles do |article_form| %>
+      <%= f.fields_for :press_articles do |article_form| %>
           <div class="well">
             <h3>Artikel</h3>
-            <%= article_form.input :title, :label => 'Titel', :as => :string %>
-            <%= article_form.input :publisher, :label => 'Quelle', :as => :string %>
-            <%= article_form.input :print_date, :label => 'Datum', :as => :string, :input_html => {:class => 'datepicker', :value => article_form.object.print_date.nil? ? '' : l(article_form.object.print_date)} %>
+            <%= article_form.text_field :title, :label => 'Titel' %>
+            <%= article_form.text_field :publisher, :label => 'Quelle' %>
+            <%= article_form.datetime_field :print_date, :label => 'Datum', :class => 'datepicker', :value => article_form.object.print_date.nil? ? '' : l(article_form.object.print_date) %>
             <div class="field">
               <% if article_form.object.article? %>
                   <%= article_form.object.article_file_name %>
                   <%= article_form.link_to_remove 'Datei löschen' %>
               <% else %>
-                  <%= article_form.input :article, :as => :file, :label => 'Datei' %>
+                  <%= article_form.file_field :article, :label => 'Datei' %>
               <% end %>
             </div>
           </div>
       <% end %>
 
     <p><%= f.link_to_add 'Artikel hinzufügen', :press_articles %></p>
-
-    <%= f.button :submit, 'Speichern', :class=>'btn btn-danger' %>
+    <p>
+      <%= f.submit 'Speichern', :class=>'btn btn-primary' %>
+      <%= link_to 'Zurück', events_path , :class=>"btn btn-default"%>
+    </p>
 <% end %>

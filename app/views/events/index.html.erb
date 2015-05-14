@@ -1,66 +1,65 @@
 <% content_for :title, "Termine" %>
-<section id="events">
-<div class="page-header">
-<div class="row">
-  <div class="span8">
-    <h3>Termine</h3>
-  </div>
-  </div>
-  <div class="row">
-  <div class="span4">
-    <% if user_signed_in? then %>
-        <%= link_to('Neuer Termin', new_event_path) %> | <%= link_to('Neues Konzert', new_concert_path) %>
-    <% end %>
-  </div>
-</div>
-</div>
 
-<div class="row">
-  <div class="span1 offset4">
-    <%= link_to events_path(:year=>(@shown_month - 1.month).year, :month=>(@shown_month - 1.month).month) do %>
-        <i class="icon-arrow-left"></i>
-    <% end %>
-  </div>
-  <div class="span2">
-    <strong><%= l(@shown_month, :format=> :month_and_year) %></strong>
-  </div>
-  <div class="span1">
-    <%= link_to events_path(:year=>(@shown_month + 1.month).year, :month=>(@shown_month + 1.month).month) do %>
-            <i class="icon-arrow-right"></i>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Termine</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <% if user_signed_in? then %>
+            <%= link_to('Neuer Termin', new_event_path) %> | <%= link_to('Neues Konzert', new_concert_path) %>
         <% end %>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="span12">
-        <%= calendrier(:year => @year, :month => @month, :day => 1, :start_on_monday => true, :display => :month, :title => "") do |cell_begin_time, cell_end_time| %>
-        <% if count_sorted_events(@events_by_date, cell_begin_time, cell_end_time) > 0 %>
-          <!-- this code is run only there is at least one event between cell begin and end -->
+  <div class="row">
+    <div class="col-md-1 col-md-offset-4">
+      <%= link_to events_path(:year=>(@shown_month - 1.month).year, :month=>(@shown_month - 1.month).month) do %>
+          <i class="glyphicon glyphicon-arrow-left"></i>
+      <% end %>
+    </div>
+    <div class="col-md-2">
+      <strong><%= l(@shown_month, :format=> :month_and_year) %></strong>
+    </div>
+    <div class="col-md-1">
+      <%= link_to events_path(:year=>(@shown_month + 1.month).year, :month=>(@shown_month + 1.month).month) do %>
+          <i class="glyphicon glyphicon-arrow-right"></i>
+      <% end %>
+    </div>
+  </div>
 
-          <ul>
-          <% yield_sorted_events(@events_by_date, cell_begin_time, cell_end_time) do |obj| %>
-            <!-- you may handle event/meeting/... with the obj variable -->
-            <li>
+  <div class="row">
+    <div class="col-md-12">
+      <%= calendrier(:year => @year, :month => @month, :day => 1, :start_on_monday => true, :display => :month, :title => "") do |cell_begin_time, cell_end_time| %>
+          <% if count_sorted_events(@events_by_date, cell_begin_time, cell_end_time) > 0 %>
+              <!-- this code is run only there is at least one event between cell begin and end -->
+
+              <ul>
+                <% yield_sorted_events(@events_by_date, cell_begin_time, cell_end_time) do |obj| %>
+                    <!-- you may handle event/meeting/... with the obj variable -->
+                    <li>
               <span class="calendar-event context-<%= obj.context_class %>">
-              <%= link_to obj.event.title[0..13],
-                            polymorphic_path(obj.event), :title => '', :class => 'calendar-event',
-                            :data=>{:placement=>"right", :toggle=>"tooltip", :original_title=>obj.event.title}%></li>
-              </span>
+                      <%= link_to obj.event.title[0..13],
+                                  polymorphic_path(obj.event), :title => '', :class => 'calendar-event',
+                                  :data=>{:placement=>"right", :toggle=>"tooltip", :original_title=>obj.event.title}%></li>
+                    </span>
+                <% end %>
+
+              </ul>
           <% end %>
 
-          </ul>
-        <% end %>
-
       <% end %>
+    </div>
   </div>
-</div>
 
-<p>&nbsp;</p>
-<div class="row">
-<div class="span6">
-  <span class="legende context-sinf">Sinfonieorchester</span> &nbsp;
-  <span class="legende context-skp">Stadtkapelle</span> &nbsp;
-  <span class="legende context-mvb">Gesamtverein</span>
-</div>
-</div>
-</section>
+  <p>&nbsp;</p>
+  <div class="row">
+    <div class="col-md-6">
+      <span class="legende context-sinf">Sinfonieorchester</span> &nbsp;
+      <span class="legende context-skp">Stadtkapelle</span> &nbsp;
+      <span class="legende context-mvb">Gesamtverein</span>
+    </div>
+  </div>

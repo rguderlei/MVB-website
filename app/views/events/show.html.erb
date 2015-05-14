@@ -1,34 +1,35 @@
 <% content_for :title, @event.title %>
 <section id="events">
-<div class="page-header">
-<h3> <%= @event.title %> </h3>
-</div>
-  <% if user_signed_in? then %>
-   <p>
-     <%= link_to('Bearbeiten', edit_event_path(@event)) %> |
-     <%= link_to('Löschen', @event, data: { confirm: "Soll die Veranstaltung wirklich gelöscht werden?" }, :method => :delete) %> |
-     <%= link_to 'Zurück zum Terminkalender', events_path %> |
-     <%= link_to('Neuer Termin', new_event_path) %> |
-     <%= link_to('Neues Konzert', new_concert_path) %>
-   </p>
-  <% end %>
-  <p>
-    <strong>Orchester:</strong> <%= @event.orchestra %> <br />
-  </p>
-<% @event.event_dates.each do |event_date| %>
-<p>
-  <strong>Beginn:</strong> <%= l event_date.start_at, :format=>:long %> <br />
-  <strong>Ende:</strong> <%= l event_date.end_at, :format=>:long %> <br />
-  <strong>Ort:</strong> <%= link_to_location event_date %> <br />
-  <% if !event_date.additional_description.blank? %>
-    <strong>Zusatzinfo:</strong> <%= event_date.additional_description %>
-  <% end %>
-</p>
-<% end %>
-<p>
-  <%= @event.description.html_safe %>
-</p>
+  <article class="col-1">
+    <div class="page-header">
+      <h3> <%= @event.title %> </h3>
+    </div>
+    <% if user_signed_in? then %>
+        <p>
+          <%= link_to('Bearbeiten', edit_event_path(@event)) %> |
+          <%= link_to('Löschen', @event, data: { confirm: "Soll die Veranstaltung wirklich gelöscht werden?" }, :method => :delete) %> |
+          <%= link_to 'Zurück zum Terminkalender', events_path %> |
+          <%= link_to('Neuer Termin', new_event_path) %> |
+          <%= link_to('Neues Konzert', new_concert_path) %>
+        </p>
+    <% end %>
+    <p>
+      <strong>Orchester:</strong> <%= @event.orchestra %> <br />
+    </p>
+    <% @event.event_dates.each do |event_date| %>
+        <p>
+          <strong>Beginn:</strong> <%= l event_date.start_at, :format=>:long %> <br />
+          <strong>Ende:</strong> <%= l event_date.end_at, :format=>:long %> <br />
+          <strong>Ort:</strong> <%= link_to_location event_date %> <br />
+          <% if !event_date.additional_description.blank? %>
+              <strong>Zusatzinfo:</strong> <%= event_date.additional_description %>
+          <% end %>
+        </p>
+    <% end %>
+    <p>
+      <%= @event.description.html_safe %>
+    </p>
 
-<%= render :partial => 'press_articles', :locals => {:press_articles => @event.press_articles} %>
-
+    <%= render :partial => 'press_articles', :locals => {:press_articles => @event.press_articles} %>
+  </article>
 </section>

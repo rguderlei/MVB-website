@@ -10,6 +10,16 @@ article.col-3 {
   @include make-md-column(4);
 }
 
+
+header {
+  @extend .container;
+}
+
+main {
+  @extend .container;
+}
+
+
 footer {
   @extend .container;
   margin-top: 45px;

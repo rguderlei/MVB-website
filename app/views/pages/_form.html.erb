@@ -1,24 +1,11 @@
-<%= simple_form_for(@page, :html => {:class => 'form-horizontal' }) do |f| %>
-    <div class="row">
-        <div class="span12">
-          <%= f.input :name %>
-          <%= f.input :permalink %>
-          <%= f.cktext_area :main_content, :label => false %>
-        </div>
+<%= bootstrap_form_for(@page, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10" ) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :permalink %>
+    <div class="form-group">
+        <%= f.cktext_area :main_content, :label => false, :class =>"form-control" %>
     </div>
-
-    <div class="row">
-      <div class="span4">
-        &nbsp;
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="span4">
-        <%= f.button :submit, 'Speichern', :class=>'btn btn-danger'%>
-      </div>
-    </div>
-
-
+    <p>
+        <%= f.submit 'Speichern', :class=>'btn btn-primary'%>
+        <%= link_to 'Zurück zur Übersicht', pages_path, :class=>"btn btn-default" %>
+    </p>
 <% end %>

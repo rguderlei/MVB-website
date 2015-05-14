@@ -1,23 +1,24 @@
 <% content_for :title, @page.name %>
+
 <div class="page-header">
-  <div class="row">
-    <div class="span2">
+  <section>
+    <article class="col-1">
       <% if user_signed_in? then %>
           <%= link_to('Bearbeiten', edit_page_path(@page)) %>
       <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span10">
+    </article>
+  </section>
+  <section>
+    <article class="col-1">
       <h3><%= @page.name %></h3>
-    </div>
+    </article>
 
-  </div>
+  </section>
 </div>
 
-<div class="row">
-  <div class="span12"><%= @page.main_content.html_safe %></div>
-</div>
+<section>
+  <article class="col-1"><%= @page.main_content.html_safe %></article>
+</section>
 
 
 

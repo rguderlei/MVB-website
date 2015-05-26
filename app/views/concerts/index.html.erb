@@ -1,25 +1,24 @@
 <% content_for :title, "Konzerte" %>
-<section id="concerts">
+
 <div class="page-header">
-<h3><%= yield :title %></h3>
+  <h3><%= yield :title %></h3>
 </div>
- <p>
+<p>
   <%= link_to('Neues Konzert anlegen', new_concert_path) if user_signed_in? %>
- </p>
+</p>
 
-  <ul class="thumbnails">
-     <% @concerts.each do |concert| %>
-         <li class="span3">
-           <div class="thumbnail">
-             <%= link_to concert do %>
-                 <%= image_tag(concert.image.url(:medium)) %>
-             <% end %>
-             <p>
-               <small><%= truncate(concert.title, :length => 35, :separator => ' ') %></small>
-             </p>
-           </div>
-         </li>
-     <% end %>
-   </ul>
-
-</section>
+<% @concerts.each do |concert| %>
+    <div class="media">
+      <div class="media-left">
+        <%= link_to concert do %>
+            <%= image_tag(concert.image.url(:medium), :class => 'img-rounded') %>
+        <% end %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= concert.title %></h4>
+        <% concert.event_dates.each do |event_date| %>
+            <p><%= l event_date.start_at, :format => :short_with_day %>, <%= link_to_location event_date %></p>
+        <% end %>
+      </div>
+    </div>
+<% end %>

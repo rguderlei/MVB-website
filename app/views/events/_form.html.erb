@@ -1,11 +1,12 @@
 <%= bootstrap_nested_form_for(@event, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
     <%= f.text_field :title, :label=>'Titel'  %>
     <%= f.select :orchestra, ['Stadtkapelle', 'Sinfonieorchester' ,'Gesamtverein'], :label=>'Betrifft' %>
-    <div class="form-group">
+    <%= f.form_group :public_event do %>
         <%= f.check_box :public_event, :label=>'öffentlicher Auftritt?' %>
-    </div>
+    <% end %>
 
     <h3>Termine</h3>
+
     <%= f.fields_for :event_dates do |date_form| %>
         <%= date_form.datetime_field :start_at, :label=>'Beginn', :class=>'datetimepicker', :value =>  date_form.object.start_at.nil? ? '' : l(date_form.object.start_at, :format=>:datetime_for_edit)  %>
         <%= date_form.datetime_field :end_at, :label=>'Ende', :class=>'datetimepicker', :value => date_form.object.end_at.nil? ? '' : l(date_form.object.end_at, :format=>:datetime_for_edit) %>
@@ -15,9 +16,9 @@
     <p><%= f.link_to_add 'weiteren Termin hinzufügen', :event_dates, :class=>'btn btn-small' %></p>
 
     <h3>Beschreibung</h3>
-    <div class="form-group">
-      <%= f.cktext_area :description %>
-    </div>
+    <%= f.form_group :description do %>
+        <%= f.cktext_area :description, :label=>'Programm' %>
+    <% end %>
 
     <h3>Presseberichte</h3>
 

@@ -1,10 +1,9 @@
 <% content_for :title, "Neues Konzert" %>
-<section id="concerts">
+
 <div class="page-header">
   <h3><%= yield :title %></h3>
 </div>
-
+<%= link_to 'Zurück zur Übersicht', events_path %>
 <%= render 'form' %>
 
-<%= link_to 'Zurück zur Übersicht', concerts_path %>
-</section>
+

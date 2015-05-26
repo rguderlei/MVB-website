@@ -1,5 +1,6 @@
 <% content_for :title, @event_location.short_name %>
 <section id="event_locations">
+  <article class="col-1">
 <div class="page-header">
 <h3> <%= @event_location.short_name %> </h3>
 </div>
@@ -8,7 +9,7 @@
      <%= link_to('Bearbeiten', edit_event_location_path(@event_location)) %> |
      <%= link_to('Löschen', @event_location, data: { confirm: "Soll der Veranstaltungsort wirklich gelöscht werden?" }, :method => :delete) %> |
      <%= link_to 'Zurück zur Übersicht', event_locations_path %> |
-     <%= link_to('Neuer Veranstaltungsort', new_event_location_path) %> ||
+     <%= link_to('Neuer Veranstaltungsort', new_event_location_path) %> |
      <%= link_to 'Zurück zum Terminkalender', events_path %>
    </p>
   <% end %>
@@ -43,5 +44,5 @@
   <p>
     <b>geo. Länge:</b> <%= @event_location.long %>
   </p>
-
+  </article>
 </section>

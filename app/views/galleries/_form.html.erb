@@ -1,27 +1,30 @@
-<%= simple_nested_form_for @gallery, :html => {:multipart => true, :class => 'form-horizontal'} do |f| %>
+<%= bootstrap_nested_form_for(@gallery, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-    <%= f.input :name, :label=>'Name'  %>
-    <%= f.input :context_date, :label=>'Datum',:as=>:string, :input_html => {:class=>'datepicker', :value => @gallery.context_date.nil? ? '' : l(@gallery.context_date)} %>
+    <%= f.text_field :name, :label=>'Name'  %>
+    <%= f.datetime_field :context_date, :label=>'Datum',:as=>:string, :class=>'datepicker', :value => @gallery.context_date.nil? ? '' : l(@gallery.context_date) %>
     <h2>Bilder</h2>
-    <ul class="thumbnails unstyled">
-    <%= f.simple_fields_for :photos do |photo_form| %>
+    <ul class="list-unstyled">
+    <%= f.fields_for :photos do |photo_form| %>
         <div class="field">
           <% if photo_form.object.image? %>
-              <li class="span2">
+              <li>
                 <%= image_tag photo_form.object.image.url(:small), :class => 'thumbnail'%>
-                <div class="caption">
+                <%= photo_form.form_group :public_event do %>
                   <%= photo_form.link_to_remove "Bild löschen", :class=>"btn" %>
-                </div>
+                <% end %>
               </li>
           <% else %>
               <li>
-                <%= photo_form.input :image, :as=>:file, :label=>"Bild auswählen:" %>
+                <%= photo_form.file_field :image, :label=>"Bild auswählen:" %>
               </li>
           <% end %>
         </div>
     <% end %>
-      <p><%= f.link_to_add "Bild hinzufügen", :photos, :class=>"btn btn-small" %></p>
+      <p><%= f.link_to_add "Bild hinzufügen", :photos %></p>
     </ul>
 
-   <%= f.button :submit, 'Speichern', :class=>'btn btn-danger' %>
+    <p>
+        <%= f.submit 'Speichern', :class=>'btn btn-primary' %>
+        <%= link_to 'Zurück', galleries_path, :class=>'btn btn-default' %>
+    </p>
 <% end %>

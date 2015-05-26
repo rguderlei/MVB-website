@@ -1,10 +1,12 @@
 <% content_for :title, "Bildergalerie bearbeiten" %>
 <section id="images">
-<div class="page-header">
-  <h3><%= yield :title %></h3>
-</div>
-<%= render 'form' %>
+  <article class="col-1">
+    <div class="page-header">
+      <h3><%= yield :title %></h3>
+    </div>
 
-<%= link_to 'Anzeigen', @gallery %> |
-<%= link_to 'Zurück', galleries_path %>
+
+    <%= link_to 'Anzeigen', @gallery %> |
+    <%= render 'form' %>
+  </article>
 </section>

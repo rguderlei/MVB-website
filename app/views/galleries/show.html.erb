@@ -1,5 +1,6 @@
 <% content_for :title, @gallery.name %>
 <section id="images">
+  <article class="col-1">
   <div class="page-header">
     <h3>
       <%= @gallery.name %>
@@ -19,13 +20,13 @@
     <%= l(@gallery.context_date) %>
   </p>
 
-  <ul class="thumbnails">
+  <div class="row">
     <% @gallery.photos.each do |photo| %>
-        <li class="span3">
-          <%= link_to image_tag(photo.image.url(:medium)), photo.image.url(:xlarge), :class => "lightbox thumbnail" %>
-        </li>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+          <%= link_to image_tag(photo.image.url(:medium), :class=>"thumbnail"), photo.image.url(:xlarge), :class => "lightbox" %>
+        </div>
     <% end %>
-  </ul>
+  </div>
 
-
+  </article>
 </section>

@@ -1,5 +1,6 @@
 <% content_for :title, "Bilder" %>
 <section id="images">
+  <article class="col-1">
   <div class="page-header">
     <h3>Bilder</h3>
   </div>
@@ -8,21 +9,21 @@
   </p>
 
 
-  <ul class="thumbnails">
+  <div class="row">
     <% @galleries.each do |gallery| %>
-        <li class="span3">
-          <div class="thumbnail">
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
             <%= link_to gallery do %>
-                <%= image_tag(gallery.photos.first.image.url(:medium)) unless gallery.photos.first.nil? %>
+                <%= image_tag(gallery.photos.first.image.url(:medium), :class=>"thumbnail") unless gallery.photos.first.nil? %>
             <% end %>
             <p>
               <small><%= gallery.name %></small>
               <br>
               <small class="muted">(<%= l(gallery.context_date) %>)</small>
             </p>
-          </div>
-        </li>
+        </div>
     <% end %>
-  </ul>
+  </div>
+  </article>
 </section>
 

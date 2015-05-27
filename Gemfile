@@ -28,7 +28,6 @@ gem 'devise'
 # use nested_forms to simplify forms for models with associations
 gem 'nested_form'
 gem 'bootstrap_form'
-gem 'simple_form' # DEPRECATED, REMOVE AFTER TRANSITION
 gem 'date_validator'
 
 # ckeditor - html wysiwyg

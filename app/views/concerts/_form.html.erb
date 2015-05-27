@@ -40,7 +40,7 @@
               <%= article_form.object.article_file_name %>
               <%= article_form.link_to_remove 'Datei löschen' %>
           <% else %>
-              <%= article_form.file_field :article, :label => 'Datei' %>
+              <%= article_form.file_field :article, :label => 'Datei', accept: 'image/jpg,image/jpeg,image/png,application/pdf' %>
           <% end %>
         </div>
       </div>

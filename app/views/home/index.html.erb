@@ -11,16 +11,16 @@
     <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
     <% if !@next_sinf_concert.nil? %>
         <h4><%= @next_sinf_concert.title %></h4>
-        <small>
-          <% @next_sinf_concert.event_dates.each do |event_date| %>
-              <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
-          <% end %>
-        </small>
-        <ul class="thumbnails">
-          <li>
-            <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
-          </li>
-        </ul>
+        <p>
+          <small>
+            <% @next_sinf_concert.event_dates.each do |event_date| %>
+                <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
+            <% end %>
+          </small>
+        </p>
+        <p>
+          <%= link_to image_tag(@next_sinf_concert.image.url(:medium), :class => 'thumbnail'), @next_sinf_concert %>
+        </p>
     <% end %>
   </article>
 
@@ -29,16 +29,16 @@
     <a href="probenplan/Stadtkapelle">Probenplan</a>
     <% if !@next_skp_concert.nil? %>
         <h4><%= @next_skp_concert.title %></h4>
-        <small>
-          <% @next_skp_concert.event_dates.each do |event_date| %>
-              <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
-          <% end %>
-        </small>
-        <ul class="thumbnails">
-          <li>
-            <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
-          </li>
-        </ul>
+        <p>
+          <small>
+            <% @next_skp_concert.event_dates.each do |event_date| %>
+                <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %> <br>
+            <% end %>
+          </small>
+        </p>
+        <p>
+          <%= link_to image_tag(@next_skp_concert.image.url(:medium), :class => 'thumbnail'), @next_skp_concert %>
+        </p>
     <% end %>
   </article>
 </section>
@@ -46,27 +46,27 @@
 <section id="termine">
   <article class="col-1">
     <div class="page-header">
-        <h3>Nächste Konzerte des Musikvereins</h3>
+      <h3>Nächste Konzerte des Musikvereins</h3>
     </div>
 
-      <% @next_concerts.each do |event| %>
-      <div class="row">
-        <div class="col-md-5">
-          <%= link_to event.title, event %> (<%= event.orchestra %>)
-        </div>
-        <div class="col-md-7">
-          <% event.event_dates.each do |event_date| %>
-          <div class="row">
-            <div class="col-md-7">
-              <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %>
-            </div>
+    <% @next_concerts.each do |event| %>
+        <div class="row">
+          <div class="col-md-5">
+            <%= link_to event.title, event %> (<%= event.orchestra %>)
           </div>
-          <% end %>
+          <div class="col-md-7">
+            <% event.event_dates.each do |event_date| %>
+                <div class="row">
+                  <div class="col-md-7">
+                    <%= l event_date.start_at, :format=>:short_with_day %>, <%= link_to_location event_date %> <%= event_date.additional_description unless event_date.additional_description.nil? %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"><hr class="list-separator"></div>
-      </div>
-      <% end %>
+        <div class="row">
+          <div class="col-md-12"><hr class="list-separator"></div>
+        </div>
+    <% end %>
   </article>
 </section>

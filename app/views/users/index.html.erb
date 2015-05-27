@@ -1,8 +1,10 @@
 <section id="users">
-  <div class="page-header">
-    <h3>Benutzerverwaltung</h3>
-  </div>
-    <table>
+  <article class="col-1">
+    <div class="page-header">
+      <h3>Benutzerverwaltung</h3>
+    </div>
+    <%= link_to 'Neuen Benutzer anlegen', new_user_path %>
+    <table class="table table-striped">
       <tr>
         <th>Email</th>
         <th></th>
@@ -17,8 +19,5 @@
           </tr>
       <% end %>
     </table>
-
-    <br/>
-
-    <%= link_to 'Neuen Benutzer anlegen', new_user_path %>
+  </article>
 </section>

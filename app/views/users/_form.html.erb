@@ -1,8 +1,13 @@
-<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
-    <%= f.input :email, :label=>'Email-Addresse'  %>
-    <%= f.input :password, :as=>:password, :label=>'Passwort'  %>
-    <%= f.input :password_confirmation, :as=>:password, :label=>'Passwort-Bestätigung'  %>
-    <%= f.input :admin, :label=>'Administrator?'  %>
+<%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    <%= f.email_field :email, :label=>'Email-Addresse'  %>
+    <%= f.password_field :password, :as=>:password, :label=>'Passwort'  %>
+    <%= f.password_field :password_confirmation, :as=>:password, :label=>'Passwort-Bestätigung'  %>
+    <%= f.form_group :admin do %>
+        <%= f.check_box :admin, :label=>'Administrator?'  %>
+    <% end %>
+    <p>
+      <%= f.submit 'Speichern', :class=>'btn btn-primary' %>
+      <%= link_to 'Zurück', users_path, :class=>'btn btn-default' %>
+    </p>
 
-    <%= f.button :submit, 'Speichern', :class=>'btn primary' %>
 <% end %>

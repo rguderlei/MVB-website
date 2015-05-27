@@ -1,4 +1,5 @@
 <section id="infos">
+  <article class="col-1">
   <div class="page-header">
     <h3>Aktuelles</h3>
   </div>
@@ -6,13 +7,13 @@
 
 <% @infos.each do |info| %>
    <div class="row">
-     <div class="span2"><%= l info.created_at, :format=>:date_and_day %><br><%= l info.created_at, :format=>:time %></div>
-     <div class="span7"><b><%= info.title %></b>
+     <div class="col-md-2"><%= l info.created_at, :format=>:date_and_day %><br><%= l info.created_at, :format=>:time %></div>
+     <div class="col-md-7"><b><%= info.title %></b>
          <div class="row">
-                <div class="span7"><%=truncate(info.content, :length=>250) %></div>
+                <div class="col-md-7"><%=truncate(info.content, :length=>250) %></div>
          </div>
      </div>
-     <div class="span3">
+     <div class="col-md-3">
        <%= link_to 'Anzeigen', info %>
        <% if user_signed_in? then %>
            | <%= link_to 'Bearbeiten', edit_info_path(info) %> |
@@ -21,6 +22,6 @@
      </div>
    </div>
   <% end %>
-
+  </article>
 </section>
 

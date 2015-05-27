@@ -1,17 +1,19 @@
-<p id="notice"><%= notice %></p>
+
 <section id="infos">
-  <div class="page-header">
-     <h3>  <%= @info.title %> </h3>
-  </div>
-  <small> <%= l @info.created_at, :format=>:short %> </small>
-  <% if user_signed_in? then %>
-   <p>
-     <%= link_to 'Bearbeiten', edit_info_path(@info) %> |
-     <%= link_to('Löschen', @info, data: { confirm: "Soll die Meldung wirklich gelöscht werden?" }, :method => :delete) %> |
-     <%= link_to 'Zurück zur Übersicht', infos_path %>
-   </p>
-  <% end %>
-  <p>
+  <article class="col-1">
+    <div class="page-header">
+      <h3>  <%= @info.title %> </h3>
+    </div>
+    <small> <%= l @info.created_at, :format=>:short %> </small>
+    <% if user_signed_in? then %>
+        <p>
+          <%= link_to 'Bearbeiten', edit_info_path(@info) %> |
+          <%= link_to('Löschen', @info, data: { confirm: "Soll die Meldung wirklich gelöscht werden?" }, :method => :delete) %> |
+          <%= link_to 'Zurück zur Übersicht', infos_path %>
+        </p>
+    <% end %>
+    <p>
       <%= @info.content %>
-  </p>
+    </p>
+  </article>
 </section>

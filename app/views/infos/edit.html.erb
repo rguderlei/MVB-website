@@ -1,10 +1,9 @@
 <section id="infos">
+  <article class="col-1">
   <div class="page-header">
     <h3>Aktuelle Information bearbeiten</h3>
   </div>
-
+    <%= link_to 'Anzeigen', @info %>
     <%= render 'form' %>
-
-    <%= link_to 'Anzeigen', @info %> |
-    <%= link_to 'Zurück', infos_path %>
+  </article>
 </section>

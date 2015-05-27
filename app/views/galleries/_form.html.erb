@@ -15,7 +15,7 @@
               </li>
           <% else %>
               <li>
-                <%= photo_form.file_field :image, :label=>"Bild auswählen:" %>
+                <%= photo_form.file_field :image, :label=>"Bild auswählen:", accept: 'image/jpg,image/jpeg,image/png' %>
               </li>
           <% end %>
         </div>

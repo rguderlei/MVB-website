@@ -10,7 +10,7 @@
     <h3>Sinfonieorchester</h3>
     <a href="probenplan/Sinfonieorchester">Probenplan</a><br/>
     <% if !@next_sinf_concert.nil? %>
-        <h4><%= @next_sinf_concert.title %></h4>
+        <h4><%= link_to @next_sinf_concert.title, @next_sinf_concert %></h4>
         <p>
           <small>
             <% @next_sinf_concert.event_dates.each do |event_date| %>
@@ -28,7 +28,7 @@
     <h3>Stadtkapelle</h3>
     <a href="probenplan/Stadtkapelle">Probenplan</a>
     <% if !@next_skp_concert.nil? %>
-        <h4><%= @next_skp_concert.title %></h4>
+        <h4><%= link_to @next_skp_concert.title, @next_skp_concert %></h4>
         <p>
           <small>
             <% @next_skp_concert.event_dates.each do |event_date| %>

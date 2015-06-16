@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 
 # sqlite as dev database
 gem 'sqlite3'

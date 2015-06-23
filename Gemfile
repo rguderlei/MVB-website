@@ -25,6 +25,9 @@ gem 'paperclip'
 # use devise as authentication framework
 gem 'devise'
 
+# helpers for social media buttons
+gem 'shareable'
+
 # use nested_forms to simplify forms for models with associations
 gem 'nested_form'
 gem 'bootstrap_form'

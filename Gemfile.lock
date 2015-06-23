@@ -145,6 +145,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    shareable (1.1.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     sprockets (3.2.0)
       rack (~> 1.0)
     sprockets-rails (2.3.1)
@@ -188,6 +191,7 @@ DEPENDENCIES
   paperclip
   rails (= 4.2.2)
   sass-rails (>= 3.2)
+  shareable
   sqlite3
   therubyracer
   uglifier

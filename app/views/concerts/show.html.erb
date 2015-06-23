@@ -14,14 +14,15 @@
         <%= link_to('Neues Konzert', new_concert_path) %>
       </p>
   <% end %>
-  <small>
-    Orchester: <%= @concert.orchestra %>
-  </small>
-  <p><%= render_shareable :buttons=> ['facebook', 'twitter'] %></p>
-  <h4>Termine</h4>
+
 
   <div class="row">
     <div class="col-md-4">
+      <small>
+        Orchester: <%= @concert.orchestra %>
+      </small>
+      <p><%= render_shareable :buttons=> ['facebook', 'twitter'] %></p>
+      <h4>Termine</h4>
       <% @concert.event_dates.each do |event_date| %>
           <div class="row">
             <div class="col-md-4">
@@ -36,11 +37,11 @@
             </div>
           </div>
       <% end %>
+    </div>
+    <div class="col-md-8">
       <div>
         <%= link_to image_tag(@concert.image.url(:medium), :class=>"img-rounded"), @concert.image.url(:xlarge), :class => "lightbox" %>
       </div>
-    </div>
-    <div class="col-md-8">
       <h2>Programm:</h2>
       <p>
         <%= @concert.description.html_safe %>

@@ -8,10 +8,11 @@
         <h4><%=  year %></h4>
         <% articles.each do |press_article| %>
             <div class="row">
-              <div class="col-md-9">
+              <div class="col-md-8">
                 <%= press_article.title %> (<%= press_article.publisher %> vom <%= l press_article.print_date unless  press_article.print_date.nil? %> )
               </div>
-              <div class="col-md-3"><%= link_to 'Download', press_article.article.url  %></div>
+              <div class="col-md-2"><%= link_to 'Download', press_article.article.url  %></div>
+              <div class="col-md-2"><%= link_to 'Löschen', press_article, data: { confirm: "Soll der Artikel wirklich gelöscht werden?" }, :method => :delete  if user_signed_in? %></div>
             </div>
         <% end %>
     <% end %>

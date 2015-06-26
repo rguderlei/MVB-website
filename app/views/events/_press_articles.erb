@@ -2,8 +2,10 @@
 <h2>In der Presse</h2>
 <ul>
 <% press_articles.each { |article|%>
-   <li><%= article.title %> ( <%= article.publisher %> vom <%= l article.print_date unless article.print_date.nil?%>)
-   <%= link_to 'Download', article.article.url  %> </li>
+   <li>
+     <%= link_to article.title, article.article.url %> ( <%= article.publisher %> vom <%= l article.print_date unless article.print_date.nil?%>)
+     <%= link_to 'Löschen', article, data: { confirm: "Soll der Artikel wirklich gelöscht werden?" }, :method => :delete if  user_signed_in? %>
+   </li>
 <% } %>
 </ul>
 <% end %>

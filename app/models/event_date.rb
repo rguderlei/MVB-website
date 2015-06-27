@@ -59,15 +59,15 @@ class EventDate < ActiveRecord::Base
 
   def to_ics (url)
     event = Icalendar::Event.new
-    event.dtstart = self.start_at.strftime('%Y%m%dT%H%M%S')
-    event.dtend = self.end_at.strftime('%Y%m%dT%H%M%S')
+    event.dtstart = Icalendar::Values::DateTime.new self.start_at, 'tzid' => "Europe/Berlin"
+    event.dtend =  Icalendar::Values::DateTime.new self.end_at, 'tzid' => "Europe/Berlin"
     event.summary = self.event.title
     p = HTMLPage.new :contents => self.event.description
     event.description = p.markdown
     event.location = self.location_name
     event.ip_class = 'PUBLIC'
-    event.created = self.created_at.strftime('%Y%m%dT%H%M%S')
-    event.last_modified = self.updated_at.strftime('%Y%m%dT%H%M%S')
+    event.created =  Icalendar::Values::DateTime.new self.created_at # must be timezone UTC, we dont care about exact times here
+    event.last_modified =  Icalendar::Values::DateTime.new self.updated_at # must be timezone UTC, we dont care about exact times here
     event.uid = url
     event
   end

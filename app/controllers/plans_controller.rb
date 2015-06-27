@@ -27,6 +27,26 @@ class PlansController < ApplicationController
       format.html
       format.ics do
         calendar = Icalendar::Calendar.new
+        calendar.timezone do |t|
+          t.tzid = "Europe/Berlin"
+
+          t.daylight do |d|
+            d.tzoffsetfrom = "+0100"
+            #d.tzoffsetto   = "-0500"
+            d.tzname       = "MESZ"
+            d.dtstart      = "19810329T020000"
+            d.rrule        = "FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU"
+          end
+
+          t.standard do |s|
+            s.tzoffsetfrom = "+0200"
+            #s.tzoffsetto   = "-0600"
+            s.tzname       = "MEZ"
+            s.dtstart      = "19961027T030000"
+            s.rrule        = "FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU"
+          end
+        end
+
         @events.each{ |event|
           calendar.add_event(event.to_ics( polymorphic_url(event.event)))
         }

@@ -2,7 +2,7 @@
   <article class="col-3">
     <h3>Aktuelles</h3>
     <h4><%= @latest_info.nil? ? "nix los" : @latest_info.title %></h4>
-    <p><%=  @latest_info.nil? ? "" : truncate(@latest_info.content, omission: '', length:250, separator: ' ') {link_to ' ...', @latest_info}  %>
+    <p><%=  @latest_info.nil? ? "" : truncate(@latest_info.content.html_safe, omission: '', length:500, separator: ' ') {link_to ' ...', @latest_info}  %>
     <p><%= link_to 'Weitere Meldungen',infos_url %>  </p>
   </article>
 

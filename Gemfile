@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.6'
 
 # sqlite as dev database
 gem 'sqlite3'
 gem 'mysql2'
 # Styling Scss
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'bourbon' # Bourbon css3/sass mixins
 gem 'coffee-rails'
@@ -40,5 +40,3 @@ gem 'ckeditor'
 gem 'calendrier'
 gem 'icalendar'
 gem 'html2markdown'
-
-

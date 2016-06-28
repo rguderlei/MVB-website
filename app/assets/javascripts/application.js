@@ -1,7 +1,7 @@
 //= require jquery
+//= require bootstrap
 //= require jquery-ui
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require jquery.lightbox-0.5.min
 //= require jquery.ui.datepicker-de
 //= require jquery-ui-timepicker-addon
@@ -61,5 +61,3 @@ $(document).on('nested:fieldAdded', function(event){
   // and activate datepicker on it
   dateField.datetimepicker();
 });
-
-

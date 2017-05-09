@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @year = (params[:year] || Time.zone.now.year).to_i
     @shown_month = Date.civil(@year, @month)
     @first_day_of_week = 1
-    event_strips = EventDate.where(:start_at => (@shown_month.beginning_of_month .. @shown_month.end_of_month))
+    event_strips = EventDate.where(:start_at => (@shown_month.beginning_of_month .. (@shown_month.end_of_month + 1.day)))
     @events_by_date = sort_events(event_strips)
   end
 

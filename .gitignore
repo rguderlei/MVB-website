@@ -10,3 +10,4 @@ public/ckeditor_assets
 .idea
 .bundle
 .sass-cache/
+vendor

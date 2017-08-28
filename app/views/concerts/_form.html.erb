@@ -1,6 +1,6 @@
 <%= bootstrap_nested_form_for(@concert, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
     <%= f.text_field :title, :label=>'Titel'  %>
-    <%= f.select :orchestra, ['Stadtkapelle', 'Sinfonieorchester' ], :label=>'Orchester' %>
+    <%= f.select :orchestra, ['Stadtkapelle', 'Sinfonieorchester', 'Gesamtverein' ], :label=>'Orchester' %>
     <%= f.form_group :public_event do %>
         <%= f.check_box :public_event, :label=>'öffentlicher Auftritt?' %>
     <% end %>

@@ -5,8 +5,8 @@ class HomeController < ApplicationController
 
     @latest_info = Info.order("created_at DESC").first
 
-    @next_sinf_concert = Concert.where("orchestra=?", "Sinfonieorchester").joins(:event_dates).where("start_at>=?", Date.today).order("start_at").first
-    @next_skp_concert = Concert.where("orchestra=?", "Stadtkapelle").joins(:event_dates).where("start_at>=?", Date.today).order("start_at").first
+    @next_sinf_concert = Concert.where(orchestra: ["Sinfonieorchester", "Gesamtverein"]).joins(:event_dates).where("start_at>=?", Date.today).order("start_at").first
+    @next_skp_concert = Concert.where(orchestra: ["Stadtkapelle", "Gesamtverein"]).joins(:event_dates).where("start_at>=?", Date.today).order("start_at").first
 
     respond_to do |format|
       format.html

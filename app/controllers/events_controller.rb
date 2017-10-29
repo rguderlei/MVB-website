@@ -8,8 +8,21 @@ class EventsController < ApplicationController
     @year = (params[:year] || Time.zone.now.year).to_i
     @shown_month = Date.civil(@year, @month)
     @first_day_of_week = 1
-    event_strips = EventDate.where(:start_at => (@shown_month.beginning_of_month .. (@shown_month.end_of_month + 1.day)))
-    @events_by_date = sort_events(event_strips)
+
+    first_day = @shown_month.beginning_of_month
+    if first_day.wday != 1
+      first_day -= 1.week
+      first_day += 1.days until first_day.wday == 1
+    end  
+
+    last_day = @shown_month.end_of_month
+    if last_day.wday != 0
+      last_day += 1.days until last_day.wday == 0
+    end  
+
+    @visible_days = (first_day .. last_day)
+
+    @events_by_date = EventDate.where(:start_at => (first_day .. (last_day + 1.day))).order(:start_at)
   end
 
   # GET /events/1

@@ -33,33 +33,34 @@
 
   <div class="row">
     <div class="col-md-12">
-      <%= calendrier(:year => @year, :month => @month, :day => 1, :start_on_monday => true, :display => :month, :title => "") do |cell_begin_time, cell_end_time| %>
-          <% if count_sorted_events(@events_by_date, cell_begin_time, cell_end_time) > 0 %>
-              <!-- this code is run only there is at least one event between cell begin and end -->
+      <div id="calendar-wrap">
+    		<div id="calendar">
+    			<ul class="weekdays">
+    				<li>Montag</li>
+    				<li>Dienstag</li>
+    				<li>Mittwoch</li>
+    				<li>Donnerstag</li>
+    				<li>Freitag</li>
+    				<li>Samstag</li>
+    				<li>Sonntag</li>
+    			</ul>
 
-              <ul>
-                <% yield_sorted_events(@events_by_date, cell_begin_time, cell_end_time) do |obj| %>
-                    <!-- you may handle event/meeting/... with the obj variable -->
-                    <li>
-              <span class="calendar-event context-<%= obj.context_class %>">
-                      <%= link_to obj.event.title[0..13],
-                                  polymorphic_path(obj.event), :title => '', :class => 'calendar-event',
-                                  :data=>{:placement=>"right", :toggle=>"tooltip", :original_title=>obj.event.title}%></li>
-                    </span>
-                <% end %>
-
-              </ul>
+    			<ul class="days">
+          <% @visible_days.each do |day| %>
+            <li class="<%= day.month == @shown_month.month ? "day" : "day other-month" %>">
+    					<div class="date"><%= day.day %></div>    	
+              <%= print_events(day, @events_by_date).html_safe %>
+    				</li>
           <% end %>
-
-      <% end %>
+          </ul>
     </div>
   </div>
 
-  <p>&nbsp;</p>
   <div class="row">
-    <div class="col-md-6">
-      <span class="legende context-sinf">Sinfonieorchester</span> &nbsp;
-      <span class="legende context-skp">Stadtkapelle</span> &nbsp;
-      <span class="legende context-mvb">Gesamtverein</span>
-    </div>
+    <div class="col-md-2"> &nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"> <div class="sinfonieorchester">Sinfonieorchester</div></div>
+    <div class="col-md-2"> <div class="stadtkapelle">Stadtkapelle</div></div>
+    <div class="col-md-2"> <div class="gesamtverein">Gesamtverein</div></div>  
   </div>

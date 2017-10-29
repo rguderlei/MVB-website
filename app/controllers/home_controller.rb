@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     @start_date = Date.today
-    @next_concerts = Concert.joins(:event_dates).where("start_at > ?", @start_date).order("start_at")
+    @next_concerts = Concert.distinct.joins(:event_dates).where("start_at > ?", @start_date).order("start_at")
 
     @latest_info = Info.order("created_at DESC").first
 

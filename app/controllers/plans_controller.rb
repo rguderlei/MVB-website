@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @plans = Plan.all

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   include Calendrier::EventExtension
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
   # GET /events
   # GET /events.xml
   def index

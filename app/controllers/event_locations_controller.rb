@@ -1,5 +1,5 @@
 class EventLocationsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
   # GET /event_locations
   # GET /event_locations.json
   def index

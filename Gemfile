@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.2.8'
+gem 'rails', '5.1.4'
 
 # sqlite as dev database
 gem 'sqlite3'
@@ -40,3 +40,12 @@ gem 'ckeditor'
 gem 'calendrier'
 gem 'icalendar'
 gem 'html2markdown'
+
+group :development do
+  gem 'listen', '~> 3.1.5'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+

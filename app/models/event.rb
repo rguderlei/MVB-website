@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   #attr_accessible :title, :public_event, :description, :orchestra, :press_articles, :press_articles_attributes, :event_dates, :event_dates_attributes
 
   validates :title, :orchestra, :presence => true
@@ -8,5 +8,4 @@ class Event < ActiveRecord::Base
 
   accepts_nested_attributes_for :press_articles
   accepts_nested_attributes_for :event_dates
-
 end

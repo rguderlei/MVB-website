@@ -1,3 +1,3 @@
-class Plan < ActiveRecord::Base
+class Plan < ApplicationRecord
   validates_uniqueness_of :orchestra
 end

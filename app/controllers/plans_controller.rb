@@ -52,7 +52,7 @@ class PlansController < ApplicationController
         }
         headers['Content-Type'] = 'text/calendar; charset=UTF-8'
         calendar.publish
-        render :text => calendar.to_ical
+        render :plain => calendar.to_ical
       end
     end
   end

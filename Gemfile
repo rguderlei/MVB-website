@@ -4,7 +4,7 @@ gem 'rails', '5.1.4'
 
 # sqlite as dev database
 gem 'sqlite3'
-gem 'mysql2'
+gem 'mysql2', '~>0.4.0'
 # Styling Scss
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'

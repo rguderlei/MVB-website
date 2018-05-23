@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '5.1.4'
+gem 'rails', '5.2.0'
 
 # sqlite as dev database
 gem 'sqlite3'
@@ -16,8 +16,8 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'therubyracer'
-gem 'libv8', '~> 3.11.8'
+gem 'therubyracer', '~>0.12.0'
+gem 'libv8', '~> 3.16.14.0'
 
 # use paperclip to handle attachments
 gem 'paperclip'

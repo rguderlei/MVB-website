@@ -1,4 +1,4 @@
-class Gallery < ActiveRecord::Base
+class Gallery < ApplicationRecord
   #attr_accessible :name, :context_date, :photos, :photos_attributes
   has_many :photos, :dependent => :destroy
   validates :name, :context_date, :presence => true

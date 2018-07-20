@@ -1,4 +1,4 @@
-class EventLocation < ActiveRecord::Base
+class EventLocation < ApplicationRecord
   #attr_accessible :city, :country, :lat, :long, :long_name, :short_name, :street, :zipcode
   has_many :event_dates
 

@@ -1,7 +1,7 @@
 <%= bootstrap_nested_form_for(@gallery, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
     <%= f.text_field :name, :label=>'Name'  %>
-    <%= f.datetime_field :context_date, :label=>'Datum',:as=>:string, :class=>'datepicker', :value => @gallery.context_date.nil? ? '' : l(@gallery.context_date) %>
+    <%= f.text_field :context_date, :label=>'Datum',:as=>:string, :class=>'datepicker', :value => @gallery.context_date.nil? ? '' : l(@gallery.context_date) %>
     <h2>Bilder</h2>
     <ul class="list-unstyled">
     <%= f.fields_for :photos do |photo_form| %>

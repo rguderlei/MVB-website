@@ -12,7 +12,6 @@ de:
       only_day: "%e"
       month_and_year: "%B %Y"
 
-
     day_names:
       - Sonntag
       - Montag

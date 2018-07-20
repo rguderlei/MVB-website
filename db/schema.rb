@@ -52,13 +52,13 @@ ActiveRecord::Schema.define(version: 20140104101615) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "orchestra",          limit: 255
-    t.string   "title",              limit: 255
+    t.string   "orchestra"
+    t.string   "title"
     t.text     "description"
     t.boolean  "public_event"
-    t.string   "type",               limit: 255
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
+    t.string   "type"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.datetime "created_at"
@@ -66,22 +66,22 @@ ActiveRecord::Schema.define(version: 20140104101615) do
   end
 
   create_table "galleries", force: :cascade do |t|
-    t.string   "name",         limit: 255
+    t.string   "name"
     t.date     "context_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "infos", force: :cascade do |t|
-    t.string   "title",      limit: 255
+    t.string   "title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.string   "permalink",    limit: 255
+    t.string   "name"
+    t.string   "permalink"
     t.text     "main_content"
     t.datetime "created_at"
     t.datetime "updated_at"

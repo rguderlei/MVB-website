@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
   # GET /pages
   # GET /pages.xml
   def index

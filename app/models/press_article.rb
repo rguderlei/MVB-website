@@ -1,4 +1,4 @@
-class PressArticle < ActiveRecord::Base
+class PressArticle < ApplicationRecord
   belongs_to :event, :polymorphic => true
   has_attached_file :article,  :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
       :url => "/system/:attachment/:id/:style/:filename"

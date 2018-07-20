@@ -1,27 +1,25 @@
 module EventsHelper
-  def month_link(month_date)
-    link_to(I18n.localize(month_date, :format => "%B"), {:month => month_date.month, :year => month_date.year})
-  end
+  def print_events(current_day, events) 
+  
+    result = ""
 
-  # custom options for this calendar
-  def event_calendar_options
-    {
-      :year => @year,
-      :month => @month,
-      :first_day_of_week => @first_day_of_week,
-      :event_strips => @event_strips,
-      :month_name_text => I18n.localize(@shown_month, :format => "%B %Y"),
-      :previous_month_text => "<< " + month_link(@shown_month.prev_month),
-      :next_month_text => month_link(@shown_month.next_month) + " >>"
-    }
-  end
-
-  def event_calendar
-    calendar event_calendar_options do |args|
-      logger.info args
-      event = args[:event]
-
-      link_to(event.event.title, polymorphic_path(event.event), :title => event.event.title)
+    if !events.nil?  
+      events.each do |event| 
+        if event.start_at.day == current_day.day && event.start_at.month == current_day.month
+            result += link_to(%Q(
+              <div class="event #{event.event.orchestra.downcase}">
+                <div class="event-desc">
+                  #{event.event.title}
+                </div>
+                <div class="event-time">
+                  #{l(event.start_at, :format=> :time)} - #{l(event.end_at, :format=> :time)}
+                </div>
+              </div>  
+              ).html_safe, polymorphic_path(event.event))
+        end
+      end   
     end
+
+    return result
   end
 end

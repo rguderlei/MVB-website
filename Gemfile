@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.2.2'
+gem 'rails', '5.2.0'
 
 # sqlite as dev database
 gem 'sqlite3'
-gem 'mysql2'
+gem 'mysql2', '~>0.4.0'
 # Styling Scss
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'bourbon' # Bourbon css3/sass mixins
 gem 'coffee-rails'
@@ -16,8 +16,8 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'therubyracer'
-gem 'libv8', '~> 3.11.8'
+gem 'therubyracer', '~>0.12.0'
+gem 'libv8', '~> 3.16.14.0'
 
 # use paperclip to handle attachments
 gem 'paperclip'
@@ -40,5 +40,12 @@ gem 'ckeditor'
 gem 'calendrier'
 gem 'icalendar'
 gem 'html2markdown'
+
+group :development do
+  gem 'listen', '~> 3.1.5'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
 
 

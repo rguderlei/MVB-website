@@ -33,16 +33,16 @@
 
   <nav class="navbar navbar-default">
     <div class="container">
-      <div class="navbar-header"> <!-- Sandwich for Mobile menu -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mvb-main-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
-      <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse"  id="mvb-main-menu">
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">&uuml;ber uns <b class="caret"></b></a>
@@ -86,7 +86,7 @@
           </li>
           <li><a href="/static/kontakt">Kontakt</a></li>
           <% if user_signed_in? %>
-              <li> <%= link_to 'Logout', destroy_user_session_path %></li>
+              <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
           <% else %>
               <li> <%= link_to 'Login', new_user_session_path %></li>
           <% end %>
@@ -105,7 +105,7 @@
     </article>
   </section>
   <section>
-    <div class="col-md-5"> &copy; <%= Time.now.year %> Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a></div>
+    <div class="col-md-5"> &copy; <%= Time.now.year %> Musikverein Biberach e.V. <a href="/static/impressum">Impressum</a>  <a href="/static/datenschutz">Datenschutzerklärung</a> </div>
     <div class="col-md-2 col-md-offset-5"> <%= link_to 'Verwaltung', '/admin', :class=>"pull-right" if user_signed_in?%>     </div>
   </section>
 </footer>
@@ -113,5 +113,3 @@
 
 </body>
 </html>
-
-

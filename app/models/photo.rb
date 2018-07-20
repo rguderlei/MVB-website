@@ -1,4 +1,4 @@
-class Photo < ActiveRecord::Base
+class Photo < ApplicationRecord
   #attr_accessible :image, :gallery_id
   belongs_to :gallery
 

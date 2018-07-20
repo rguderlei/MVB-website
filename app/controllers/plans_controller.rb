@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @plans = Plan.all
@@ -52,7 +52,7 @@ class PlansController < ApplicationController
         }
         headers['Content-Type'] = 'text/calendar; charset=UTF-8'
         calendar.publish
-        render :text => calendar.to_ical
+        render :plain => calendar.to_ical
       end
     end
   end

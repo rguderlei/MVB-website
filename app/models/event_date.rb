@@ -1,4 +1,4 @@
-class EventDate < ActiveRecord::Base
+class EventDate < ApplicationRecord
   #attr_accessible :start_at, :event_location_id, :end_at, :event_id, :location, :additional_description
 
   belongs_to :event
